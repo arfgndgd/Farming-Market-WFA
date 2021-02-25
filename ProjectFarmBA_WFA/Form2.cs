@@ -387,6 +387,103 @@ namespace ProjectFarmBA_WFA
 
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e) //Güncelleme butonu
+        {
+            //string authority = "";
+
+            //TC Kimlik kontrolü
+            if (txtTcNo.Text.Length < 11 || txtTcNo.Text == "")
+            {
+                lblTcNo.ForeColor = Color.Red;
+            }
+            else
+                lblTcNo.ForeColor = Color.Black;
+
+            //Ad 
+            if (txtFirstName.Text.Length < 2 || txtFirstName.Text == "")
+            {
+                lblFirstName.ForeColor = Color.Red;
+            }
+            else
+                lblFirstName.ForeColor = Color.Black;
+
+            //soyad
+            if (txtLastName.Text.Length < 2 || txtLastName.Text == "")
+            {
+                lblLastName.ForeColor = Color.Red;
+            }
+            else
+                lblLastName.ForeColor = Color.Black;
+
+            //telefon
+            if (txtPhone.Text.Length < 10 || txtPhone.Text == "")
+            {
+                lblPhone.ForeColor = Color.Red;
+            }
+            else
+                lblPhone.ForeColor = Color.Black;
+
+            //Adres
+            if (txtAddress.Text == "")
+            {
+                lblAdress.ForeColor = Color.Red;
+            }
+            else
+                lblAdress.ForeColor = Color.Black;
+
+            //Şehir
+            if (txtCity.Text == "")
+            {
+                lblCity.ForeColor = Color.Red;
+            }
+            else
+                lblCity.ForeColor = Color.Black;
+
+            //şifre
+            if (txtPassword.Text.Length < 3 || txtPassword.Text == "")
+            {
+                lblPassword.ForeColor = Color.Red;
+            }
+            else
+                lblPassword.ForeColor = Color.Black;
+
+
+            if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "")
+            {
+                //Yetki 
+                //if (rdbManager.Checked == true)
+                //{
+                //    authority = "1";
+                //}
+                //else if (rdbWorker.Checked == true)
+                //    authority = "2";
+                try
+                {
+                    connection.Open();
+                    SqlCommand updateData = new SqlCommand("update Employees set FirstName='" + txtFirstName.Text + "', LastName= '" + txtLastName.Text + "', Email= '" + txtEmail.Text + "',Phone= '" + txtPhone.Text + "',Address= '" + txtAddress.Text + "',City= '" + txtCity.Text + "',DepartmentID= '" + cmbDepartment.Text + "',Password= '" + txtPassword.Text + "' where TCNO='" + txtTcNo.Text + "'", connection);
+
+                    updateData.ExecuteNonQuery();
+
+                    connection.Close();
+                    MessageBox.Show("Kayıt Güncellendi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    EmployeeShow();
+                    //CleanEmployeeTabPage();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    connection.Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
 
 
