@@ -483,7 +483,44 @@ namespace ProjectFarmBA_WFA
             }
         }
 
+        private void btnDelete_Click(object sender, EventArgs e) //Silme butonu
+        {
+            if (txtTcNo.Text.Length == 11)
+            {
+                bool searchData = false;
 
+                connection.Open();
+
+                SqlCommand selectQuery = new SqlCommand("select * from Employees where TCNO='" + txtTcNo.Text + "'", connection);
+                SqlDataReader dataReader = selectQuery.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    searchData = true;
+                    SqlCommand deleteData = new SqlCommand("delete from Employees where TCNO='" + txtTcNo.Text + "'", connection);
+                    deleteData.ExecuteNonQuery();
+                    MessageBox.Show("Çalışan kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    connection.Close();
+                    EmployeeShow();
+                    CleanEmployeeTabPage();
+                    break;
+                }
+                if (searchData == false)
+                {
+                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                    CleanEmployeeTabPage();
+                }
+
+            }
+            else
+                MessageBox.Show("Lütfen 11 haneli bir TC Kimlik No giriniz !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            CleanEmployeeTabPage();
+        }
 
 
 
