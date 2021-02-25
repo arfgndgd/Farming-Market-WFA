@@ -196,11 +196,145 @@ namespace ProjectFarmBA_WFA
         //}
 
 
-        
-        
+        private void btnSave_Click(object sender, EventArgs e)//Kaydet ekle butonu(employee)
+        {
+            //string authority = "";
+            bool dataCheck = false;
 
-        
+            connection.Open();
+            SqlCommand selectQuery = new SqlCommand("select * from employees where TCNO='" + txtTcNo.Text + "'", connection);
+            SqlDataReader dataReader = selectQuery.ExecuteReader();
+            while (dataReader.Read())
+            {
+                dataCheck = true;
+                break;
+            }
 
-        
+            connection.Close();
+
+            if (dataCheck == false)
+            {
+                //TC Kimlik kontrolü
+                if (txtTcNo.Text.Length < 11 || txtTcNo.Text == "")
+                {
+                    lblTcNo.ForeColor = Color.Red;
+                }
+                else
+                    lblTcNo.ForeColor = Color.Black;
+
+                //Ad 
+                if (txtFirstName.Text.Length < 2 || txtFirstName.Text == "")
+                {
+                    lblFirstName.ForeColor = Color.Red;
+                }
+                else
+                    lblFirstName.ForeColor = Color.Black;
+
+                //soyad
+                if (txtLastName.Text.Length < 2 || txtLastName.Text == "")
+                {
+                    lblLastName.ForeColor = Color.Red;
+                }
+                else
+                    lblLastName.ForeColor = Color.Black;
+
+                //telefon
+                if (txtPhone.Text.Length < 10 || txtPhone.Text == "")
+                {
+                    lblPhone.ForeColor = Color.Red;
+                }
+                else
+                    lblPhone.ForeColor = Color.Black;
+
+                //Adres
+                if (txtAddress.Text == "")
+                {
+                    lblAdress.ForeColor = Color.Red;
+                }
+                else
+                    lblAdress.ForeColor = Color.Black;
+
+                //Şehir
+                if (txtCity.Text == "")
+                {
+                    lblCity.ForeColor = Color.Red;
+                }
+                else
+                    lblCity.ForeColor = Color.Black;
+
+                //şifre
+                if (txtPassword.Text.Length < 3 || txtPassword.Text == "")
+                {
+                    lblPassword.ForeColor = Color.Red;
+                }
+                else
+                    lblPassword.ForeColor = Color.Black;
+
+
+                if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "")
+                {
+                    //Yetki 
+                    //if (rdbManager.Checked == true)
+                    //{
+                    //    authority = "1";
+                    //}
+                    //else if (rdbWorker.Checked == true)
+                    //    authority = "2";
+                    try
+                    {
+                        connection.Open();
+                        //SqlCommand addData = new SqlCommand("insert into Employees values ('" + txtFirstName.Text + "', '" + txtLastName + "','" + txtEmail + "','" + txtPhone + "','" + txtAddress + "','" + txtCity + "','" + txtTcNo.Text + "','" + authority + "','" + txtPassword + "')", connection);
+
+                        //addData.ExecuteNonQuery();
+
+                        //TODO: Ekleme için şimdilik sıkıntı yok
+                        Employee em = new Employee();
+                        em.TCNO = txtTcNo.Text;
+                        em.FirstName = txtFirstName.Text;
+                        em.LastName = txtLastName.Text;
+                        em.Email = txtEmail.Text;
+                        em.Phone = txtPhone.Text;
+                        em.Address = txtAddress.Text;
+                        em.City = txtCity.Text;
+                        //TODO: foto ekle, yetki, gender
+                        //em.ERole = 
+                        em.DepartmentID = cmbDepartment.SelectedItem != null ? (cmbDepartment.SelectedItem as Department).ID : default(int?);
+                        em.Password = txtPassword.Text;
+                        db.Employees.Add(em);
+                        db.SaveChanges();
+
+
+                        connection.Close();
+                        MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        EmployeeShow();
+                        CleanEmployeeTabPage();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        connection.Close();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Girilen Tc Kimlik kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
