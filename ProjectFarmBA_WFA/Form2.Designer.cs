@@ -143,6 +143,7 @@ namespace ProjectFarmBA_WFA
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Arama";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnClear
             // 
@@ -152,6 +153,7 @@ namespace ProjectFarmBA_WFA
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Formu Temizle";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -161,6 +163,7 @@ namespace ProjectFarmBA_WFA
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -170,6 +173,7 @@ namespace ProjectFarmBA_WFA
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -179,6 +183,7 @@ namespace ProjectFarmBA_WFA
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rdbWorker
             // 
@@ -449,6 +454,7 @@ namespace ProjectFarmBA_WFA
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.Click += new System.EventHandler(this.Form2_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
