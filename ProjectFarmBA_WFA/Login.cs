@@ -26,6 +26,9 @@ namespace ProjectFarmBA_WFA
         SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True");
 
         public static string tcno, name, surname, authority;
+
+        public static string photo;
+
         int fail = 3;
         bool authorized = false;
 

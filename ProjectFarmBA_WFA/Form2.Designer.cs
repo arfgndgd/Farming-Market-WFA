@@ -86,6 +86,9 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.rdbWomen);
+            this.tabPage1.Controls.Add(this.rdbMan);
+            this.tabPage1.Controls.Add(this.rdbOther);
             this.tabPage1.Controls.Add(this.dGVEmployee);
             this.tabPage1.Controls.Add(this.btnSearch);
             this.tabPage1.Controls.Add(this.btnClear);
@@ -95,9 +98,6 @@ namespace ProjectFarmBA_WFA
             this.tabPage1.Controls.Add(this.rdbWorker);
             this.tabPage1.Controls.Add(this.rdbManager);
             this.tabPage1.Controls.Add(this.cmbDepartment);
-            this.tabPage1.Controls.Add(this.rdbOther);
-            this.tabPage1.Controls.Add(this.rdbMan);
-            this.tabPage1.Controls.Add(this.rdbWomen);
             this.tabPage1.Controls.Add(this.txtAddress);
             this.tabPage1.Controls.Add(this.txtPassword);
             this.tabPage1.Controls.Add(this.txtCity);
@@ -188,7 +188,7 @@ namespace ProjectFarmBA_WFA
             // rdbWorker
             // 
             this.rdbWorker.AutoSize = true;
-            this.rdbWorker.Location = new System.Drawing.Point(619, 107);
+            this.rdbWorker.Location = new System.Drawing.Point(598, 107);
             this.rdbWorker.Name = "rdbWorker";
             this.rdbWorker.Size = new System.Drawing.Size(82, 21);
             this.rdbWorker.TabIndex = 4;
@@ -218,7 +218,7 @@ namespace ProjectFarmBA_WFA
             // rdbOther
             // 
             this.rdbOther.AutoSize = true;
-            this.rdbOther.Location = new System.Drawing.Point(752, 72);
+            this.rdbOther.Location = new System.Drawing.Point(729, 69);
             this.rdbOther.Name = "rdbOther";
             this.rdbOther.Size = new System.Drawing.Size(70, 21);
             this.rdbOther.TabIndex = 2;
@@ -229,7 +229,7 @@ namespace ProjectFarmBA_WFA
             // rdbMan
             // 
             this.rdbMan.AutoSize = true;
-            this.rdbMan.Location = new System.Drawing.Point(619, 71);
+            this.rdbMan.Location = new System.Drawing.Point(598, 69);
             this.rdbMan.Name = "rdbMan";
             this.rdbMan.Size = new System.Drawing.Size(70, 21);
             this.rdbMan.TabIndex = 2;
@@ -240,7 +240,7 @@ namespace ProjectFarmBA_WFA
             // rdbWomen
             // 
             this.rdbWomen.AutoSize = true;
-            this.rdbWomen.Location = new System.Drawing.Point(476, 72);
+            this.rdbWomen.Location = new System.Drawing.Point(476, 68);
             this.rdbWomen.Name = "rdbWomen";
             this.rdbWomen.Size = new System.Drawing.Size(70, 21);
             this.rdbWomen.TabIndex = 2;

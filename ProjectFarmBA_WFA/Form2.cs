@@ -93,8 +93,6 @@ namespace ProjectFarmBA_WFA
             txtPassword.MaxLength = 3;
             toolTip1.SetToolTip(this.txtTcNo, "TC Kimlik No 11 karakter olmalıdır");
             rdbWorker.Checked = true;
-            txtFirstName.CharacterCasing = CharacterCasing.Upper;
-            txtLastName.CharacterCasing = CharacterCasing.Upper;
             //TODO: Parola sınırlama 
             //TODO: Departman Ekle 48den önce
 
@@ -186,7 +184,7 @@ namespace ProjectFarmBA_WFA
         // Çalışan sekme temizleme
         private void CleanEmployeeTabPage()
         {
-            txtTcNo.Clear(); txtFirstName.Clear(); txtLastName.Clear(); txtEmail.Clear(); txtPhone.Clear(); txtAddress.Clear(); txtPassword.Clear(); cmbDepartment.SelectedIndex = -1;
+            txtTcNo.Clear(); txtFirstName.Clear(); txtLastName.Clear(); txtEmail.Clear(); txtPhone.Clear(); txtAddress.Clear(); txtCity.Clear(); txtPassword.Clear(); cmbDepartment.SelectedIndex = -1;
         }
 
         //Product sekmesi
@@ -200,6 +198,8 @@ namespace ProjectFarmBA_WFA
         {
             //string authority = "";
             bool dataCheck = false;
+            string gender = "";
+            //TODO: cinsiyet
 
             connection.Open();
             SqlCommand selectQuery = new SqlCommand("select * from employees where TCNO='" + txtTcNo.Text + "'", connection);
