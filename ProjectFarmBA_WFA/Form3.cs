@@ -23,7 +23,7 @@ namespace ProjectFarmBA_WFA
             db = DBTool.DBInstance;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True;MultipleActiveResultSets=True");
 
         private void ProductShow()
         {
@@ -73,16 +73,14 @@ namespace ProjectFarmBA_WFA
             pctProduct.Width = 100;
             pctProduct.Height = 100;
             pctProduct.BorderStyle = BorderStyle.Fixed3D;
-            //try
-            //{
-            //    pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\"+ Login.photo + ".jpg");
-            //}
-            //catch (Exception)
-            //{
-            //    pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\urunresimyok.jpg");
-            //}
-            //TODO: ürün resmi
-            
+            try
+            {
+                pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\" + Login.tcno + ".jpg");
+            }
+            catch
+            {
+                pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\resimyok.jpg");
+            }
 
             ProductShow();
         }
@@ -92,6 +90,37 @@ namespace ProjectFarmBA_WFA
         {
             pctProduct.Image = null; txtProductName.Clear(); txtUnitPrice.Clear(); txtStock.Clear(); txtFeatures.Clear(); cmbSupplier.SelectedIndex = -1; 
             cmbCategory.SelectedIndex = -1;
+        }
+
+        private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //IsLetter = harf, IsControl = back space, ısSeparator = boşluk
+            if (char.IsLetter(e.KeyChar) == true || ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8 || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
@@ -209,35 +238,48 @@ namespace ProjectFarmBA_WFA
 
         }
 
-        private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
+            bool searchData = false;
+            if (txtProductName.Text.Length >1)
             {
-                e.Handled = false;
-            }
-            else
-                e.Handled = true;
-        }
+                connection.Open();
+                SqlCommand selectQuery = new SqlCommand("select * from Products where ProductName = '" + txtProductName.Text + "'", connection);
+                SqlDataReader dataReader = selectQuery.ExecuteReader();
 
-        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
-            {
-                e.Handled = false;
-            }
-            else
-                e.Handled = true;
-        }
+                while (dataReader.Read())
+                {
+                    searchData = true;
 
-        private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //IsLetter = harf, IsControl = back space, ısSeparator = boşluk
-            if (char.IsLetter(e.KeyChar) == true || ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8 || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
-            {
-                e.Handled = false;
+                    txtUnitPrice.Text = dataReader.GetValue(2).ToString();
+                    txtStock.Text = dataReader.GetValue(3).ToString();
+                    try
+                    {
+                        pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\" + dataReader.GetValue(1).ToString() + ".jpg");
+
+                    }
+                    catch
+                    {
+                        pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\resimyok.jpg");
+                    }
+                    cmbCategory.Text = dataReader.GetValue(5).ToString();
+                    cmbSupplier.Text = dataReader.GetValue(6).ToString();
+                    txtFeatures.Text = dataReader.GetValue(11).ToString();
+
+                    break;
+                }
+                if (searchData == false)//Kayıt yoksa
+                {
+                    MessageBox.Show("Aranan kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                connection.Close();
+                
             }
             else
-                e.Handled = true;
+            {
+                MessageBox.Show("Lütfen kayıtlarda olan bir Ürün ismi giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CleanProductTabPage();
+            }
         }
     }
 }

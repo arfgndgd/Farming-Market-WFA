@@ -237,6 +237,7 @@ namespace ProjectFarmBA_WFA
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Ara";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // tabPage2
             // 
