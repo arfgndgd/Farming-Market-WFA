@@ -305,6 +305,7 @@ namespace ProjectFarmBA_WFA
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(164, 22);
             this.txtProductName.TabIndex = 11;
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // txtUnitPrice
             // 
@@ -312,6 +313,7 @@ namespace ProjectFarmBA_WFA
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(164, 22);
             this.txtUnitPrice.TabIndex = 11;
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
             // 
             // txtStock
             // 
@@ -319,6 +321,7 @@ namespace ProjectFarmBA_WFA
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(164, 22);
             this.txtStock.TabIndex = 11;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // txtFeatures
             // 

@@ -90,7 +90,8 @@ namespace ProjectFarmBA_WFA
         //Product sekmesi
         private void CleanProductTabPage()
         {
-            pctProduct.Image = null; txtProductName.Clear(); txtUnitPrice.Clear(); txtStock.Clear(); txtFeatures.Clear(); cmbSupplier.SelectedIndex = -1; cmbCategory.SelectedIndex = -1;
+            pctProduct.Image = null; txtProductName.Clear(); txtUnitPrice.Clear(); txtStock.Clear(); txtFeatures.Clear(); cmbSupplier.SelectedIndex = -1; 
+            cmbCategory.SelectedIndex = -1;
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
@@ -182,13 +183,8 @@ namespace ProjectFarmBA_WFA
 
                         //resmi debug içinde kaydetme
                         if (!Directory.Exists(Application.StartupPath + "\\ImageProduct"))
-                        {
                             Directory.CreateDirectory(Application.StartupPath + "\\ImageProduct");
-                        }
-                        else
-                        {
-                            pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct" + txtProductName.Text+ ".jpg");
-                        }
+                            pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct\\" + txtProductName.Text+ ".jpg");
 
                         MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         ProductShow();
@@ -211,6 +207,37 @@ namespace ProjectFarmBA_WFA
                 MessageBox.Show("Girilen Ürün daha önceden kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtProductName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //IsLetter = harf, IsControl = back space, ısSeparator = boşluk
+            if (char.IsLetter(e.KeyChar) == true || ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8 || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
         }
     }
 }
