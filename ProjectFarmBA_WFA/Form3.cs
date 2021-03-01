@@ -50,6 +50,8 @@ namespace ProjectFarmBA_WFA
             }
         }
 
+        public static string photo;
+
         private void Form3_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme Form3
@@ -73,14 +75,14 @@ namespace ProjectFarmBA_WFA
             pctProduct.Width = 100;
             pctProduct.Height = 100;
             pctProduct.BorderStyle = BorderStyle.Fixed3D;
-            try
-            {
-                pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\" + Login.tcno + ".jpg");
-            }
-            catch
-            {
-                pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\resimyok.jpg");
-            }
+            //try
+            //{
+            //    pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\" + Login.tcno + ".jpg");
+            //}
+            //catch
+            //{
+            //    pctProduct.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\resimyok.jpg");
+            //}
 
             ProductShow();
         }
@@ -88,7 +90,7 @@ namespace ProjectFarmBA_WFA
         //Product sekmesi
         private void CleanProductTabPage()
         {
-            pctProduct.Image = null; txtProductName.Clear(); txtUnitPrice.Clear(); txtStock.Clear(); txtFeatures.Clear(); cmbSupplier.SelectedIndex = -1; 
+            pctProduct.Image = null; txtProductName.Clear(); txtUnitPrice.Clear(); txtStock.Clear(); txtFeatures.Clear(); cmbSupplier.SelectedIndex = -1;
             cmbCategory.SelectedIndex = -1;
         }
 
@@ -134,7 +136,7 @@ namespace ProjectFarmBA_WFA
             }
         } //Fotoğraf ekleme
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) //Ürün Ekleme
         {
             bool dataCheck = false;
 
@@ -151,10 +153,10 @@ namespace ProjectFarmBA_WFA
             if (dataCheck == false)
             {
                 //fotoğraf
-                if (pctProduct.Image == null)
-                    btnAddImage.ForeColor = Color.Red;
-                else
-                    btnAddImage.ForeColor = Color.Black;
+                //if (pctProduct.Image == null)
+                //    btnAddImage.ForeColor = Color.Red;
+                //else
+                //    btnAddImage.ForeColor = Color.Black;
 
                 //isim
                 if (txtProductName.Text == "")
@@ -192,7 +194,7 @@ namespace ProjectFarmBA_WFA
                 else
                     lblCategory.ForeColor = Color.Black;
 
-                if (pctProduct.Image != null && txtProductName.Text != "" && txtUnitPrice.Text != "" && txtStock.Text != "" && txtFeatures.Text != "" && cmbCategory.Text != "" && cmbSupplier.Text != "")
+                if (/*pctProduct.Image !=  null &&*/ txtProductName.Text != "" && txtUnitPrice.Text != "" && txtStock.Text != "" && txtFeatures.Text != "" && cmbCategory.Text != "" && cmbSupplier.Text != "")
                 {
                     try
                     {
@@ -213,7 +215,7 @@ namespace ProjectFarmBA_WFA
                         //resmi debug içinde kaydetme
                         if (!Directory.Exists(Application.StartupPath + "\\ImageProduct"))
                             Directory.CreateDirectory(Application.StartupPath + "\\ImageProduct");
-                            pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct\\" + txtProductName.Text+ ".jpg");
+                        pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct\\" + txtProductName.Text + ".jpg");
 
                         MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         ProductShow();
@@ -236,7 +238,7 @@ namespace ProjectFarmBA_WFA
                 MessageBox.Show("Girilen Ürün daha önceden kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        } //Ürün Ekleme
+        } 
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -314,7 +316,7 @@ namespace ProjectFarmBA_WFA
             else
                 lblFeatures.ForeColor = Color.Black;
 
-            if (pctProduct.Image != null && txtProductName.Text != "" && txtUnitPrice.Text != "" && txtStock.Text != "" && txtFeatures.Text != "")
+            if (pctProduct.Image != null && txtProductName.Text != "" && txtUnitPrice.Text != "" && txtStock.Text != "" && cmbCategory.Text != "" && cmbSupplier.Text != ""  && txtFeatures.Text != "")
             {
                 try
                 {
@@ -339,9 +341,9 @@ namespace ProjectFarmBA_WFA
 
 
                     //resmi debug içinde kaydetme
-                    if (!Directory.Exists(Application.StartupPath + "\\ImageProduct"))
-                        Directory.CreateDirectory(Application.StartupPath + "\\ImageProduct");
-                    pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct\\" + txtProductName.Text + ".jpg");
+                    //if (!Directory.Exists(Application.StartupPath + "\\ImageProduct"))
+                    //    Directory.CreateDirectory(Application.StartupPath + "\\ImageProduct");
+                    //pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct\\" + txtProductName.Text + ".jpg");
 
                     ProductShow();
                     CleanProductTabPage();
@@ -357,6 +359,44 @@ namespace ProjectFarmBA_WFA
             {
                 MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtProductName.Text != null)
+            {
+                bool searchData = false;
+
+                connection.Open();
+
+                SqlCommand selectQuery = new SqlCommand("select * from Products where ProductName='" + txtProductName.Text + "'", connection);
+                SqlDataReader dataReader = selectQuery.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    searchData = true;
+                    SqlCommand deleteData = new SqlCommand("delete from Products where ProductName='" + txtProductName.Text + "'", connection);
+                    deleteData.ExecuteNonQuery();
+                    MessageBox.Show("Ürün kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    connection.Close();
+                    ProductShow();
+                    CleanProductTabPage();
+                    break;
+                }
+                if (searchData == false)
+                {
+                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                    CleanProductTabPage();
+                }
+
+            }
+            else
+                MessageBox.Show("Lütfen kayıtlarda bulunan bir ürün ismi giriniz !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            CleanProductTabPage();
         }
     }
 }

@@ -53,12 +53,12 @@ namespace ProjectFarmBA_WFA
             this.txtFeatures = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).BeginInit();
@@ -203,6 +203,7 @@ namespace ProjectFarmBA_WFA
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Temizle";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -212,6 +213,7 @@ namespace ProjectFarmBA_WFA
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -288,6 +290,14 @@ namespace ProjectFarmBA_WFA
             this.txtUnitPrice.TabIndex = 11;
             this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(347, 21);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(164, 22);
+            this.txtID.TabIndex = 11;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
+            // 
             // txtProductName
             // 
             this.txtProductName.Location = new System.Drawing.Point(347, 65);
@@ -324,14 +334,6 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1041, 629);
             this.tabControl1.TabIndex = 3;
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(347, 21);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(164, 22);
-            this.txtID.TabIndex = 11;
-            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // Form3
             // 
