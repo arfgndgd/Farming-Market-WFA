@@ -45,20 +45,20 @@ namespace ProjectFarmBA_WFA
             this.label14 = new System.Windows.Forms.Label();
             this.lblEmployee = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mtxtProductID = new System.Windows.Forms.MaskedTextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtFeatures = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.btnAddImage = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.btnAddImage = new System.Windows.Forms.Button();
-            this.txtProductName = new System.Windows.Forms.TextBox();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtFeatures = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).BeginInit();
@@ -195,13 +195,6 @@ namespace ProjectFarmBA_WFA
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // mtxtProductID
-            // 
-            this.mtxtProductID.Location = new System.Drawing.Point(347, 22);
-            this.mtxtProductID.Name = "mtxtProductID";
-            this.mtxtProductID.Size = new System.Drawing.Size(164, 22);
-            this.mtxtProductID.TabIndex = 10;
-            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(877, 155);
@@ -228,6 +221,7 @@ namespace ProjectFarmBA_WFA
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearch
             // 
@@ -244,8 +238,8 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.Controls.Add(this.txtFeatures);
             this.tabPage2.Controls.Add(this.txtStock);
             this.tabPage2.Controls.Add(this.txtUnitPrice);
+            this.tabPage2.Controls.Add(this.txtID);
             this.tabPage2.Controls.Add(this.txtProductName);
-            this.tabPage2.Controls.Add(this.mtxtProductID);
             this.tabPage2.Controls.Add(this.btnClear);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.btnUpdate);
@@ -271,6 +265,47 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.Text = "Ürün İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtFeatures
+            // 
+            this.txtFeatures.Location = new System.Drawing.Point(347, 204);
+            this.txtFeatures.Name = "txtFeatures";
+            this.txtFeatures.Size = new System.Drawing.Size(624, 22);
+            this.txtFeatures.TabIndex = 11;
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(347, 160);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(164, 22);
+            this.txtStock.TabIndex = 11;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(347, 112);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(164, 22);
+            this.txtUnitPrice.TabIndex = 11;
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(347, 65);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(164, 22);
+            this.txtProductName.TabIndex = 11;
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.Location = new System.Drawing.Point(8, 187);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(179, 34);
+            this.btnAddImage.TabIndex = 9;
+            this.btnAddImage.Text = "Resim Ekle";
+            this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(653, 106);
@@ -290,46 +325,13 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.Size = new System.Drawing.Size(1041, 629);
             this.tabControl1.TabIndex = 3;
             // 
-            // btnAddImage
+            // txtID
             // 
-            this.btnAddImage.Location = new System.Drawing.Point(8, 187);
-            this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(179, 34);
-            this.btnAddImage.TabIndex = 9;
-            this.btnAddImage.Text = "Resim Ekle";
-            this.btnAddImage.UseVisualStyleBackColor = true;
-            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
-            // 
-            // txtProductName
-            // 
-            this.txtProductName.Location = new System.Drawing.Point(347, 65);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(164, 22);
-            this.txtProductName.TabIndex = 11;
-            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(347, 112);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(164, 22);
-            this.txtUnitPrice.TabIndex = 11;
-            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(347, 160);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(164, 22);
-            this.txtStock.TabIndex = 11;
-            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
-            // 
-            // txtFeatures
-            // 
-            this.txtFeatures.Location = new System.Drawing.Point(347, 204);
-            this.txtFeatures.Name = "txtFeatures";
-            this.txtFeatures.Size = new System.Drawing.Size(624, 22);
-            this.txtFeatures.TabIndex = 11;
+            this.txtID.Location = new System.Drawing.Point(347, 21);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(164, 22);
+            this.txtID.TabIndex = 11;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
             // 
             // Form3
             // 
@@ -374,7 +376,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.MaskedTextBox mtxtProductID;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
@@ -386,5 +387,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtProductName;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

@@ -236,12 +236,12 @@ namespace ProjectFarmBA_WFA
                 MessageBox.Show("Girilen Ürün daha önceden kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+        } //Ürün Ekleme
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             bool searchData = false;
-            if (txtProductName.Text.Length >1)
+            if (txtProductName.Text.Length >0)
             {
                 connection.Open();
                 SqlCommand selectQuery = new SqlCommand("select * from Products where ProductName = '" + txtProductName.Text + "'", connection);
@@ -250,7 +250,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
-
+                    txtProductName.Text = dataReader.GetValue(1).ToString();
                     txtUnitPrice.Text = dataReader.GetValue(2).ToString();
                     txtStock.Text = dataReader.GetValue(3).ToString();
                     try
@@ -279,6 +279,83 @@ namespace ProjectFarmBA_WFA
             {
                 MessageBox.Show("Lütfen kayıtlarda olan bir Ürün ismi giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 CleanProductTabPage();
+            }
+        } //Arama
+
+        private void btnUpdate_Click(object sender, EventArgs e) //Güncelleme
+        {
+            //fotoğraf
+            if (pctProduct.Image == null)
+                btnAddImage.ForeColor = Color.Red;
+            else
+                btnAddImage.ForeColor = Color.Black;
+
+            //isim
+            if (txtProductName.Text == "")
+                lblProductName.ForeColor = Color.Red;
+            else
+                lblProductName.ForeColor = Color.Black;
+
+            //fiyat
+            if (txtUnitPrice.Text == "")
+                lblUnitPrice.ForeColor = Color.Red;
+            else
+                lblUnitPrice.ForeColor = Color.Black;
+
+            //stok
+            if (txtStock.Text == "")
+                lblStock.ForeColor = Color.Red;
+            else
+                lblStock.ForeColor = Color.Black;
+
+            //özellikler
+            if (txtFeatures.Text == "")
+                lblFeatures.ForeColor = Color.Red;
+            else
+                lblFeatures.ForeColor = Color.Black;
+
+            if (pctProduct.Image != null && txtProductName.Text != "" && txtUnitPrice.Text != "" && txtStock.Text != "" && txtFeatures.Text != "")
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "' where ProductName='" + txtProductName.Text + "'", connection);
+                    updateData.ExecuteNonQuery();
+
+                    #region MyRegion
+                    //Product p = new Product();
+                    //p.ProductName = txtProductName.Text;
+                    //p.UnitPrice = Convert.ToInt32(txtUnitPrice.Text);
+                    //p.UnitInStock = Convert.ToInt16(txtStock.Text);
+                    //p.Features = txtFeatures.Text;
+                    //p.SupplierID = cmbSupplier.SelectedItem != null ? (cmbSupplier.SelectedItem as Supplier).ID : default(int?);
+                    //p.CategoryID = cmbCategory.SelectedItem != null ? (cmbCategory.SelectedItem as Category).ID : default(int?);
+                    //db.Products.Add(p);
+                    //db.SaveChanges(); 
+                    #endregion
+
+                    connection.Close();
+                    MessageBox.Show("Kayıt Güncellendi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+                    //resmi debug içinde kaydetme
+                    if (!Directory.Exists(Application.StartupPath + "\\ImageProduct"))
+                        Directory.CreateDirectory(Application.StartupPath + "\\ImageProduct");
+                    pctProduct.Image.Save(Application.StartupPath + "\\ImageProduct\\" + txtProductName.Text + ".jpg");
+
+                    ProductShow();
+                    CleanProductTabPage();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
