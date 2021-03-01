@@ -76,8 +76,8 @@ namespace ProjectFarmBA_WFA
                             surname = dataRead.GetValue(2).ToString();
                             authority = dataRead.GetValue(9).ToString();
                             this.Hide();
-                            Form3 frm3 = new Form3(); //TODO: worker için farklı anasayfa ile sadece listeleme yapılacak
-                            frm3.Show();
+                            wAnaSayfa wAnaSayfa = new wAnaSayfa(); //TODO: worker için farklı anasayfa ile sadece listeleme yapılacak
+                            wAnaSayfa.Show();
                             break;
                         }
                     }
