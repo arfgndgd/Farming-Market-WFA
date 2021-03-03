@@ -241,6 +241,9 @@
     <EmbeddedResource Include="wStorage.resx">
       <DependentUpon>wStorage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="wStorageCategory.resx">
+      <DependentUpon>wStorageCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wSupplier.resx">
       <DependentUpon>wSupplier.cs</DependentUpon>
     </EmbeddedResource>
