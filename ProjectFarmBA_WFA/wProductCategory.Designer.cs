@@ -59,7 +59,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblDeleted.AutoSize = true;
             this.lblDeleted.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDeleted.Location = new System.Drawing.Point(453, 233);
+            this.lblDeleted.Location = new System.Drawing.Point(444, 226);
             this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeleted.Name = "lblDeleted";
             this.lblDeleted.Size = new System.Drawing.Size(0, 18);
@@ -69,7 +69,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(328, 225);
+            this.label1.Location = new System.Drawing.Point(335, 226);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
@@ -80,7 +80,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblUpdated.AutoSize = true;
             this.lblUpdated.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUpdated.Location = new System.Drawing.Point(453, 177);
+            this.lblUpdated.Location = new System.Drawing.Point(444, 187);
             this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUpdated.Name = "lblUpdated";
             this.lblUpdated.Size = new System.Drawing.Size(0, 18);
@@ -90,7 +90,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(282, 178);
+            this.label8.Location = new System.Drawing.Point(289, 179);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(144, 18);
@@ -101,7 +101,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblCreated.AutoSize = true;
             this.lblCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCreated.Location = new System.Drawing.Point(453, 138);
+            this.lblCreated.Location = new System.Drawing.Point(444, 148);
             this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreated.Name = "lblCreated";
             this.lblCreated.Size = new System.Drawing.Size(0, 18);
@@ -111,7 +111,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(335, 138);
+            this.label5.Location = new System.Drawing.Point(342, 139);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 18);
@@ -132,18 +132,18 @@ namespace ProjectFarmBA_WFA
             // dGVProductCategory
             // 
             this.dGVProductCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVProductCategory.Location = new System.Drawing.Point(28, 336);
+            this.dGVProductCategory.Location = new System.Drawing.Point(28, 306);
             this.dGVProductCategory.Name = "dGVProductCategory";
             this.dGVProductCategory.RowHeadersWidth = 51;
             this.dGVProductCategory.RowTemplate.Height = 24;
-            this.dGVProductCategory.Size = new System.Drawing.Size(1053, 406);
+            this.dGVProductCategory.Size = new System.Drawing.Size(1053, 436);
             this.dGVProductCategory.TabIndex = 92;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(349, 101);
+            this.label9.Location = new System.Drawing.Point(356, 102);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 18);
             this.label9.TabIndex = 87;
@@ -153,7 +153,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDescription.Location = new System.Drawing.Point(453, 100);
+            this.lblDescription.Location = new System.Drawing.Point(444, 109);
             this.lblDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(0, 18);
@@ -162,7 +162,7 @@ namespace ProjectFarmBA_WFA
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSearch.Location = new System.Drawing.Point(637, 52);
+            this.btnSearch.Location = new System.Drawing.Point(649, 28);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(114, 25);
@@ -183,7 +183,7 @@ namespace ProjectFarmBA_WFA
             // txtCategoryName
             // 
             this.txtCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCategoryName.Location = new System.Drawing.Point(435, 53);
+            this.txtCategoryName.Location = new System.Drawing.Point(447, 29);
             this.txtCategoryName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(194, 24);
@@ -193,7 +193,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblTcNo.AutoSize = true;
             this.lblTcNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTcNo.Location = new System.Drawing.Point(355, 55);
+            this.lblTcNo.Location = new System.Drawing.Point(362, 28);
             this.lblTcNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTcNo.Name = "lblTcNo";
             this.lblTcNo.Size = new System.Drawing.Size(71, 18);
@@ -202,7 +202,7 @@ namespace ProjectFarmBA_WFA
             // 
             // pctEmployee
             // 
-            this.pctEmployee.Location = new System.Drawing.Point(759, 29);
+            this.pctEmployee.Location = new System.Drawing.Point(786, 29);
             this.pctEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pctEmployee.Name = "pctEmployee";
             this.pctEmployee.Size = new System.Drawing.Size(247, 194);
@@ -213,7 +213,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(756, 259);
+            this.label14.Location = new System.Drawing.Point(783, 259);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 18);
@@ -225,7 +225,7 @@ namespace ProjectFarmBA_WFA
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
-            this.lblEmployee.Location = new System.Drawing.Point(866, 259);
+            this.lblEmployee.Location = new System.Drawing.Point(893, 259);
             this.lblEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(82, 18);
@@ -236,7 +236,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(329, 267);
+            this.label2.Location = new System.Drawing.Point(336, 268);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 18);
@@ -247,7 +247,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblStatus.Location = new System.Drawing.Point(453, 266);
+            this.lblStatus.Location = new System.Drawing.Point(444, 265);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 18);
@@ -257,7 +257,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblID.Location = new System.Drawing.Point(641, 138);
+            this.lblID.Location = new System.Drawing.Point(444, 70);
             this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 18);
@@ -267,7 +267,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(599, 138);
+            this.label3.Location = new System.Drawing.Point(408, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 18);

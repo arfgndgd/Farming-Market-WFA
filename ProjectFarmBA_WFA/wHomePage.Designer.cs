@@ -46,9 +46,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageEmployee
             // 
+            this.btnPageEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageEmployee.Location = new System.Drawing.Point(57, 60);
             this.btnPageEmployee.Name = "btnPageEmployee";
-            this.btnPageEmployee.Size = new System.Drawing.Size(119, 57);
+            this.btnPageEmployee.Size = new System.Drawing.Size(127, 57);
             this.btnPageEmployee.TabIndex = 0;
             this.btnPageEmployee.Text = "Çalışanlar";
             this.btnPageEmployee.UseVisualStyleBackColor = true;
@@ -56,9 +57,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageProduct
             // 
+            this.btnPageProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageProduct.Location = new System.Drawing.Point(57, 149);
             this.btnPageProduct.Name = "btnPageProduct";
-            this.btnPageProduct.Size = new System.Drawing.Size(119, 57);
+            this.btnPageProduct.Size = new System.Drawing.Size(127, 57);
             this.btnPageProduct.TabIndex = 0;
             this.btnPageProduct.Text = "Ürünler";
             this.btnPageProduct.UseVisualStyleBackColor = true;
@@ -67,19 +69,21 @@ namespace ProjectFarmBA_WFA
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label14.Location = new System.Drawing.Point(556, 285);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 17);
+            this.label14.Size = new System.Drawing.Size(102, 18);
             this.label14.TabIndex = 8;
             this.label14.Text = "Aktif Çalışan";
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
+            this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
             this.lblEmployee.Location = new System.Drawing.Point(659, 287);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(70, 17);
+            this.lblEmployee.Size = new System.Drawing.Size(82, 18);
             this.lblEmployee.TabIndex = 7;
             this.lblEmployee.Text = "Employee";
             // 
@@ -93,9 +97,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageSupplier
             // 
+            this.btnPageSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageSupplier.Location = new System.Drawing.Point(258, 330);
             this.btnPageSupplier.Name = "btnPageSupplier";
-            this.btnPageSupplier.Size = new System.Drawing.Size(115, 59);
+            this.btnPageSupplier.Size = new System.Drawing.Size(123, 59);
             this.btnPageSupplier.TabIndex = 9;
             this.btnPageSupplier.Text = "Tedarikçiler";
             this.btnPageSupplier.UseVisualStyleBackColor = true;
@@ -103,9 +108,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageShipper
             // 
+            this.btnPageShipper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageShipper.Location = new System.Drawing.Point(258, 240);
             this.btnPageShipper.Name = "btnPageShipper";
-            this.btnPageShipper.Size = new System.Drawing.Size(115, 59);
+            this.btnPageShipper.Size = new System.Drawing.Size(123, 59);
             this.btnPageShipper.TabIndex = 10;
             this.btnPageShipper.Text = "Kargo/Nakliye ";
             this.btnPageShipper.UseVisualStyleBackColor = true;
@@ -113,9 +119,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageStorageCategory
             // 
+            this.btnPageStorageCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageStorageCategory.Location = new System.Drawing.Point(258, 150);
             this.btnPageStorageCategory.Name = "btnPageStorageCategory";
-            this.btnPageStorageCategory.Size = new System.Drawing.Size(115, 59);
+            this.btnPageStorageCategory.Size = new System.Drawing.Size(123, 59);
             this.btnPageStorageCategory.TabIndex = 11;
             this.btnPageStorageCategory.Text = "Kategori (Ambar)";
             this.btnPageStorageCategory.UseVisualStyleBackColor = true;
@@ -123,9 +130,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageStorage
             // 
+            this.btnPageStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageStorage.Location = new System.Drawing.Point(258, 60);
             this.btnPageStorage.Name = "btnPageStorage";
-            this.btnPageStorage.Size = new System.Drawing.Size(115, 59);
+            this.btnPageStorage.Size = new System.Drawing.Size(123, 59);
             this.btnPageStorage.TabIndex = 12;
             this.btnPageStorage.Text = "Ambar Ürünleri";
             this.btnPageStorage.UseVisualStyleBackColor = true;
@@ -133,9 +141,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageDepartment
             // 
+            this.btnPageDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageDepartment.Location = new System.Drawing.Point(59, 329);
             this.btnPageDepartment.Name = "btnPageDepartment";
-            this.btnPageDepartment.Size = new System.Drawing.Size(115, 59);
+            this.btnPageDepartment.Size = new System.Drawing.Size(123, 59);
             this.btnPageDepartment.TabIndex = 13;
             this.btnPageDepartment.Text = "Departmanlar";
             this.btnPageDepartment.UseVisualStyleBackColor = true;
@@ -143,9 +152,10 @@ namespace ProjectFarmBA_WFA
             // 
             // btnPageCategory
             // 
+            this.btnPageCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPageCategory.Location = new System.Drawing.Point(59, 238);
             this.btnPageCategory.Name = "btnPageCategory";
-            this.btnPageCategory.Size = new System.Drawing.Size(115, 59);
+            this.btnPageCategory.Size = new System.Drawing.Size(123, 59);
             this.btnPageCategory.TabIndex = 14;
             this.btnPageCategory.Text = "Kategori (Ürün)";
             this.btnPageCategory.UseVisualStyleBackColor = true;

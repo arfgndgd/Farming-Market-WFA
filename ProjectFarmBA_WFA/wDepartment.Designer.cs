@@ -89,7 +89,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(336, 221);
+            this.label1.Location = new System.Drawing.Point(332, 221);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
@@ -109,7 +109,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(289, 176);
+            this.label8.Location = new System.Drawing.Point(285, 176);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(144, 18);
@@ -129,7 +129,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(342, 137);
+            this.label5.Location = new System.Drawing.Point(338, 137);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 18);
@@ -149,7 +149,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(332, 258);
+            this.label2.Location = new System.Drawing.Point(328, 258);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 18);
@@ -181,7 +181,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(357, 100);
+            this.label9.Location = new System.Drawing.Point(353, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(76, 18);
             this.label9.TabIndex = 112;
@@ -220,17 +220,17 @@ namespace ProjectFarmBA_WFA
             // 
             // txtDepartmentName
             // 
-            this.txtDepartmentName.Location = new System.Drawing.Point(431, 53);
+            this.txtDepartmentName.Location = new System.Drawing.Point(441, 53);
             this.txtDepartmentName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.Size = new System.Drawing.Size(194, 22);
+            this.txtDepartmentName.Size = new System.Drawing.Size(184, 22);
             this.txtDepartmentName.TabIndex = 108;
             // 
             // lblTcNo
             // 
             this.lblTcNo.AutoSize = true;
             this.lblTcNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblTcNo.Location = new System.Drawing.Point(343, 57);
+            this.lblTcNo.Location = new System.Drawing.Point(339, 57);
             this.lblTcNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTcNo.Name = "lblTcNo";
             this.lblTcNo.Size = new System.Drawing.Size(90, 18);

@@ -73,7 +73,7 @@ namespace ProjectFarmBA_WFA
             // 
             // pctEmployee
             // 
-            this.pctEmployee.Location = new System.Drawing.Point(1128, 15);
+            this.pctEmployee.Location = new System.Drawing.Point(1120, 12);
             this.pctEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pctEmployee.Name = "pctEmployee";
             this.pctEmployee.Size = new System.Drawing.Size(225, 194);
@@ -83,7 +83,7 @@ namespace ProjectFarmBA_WFA
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1125, 232);
+            this.label14.Location = new System.Drawing.Point(1117, 229);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 18);
@@ -94,7 +94,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
-            this.lblEmployee.Location = new System.Drawing.Point(1226, 232);
+            this.lblEmployee.Location = new System.Drawing.Point(1227, 229);
             this.lblEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(82, 18);
@@ -104,7 +104,7 @@ namespace ProjectFarmBA_WFA
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 146);
+            this.label4.Location = new System.Drawing.Point(265, 143);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 18);
@@ -114,7 +114,7 @@ namespace ProjectFarmBA_WFA
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(242, 189);
+            this.label17.Location = new System.Drawing.Point(261, 186);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(51, 18);
@@ -124,7 +124,7 @@ namespace ProjectFarmBA_WFA
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(614, 65);
+            this.label2.Location = new System.Drawing.Point(610, 65);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 18);
@@ -144,7 +144,7 @@ namespace ProjectFarmBA_WFA
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(242, 112);
+            this.label19.Location = new System.Drawing.Point(257, 109);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(55, 18);
@@ -154,7 +154,7 @@ namespace ProjectFarmBA_WFA
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(274, 69);
+            this.label20.Location = new System.Drawing.Point(285, 66);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 18);
@@ -164,7 +164,7 @@ namespace ProjectFarmBA_WFA
             // lblTcNo
             // 
             this.lblTcNo.AutoSize = true;
-            this.lblTcNo.Location = new System.Drawing.Point(243, 27);
+            this.lblTcNo.Location = new System.Drawing.Point(257, 27);
             this.lblTcNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTcNo.Name = "lblTcNo";
             this.lblTcNo.Size = new System.Drawing.Size(55, 18);
@@ -174,7 +174,7 @@ namespace ProjectFarmBA_WFA
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(613, 146);
+            this.label7.Location = new System.Drawing.Point(617, 146);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 18);
@@ -184,7 +184,7 @@ namespace ProjectFarmBA_WFA
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(610, 26);
+            this.label11.Location = new System.Drawing.Point(606, 26);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 18);
@@ -194,7 +194,7 @@ namespace ProjectFarmBA_WFA
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(865, 27);
+            this.label21.Location = new System.Drawing.Point(861, 28);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(90, 18);
@@ -242,7 +242,7 @@ namespace ProjectFarmBA_WFA
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(321, 66);
+            this.lblFirstName.Location = new System.Drawing.Point(339, 66);
             this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(0, 18);
@@ -251,7 +251,7 @@ namespace ProjectFarmBA_WFA
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(321, 109);
+            this.lblLastName.Location = new System.Drawing.Point(339, 109);
             this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(0, 18);
@@ -260,7 +260,7 @@ namespace ProjectFarmBA_WFA
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(686, 105);
+            this.lblEmail.Location = new System.Drawing.Point(696, 105);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(0, 18);
@@ -269,7 +269,7 @@ namespace ProjectFarmBA_WFA
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(689, 63);
+            this.lblPhone.Location = new System.Drawing.Point(696, 63);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(0, 18);
@@ -278,7 +278,7 @@ namespace ProjectFarmBA_WFA
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
-            this.lblAdress.Location = new System.Drawing.Point(301, 191);
+            this.lblAdress.Location = new System.Drawing.Point(339, 191);
             this.lblAdress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(0, 18);
@@ -287,7 +287,7 @@ namespace ProjectFarmBA_WFA
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(304, 145);
+            this.lblCity.Location = new System.Drawing.Point(339, 145);
             this.lblCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(0, 18);
@@ -296,7 +296,7 @@ namespace ProjectFarmBA_WFA
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(686, 24);
+            this.lblGender.Location = new System.Drawing.Point(696, 24);
             this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(0, 18);
@@ -305,7 +305,7 @@ namespace ProjectFarmBA_WFA
             // lblAuthory
             // 
             this.lblAuthory.AutoSize = true;
-            this.lblAuthory.Location = new System.Drawing.Point(683, 196);
+            this.lblAuthory.Location = new System.Drawing.Point(696, 196);
             this.lblAuthory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAuthory.Name = "lblAuthory";
             this.lblAuthory.Size = new System.Drawing.Size(0, 18);
@@ -314,7 +314,7 @@ namespace ProjectFarmBA_WFA
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(686, 146);
+            this.lblPassword.Location = new System.Drawing.Point(696, 146);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(0, 18);
@@ -323,7 +323,7 @@ namespace ProjectFarmBA_WFA
             // lblDepartment
             // 
             this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Location = new System.Drawing.Point(960, 28);
+            this.lblDepartment.Location = new System.Drawing.Point(972, 28);
             this.lblDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDepartment.Name = "lblDepartment";
             this.lblDepartment.Size = new System.Drawing.Size(0, 18);
@@ -352,7 +352,7 @@ namespace ProjectFarmBA_WFA
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(854, 67);
+            this.label1.Location = new System.Drawing.Point(850, 72);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 18);
@@ -362,7 +362,7 @@ namespace ProjectFarmBA_WFA
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(963, 67);
+            this.lblStatus.Location = new System.Drawing.Point(972, 72);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(0, 18);
@@ -371,7 +371,7 @@ namespace ProjectFarmBA_WFA
             // lblCreated
             // 
             this.lblCreated.AutoSize = true;
-            this.lblCreated.Location = new System.Drawing.Point(960, 106);
+            this.lblCreated.Location = new System.Drawing.Point(972, 116);
             this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreated.Name = "lblCreated";
             this.lblCreated.Size = new System.Drawing.Size(0, 18);
@@ -380,7 +380,7 @@ namespace ProjectFarmBA_WFA
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(861, 106);
+            this.label5.Location = new System.Drawing.Point(857, 116);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 18);
@@ -390,7 +390,7 @@ namespace ProjectFarmBA_WFA
             // lblUpdated
             // 
             this.lblUpdated.AutoSize = true;
-            this.lblUpdated.Location = new System.Drawing.Point(976, 158);
+            this.lblUpdated.Location = new System.Drawing.Point(972, 160);
             this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUpdated.Name = "lblUpdated";
             this.lblUpdated.Size = new System.Drawing.Size(0, 18);
@@ -399,7 +399,7 @@ namespace ProjectFarmBA_WFA
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(808, 159);
+            this.label8.Location = new System.Drawing.Point(804, 160);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(144, 18);
@@ -409,7 +409,7 @@ namespace ProjectFarmBA_WFA
             // lblDeleted
             // 
             this.lblDeleted.AutoSize = true;
-            this.lblDeleted.Location = new System.Drawing.Point(972, 206);
+            this.lblDeleted.Location = new System.Drawing.Point(972, 204);
             this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeleted.Name = "lblDeleted";
             this.lblDeleted.Size = new System.Drawing.Size(0, 18);
@@ -418,7 +418,7 @@ namespace ProjectFarmBA_WFA
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(854, 206);
+            this.label12.Location = new System.Drawing.Point(850, 204);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(97, 18);
