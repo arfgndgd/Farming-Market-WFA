@@ -235,6 +235,9 @@
     <EmbeddedResource Include="wProductCategory.resx">
       <DependentUpon>wProductCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="wStorage.resx">
+      <DependentUpon>wStorage.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="ModelContext\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>

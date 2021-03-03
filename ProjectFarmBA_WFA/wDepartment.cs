@@ -72,7 +72,7 @@ namespace ProjectFarmBA_WFA
             }
         }
 
-        private void txtDepartmentName_TextChanged(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             bool searchData = false;
             if (txtDepartmentName.Text.Length > 0)

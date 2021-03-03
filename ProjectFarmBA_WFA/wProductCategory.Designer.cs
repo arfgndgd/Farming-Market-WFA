@@ -159,6 +159,7 @@ namespace ProjectFarmBA_WFA
             this.btnSearch.TabIndex = 81;
             this.btnSearch.Text = "ARA";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // pctCategory
             // 
@@ -176,7 +177,6 @@ namespace ProjectFarmBA_WFA
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(194, 22);
             this.txtCategoryName.TabIndex = 79;
-            this.txtCategoryName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             // 
             // lblTcNo
             // 
