@@ -15,10 +15,10 @@ using ProjectFarmBA_WFA.DesingPatterns.SingletonPattern;
 
 namespace ProjectFarmBA_WFA
 {
-    public partial class Form2 : Form
+    public partial class mEmployee : Form
     {
         ProjectFarmBAEntities db;
-        public Form2()
+        public mEmployee()
         {
             InitializeComponent();
             db = DBTool.DBInstance;
@@ -67,7 +67,8 @@ namespace ProjectFarmBA_WFA
         //    }
         //}
 
-        private void Form2_Load(object sender, EventArgs e)
+       
+        private void mEmployee_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme
             //Form2
@@ -105,7 +106,6 @@ namespace ProjectFarmBA_WFA
             //pctProduct.BorderStyle = BorderStyle.Fixed3D;
             //mtxtProductName.Mask = "LL????????????????????"; //iki karakter zorunlu soru işareti sayısı kadar da limit var
             //mtxtProductName.Text.ToUpper();
-
         }
 
         private void txtTcNo_TextChanged(object sender, EventArgs e)
@@ -521,14 +521,6 @@ namespace ProjectFarmBA_WFA
         {
             CleanEmployeeTabPage();
         }
-
-
-
-
-
-
-
-
 
     }
 }

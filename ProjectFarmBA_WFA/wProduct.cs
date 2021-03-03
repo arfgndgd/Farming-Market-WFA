@@ -13,11 +13,11 @@ using System.Windows.Forms;
 
 namespace ProjectFarmBA_WFA
 {
-    public partial class wForm3 : Form
+    public partial class wProduct : Form
     {
         ProjectFarmBAEntities db;
 
-        public wForm3()
+        public wProduct()
         {
             InitializeComponent();
             db = DBTool.DBInstance;
@@ -26,7 +26,7 @@ namespace ProjectFarmBA_WFA
 
         SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True;MultipleActiveResultSets=True");
 
-        private void wForm3_Load(object sender, EventArgs e)
+        private void wProduct_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme wForm3
             pctEmployee.Height = 200;
@@ -124,5 +124,7 @@ namespace ProjectFarmBA_WFA
                 MessageBox.Show("Lütfen kayıtlarda olan bir Ürün ismi giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }

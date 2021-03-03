@@ -27,12 +27,7 @@ namespace ProjectFarmBA_WFA
 
         public static string tcno, name, surname, authority;
 
-        //public static string photo;
-
-        int fail = 3;
-        bool authorized = false;
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             this.Text = "Çalışan Girişi";
             this.AcceptButton = btnLogin; this.CancelButton = btnLogOut;
@@ -41,6 +36,13 @@ namespace ProjectFarmBA_WFA
             this.StartPosition = FormStartPosition.CenterScreen;
             this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
         }
+
+        //public static string photo;
+
+        int fail = 3;
+        bool authorized = false;
+
+       
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -61,8 +63,8 @@ namespace ProjectFarmBA_WFA
                             surname = dataRead.GetValue(2).ToString();
                             authority = dataRead.GetValue(9).ToString();
                             this.Hide();
-                            AnaSayfa anaSayfa = new AnaSayfa();
-                            anaSayfa.Show();
+                            mHomePage homePage = new mHomePage();
+                            homePage.Show();
                             break;
                         }
                     }
@@ -76,8 +78,8 @@ namespace ProjectFarmBA_WFA
                             surname = dataRead.GetValue(2).ToString();
                             authority = dataRead.GetValue(9).ToString();
                             this.Hide();
-                            wAnaSayfa wAnaSayfa = new wAnaSayfa(); //TODO: worker için farklı anasayfa ile sadece listeleme yapılacak
-                            wAnaSayfa.Show();
+                            wHomePage homePage = new wHomePage();
+                            homePage.Show();
                             break;
                         }
                     }

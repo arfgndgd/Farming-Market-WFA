@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectFarmBA_WFA
 {
-    partial class wForm2
+    partial class wEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -425,7 +425,7 @@ namespace ProjectFarmBA_WFA
             this.label12.TabIndex = 65;
             this.label12.Text = "Silme Tarihi";
             // 
-            // wForm2
+            // wEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -469,9 +469,9 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.lblEmployee);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "wForm2";
+            this.Name = "wEmployee";
             this.Text = "wForm2";
-            this.Load += new System.EventHandler(this.wForm2_Load);
+            this.Load += new System.EventHandler(this.wEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctDataEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployee)).EndInit();

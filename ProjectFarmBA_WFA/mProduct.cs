@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace ProjectFarmBA_WFA
 {
-    public partial class Form3 : Form
+    public partial class mProduct : Form
     {
         ProjectFarmBAEntities db;
-        public Form3()
+        public mProduct()
         {
             InitializeComponent();
             db = DBTool.DBInstance;
@@ -52,7 +52,7 @@ namespace ProjectFarmBA_WFA
 
         public static string photo;
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void mProduct_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme Form3
             pctEmployee.Height = 150;
@@ -398,5 +398,7 @@ namespace ProjectFarmBA_WFA
         {
             CleanProductTabPage();
         }
+
+        
     }
 }

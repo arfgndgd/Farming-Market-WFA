@@ -13,17 +13,18 @@ using System.Windows.Forms;
 
 namespace ProjectFarmBA_WFA
 {
-    public partial class wForm2 : Form
+    public partial class wEmployee : Form
     {
         ProjectFarmBAEntities db;
-        public wForm2()
+        public wEmployee()
         {
             InitializeComponent();
             db = DBTool.DBInstance;
         }
 
         SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True;MultipleActiveResultSets=True");
-        private void wForm2_Load(object sender, EventArgs e)
+        
+        private void wEmployee_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme
             //wForm2
@@ -126,5 +127,7 @@ namespace ProjectFarmBA_WFA
                 
             }
         }
+
+        
     }
 }

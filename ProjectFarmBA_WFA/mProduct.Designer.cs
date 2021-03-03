@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectFarmBA_WFA
 {
-    partial class Form3
+    partial class mProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -335,7 +335,7 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.Size = new System.Drawing.Size(1041, 629);
             this.tabControl1.TabIndex = 3;
             // 
-            // Form3
+            // mProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -344,9 +344,9 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form3";
+            this.Name = "mProduct";
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Form3_Load);
+            this.Load += new System.EventHandler(this.mProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).EndInit();

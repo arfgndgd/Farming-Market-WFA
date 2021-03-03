@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectFarmBA_WFA
 {
-    partial class Form2
+    partial class mEmployee
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,9 @@ namespace ProjectFarmBA_WFA
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rdbWomen = new System.Windows.Forms.RadioButton();
+            this.rdbMan = new System.Windows.Forms.RadioButton();
+            this.rdbOther = new System.Windows.Forms.RadioButton();
             this.dGVEmployee = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -41,9 +44,6 @@ namespace ProjectFarmBA_WFA
             this.rdbWorker = new System.Windows.Forms.RadioButton();
             this.rdbManager = new System.Windows.Forms.RadioButton();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
-            this.rdbOther = new System.Windows.Forms.RadioButton();
-            this.rdbMan = new System.Windows.Forms.RadioButton();
-            this.rdbWomen = new System.Windows.Forms.RadioButton();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
@@ -124,6 +124,39 @@ namespace ProjectFarmBA_WFA
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Çalışan İşlemleri";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // rdbWomen
+            // 
+            this.rdbWomen.AutoSize = true;
+            this.rdbWomen.Location = new System.Drawing.Point(476, 68);
+            this.rdbWomen.Name = "rdbWomen";
+            this.rdbWomen.Size = new System.Drawing.Size(70, 21);
+            this.rdbWomen.TabIndex = 2;
+            this.rdbWomen.TabStop = true;
+            this.rdbWomen.Text = "Kadın";
+            this.rdbWomen.UseVisualStyleBackColor = true;
+            // 
+            // rdbMan
+            // 
+            this.rdbMan.AutoSize = true;
+            this.rdbMan.Location = new System.Drawing.Point(598, 69);
+            this.rdbMan.Name = "rdbMan";
+            this.rdbMan.Size = new System.Drawing.Size(70, 21);
+            this.rdbMan.TabIndex = 2;
+            this.rdbMan.TabStop = true;
+            this.rdbMan.Text = "Erkek";
+            this.rdbMan.UseVisualStyleBackColor = true;
+            // 
+            // rdbOther
+            // 
+            this.rdbOther.AutoSize = true;
+            this.rdbOther.Location = new System.Drawing.Point(729, 69);
+            this.rdbOther.Name = "rdbOther";
+            this.rdbOther.Size = new System.Drawing.Size(70, 21);
+            this.rdbOther.TabIndex = 2;
+            this.rdbOther.TabStop = true;
+            this.rdbOther.Text = "Other";
+            this.rdbOther.UseVisualStyleBackColor = true;
             // 
             // dGVEmployee
             // 
@@ -214,39 +247,6 @@ namespace ProjectFarmBA_WFA
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(136, 24);
             this.cmbDepartment.TabIndex = 3;
-            // 
-            // rdbOther
-            // 
-            this.rdbOther.AutoSize = true;
-            this.rdbOther.Location = new System.Drawing.Point(729, 69);
-            this.rdbOther.Name = "rdbOther";
-            this.rdbOther.Size = new System.Drawing.Size(70, 21);
-            this.rdbOther.TabIndex = 2;
-            this.rdbOther.TabStop = true;
-            this.rdbOther.Text = "Other";
-            this.rdbOther.UseVisualStyleBackColor = true;
-            // 
-            // rdbMan
-            // 
-            this.rdbMan.AutoSize = true;
-            this.rdbMan.Location = new System.Drawing.Point(598, 69);
-            this.rdbMan.Name = "rdbMan";
-            this.rdbMan.Size = new System.Drawing.Size(70, 21);
-            this.rdbMan.TabIndex = 2;
-            this.rdbMan.TabStop = true;
-            this.rdbMan.Text = "Erkek";
-            this.rdbMan.UseVisualStyleBackColor = true;
-            // 
-            // rdbWomen
-            // 
-            this.rdbWomen.AutoSize = true;
-            this.rdbWomen.Location = new System.Drawing.Point(476, 68);
-            this.rdbWomen.Name = "rdbWomen";
-            this.rdbWomen.Size = new System.Drawing.Size(70, 21);
-            this.rdbWomen.TabIndex = 2;
-            this.rdbWomen.TabStop = true;
-            this.rdbWomen.Text = "Kadın";
-            this.rdbWomen.UseVisualStyleBackColor = true;
             // 
             // txtAddress
             // 
@@ -441,7 +441,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Form2
+            // mEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -451,10 +451,9 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.pctEmployee);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Name = "Form2";
+            this.Name = "mEmployee";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
-            this.Click += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.mEmployee_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectFarmBA_WFA
 {
-    partial class wForm3
+    partial class wProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -313,7 +313,7 @@ namespace ProjectFarmBA_WFA
             this.label2.TabIndex = 67;
             this.label2.Text = "Veri Durumu";
             // 
-            // wForm3
+            // wProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,9 +347,9 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.lblEmployee);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "wForm3";
-            this.Text = "wForm3";
-            this.Load += new System.EventHandler(this.wForm3_Load);
+            this.Name = "wProduct";
+            this.Text = "wProduct";
+            this.Load += new System.EventHandler(this.wProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).EndInit();
