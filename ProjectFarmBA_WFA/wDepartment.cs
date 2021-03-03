@@ -57,7 +57,7 @@ namespace ProjectFarmBA_WFA
             try
             {
                 connection.Open();
-                SqlDataAdapter departmentList = new SqlDataAdapter("select ID , DepartmentName as [Kategori Adı], Description as [Açıklama], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from Departments", connection);
+                SqlDataAdapter departmentList = new SqlDataAdapter("select ID , DepartmentName as [Deparman Adı], Description as [Açıklama], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from Departments", connection);
                 DataSet dataSet = new DataSet();
                 departmentList.Fill(dataSet);
                 dGVDepartment.DataSource = dataSet.Tables[0];

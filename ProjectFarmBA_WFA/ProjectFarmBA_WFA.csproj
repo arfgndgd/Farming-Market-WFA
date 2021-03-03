@@ -235,8 +235,14 @@
     <EmbeddedResource Include="wProductCategory.resx">
       <DependentUpon>wProductCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="wShipper.resx">
+      <DependentUpon>wShipper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wStorage.resx">
       <DependentUpon>wStorage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wSupplier.resx">
+      <DependentUpon>wSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="ModelContext\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
