@@ -36,7 +36,7 @@ namespace ProjectFarmBA_WFA
             this.lblCreated = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dGVProduct = new System.Windows.Forms.DataGridView();
+            this.dGVProductCategory = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@ namespace ProjectFarmBA_WFA
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProductCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             this.SuspendLayout();
@@ -122,15 +122,15 @@ namespace ProjectFarmBA_WFA
             this.label15.TabIndex = 93;
             this.label15.Text = "Kategori Fotoğrafı";
             // 
-            // dGVProduct
+            // dGVProductCategory
             // 
-            this.dGVProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVProduct.Location = new System.Drawing.Point(28, 307);
-            this.dGVProduct.Name = "dGVProduct";
-            this.dGVProduct.RowHeadersWidth = 51;
-            this.dGVProduct.RowTemplate.Height = 24;
-            this.dGVProduct.Size = new System.Drawing.Size(978, 406);
-            this.dGVProduct.TabIndex = 92;
+            this.dGVProductCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVProductCategory.Location = new System.Drawing.Point(28, 307);
+            this.dGVProductCategory.Name = "dGVProductCategory";
+            this.dGVProductCategory.RowHeadersWidth = 51;
+            this.dGVProductCategory.RowTemplate.Height = 24;
+            this.dGVProductCategory.Size = new System.Drawing.Size(978, 406);
+            this.dGVProductCategory.TabIndex = 92;
             // 
             // label9
             // 
@@ -272,7 +272,7 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.dGVProduct);
+            this.Controls.Add(this.dGVProductCategory);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.btnSearch);
@@ -285,7 +285,7 @@ namespace ProjectFarmBA_WFA
             this.Name = "wProductCategory";
             this.Text = "wProductCategory";
             this.Load += new System.EventHandler(this.wProductCategory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVProductCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
             this.ResumeLayout(false);
@@ -302,7 +302,7 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label lblCreated;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DataGridView dGVProduct;
+        private System.Windows.Forms.DataGridView dGVProductCategory;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnSearch;

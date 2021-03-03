@@ -42,7 +42,7 @@ namespace ProjectFarmBA_WFA
                 pctEmployee.Image = Image.FromFile(Application.StartupPath + "\\ImageEmployee\\resimyok.jpg");
             }
 
-            //Ürün İşlemleri Sekmesi
+            //Kategori İşlemleri Sekmesi
             
             pctCategory.SizeMode = PictureBoxSizeMode.StretchImage;
             pctCategory.Width = 200;
@@ -60,7 +60,7 @@ namespace ProjectFarmBA_WFA
                 SqlDataAdapter categoryList = new SqlDataAdapter("select ID , CategoryName as [Kategori Adı], Description as [Açıklama], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from Categories", connection);
                 DataSet dataSet = new DataSet();
                 categoryList.Fill(dataSet);
-                dGVProduct.DataSource = dataSet.Tables[0];
+                dGVProductCategory.DataSource = dataSet.Tables[0];
 
 
                 connection.Close();
