@@ -336,7 +336,7 @@ namespace ProjectFarmBA_WFA
             this.dGVEmployee.Name = "dGVEmployee";
             this.dGVEmployee.RowHeadersWidth = 51;
             this.dGVEmployee.RowTemplate.Height = 24;
-            this.dGVEmployee.Size = new System.Drawing.Size(1346, 386);
+            this.dGVEmployee.Size = new System.Drawing.Size(1335, 386);
             this.dGVEmployee.TabIndex = 25;
             // 
             // label16
@@ -429,7 +429,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1402, 675);
+            this.ClientSize = new System.Drawing.Size(1391, 675);
             this.Controls.Add(this.lblDeleted);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblUpdated);

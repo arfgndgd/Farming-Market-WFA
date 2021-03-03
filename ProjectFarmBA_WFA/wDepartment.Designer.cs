@@ -174,7 +174,7 @@ namespace ProjectFarmBA_WFA
             this.dGVDepartment.Name = "dGVDepartment";
             this.dGVDepartment.RowHeadersWidth = 51;
             this.dGVDepartment.RowTemplate.Height = 24;
-            this.dGVDepartment.Size = new System.Drawing.Size(1018, 443);
+            this.dGVDepartment.Size = new System.Drawing.Size(997, 443);
             this.dGVDepartment.TabIndex = 113;
             // 
             // label9
@@ -274,7 +274,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 768);
+            this.ClientSize = new System.Drawing.Size(1048, 768);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDeleted);
