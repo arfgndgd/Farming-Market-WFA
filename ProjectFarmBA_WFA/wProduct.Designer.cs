@@ -56,6 +56,8 @@ namespace ProjectFarmBA_WFA
             this.label5 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
@@ -64,7 +66,7 @@ namespace ProjectFarmBA_WFA
             // lblFeatures
             // 
             this.lblFeatures.AutoSize = true;
-            this.lblFeatures.Location = new System.Drawing.Point(417, 246);
+            this.lblFeatures.Location = new System.Drawing.Point(410, 285);
             this.lblFeatures.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFeatures.Name = "lblFeatures";
             this.lblFeatures.Size = new System.Drawing.Size(0, 18);
@@ -159,7 +161,7 @@ namespace ProjectFarmBA_WFA
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(321, 246);
+            this.label9.Location = new System.Drawing.Point(314, 285);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(79, 18);
             this.label9.TabIndex = 54;
@@ -240,7 +242,7 @@ namespace ProjectFarmBA_WFA
             // lblDeleted
             // 
             this.lblDeleted.AutoSize = true;
-            this.lblDeleted.Location = new System.Drawing.Point(430, 205);
+            this.lblDeleted.Location = new System.Drawing.Point(423, 244);
             this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDeleted.Name = "lblDeleted";
             this.lblDeleted.Size = new System.Drawing.Size(0, 18);
@@ -249,7 +251,7 @@ namespace ProjectFarmBA_WFA
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 193);
+            this.label1.Location = new System.Drawing.Point(295, 232);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
@@ -259,7 +261,7 @@ namespace ProjectFarmBA_WFA
             // lblUpdated
             // 
             this.lblUpdated.AutoSize = true;
-            this.lblUpdated.Location = new System.Drawing.Point(434, 157);
+            this.lblUpdated.Location = new System.Drawing.Point(427, 196);
             this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUpdated.Name = "lblUpdated";
             this.lblUpdated.Size = new System.Drawing.Size(0, 18);
@@ -268,7 +270,7 @@ namespace ProjectFarmBA_WFA
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(256, 146);
+            this.label8.Location = new System.Drawing.Point(249, 185);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(144, 18);
@@ -278,7 +280,7 @@ namespace ProjectFarmBA_WFA
             // lblCreated
             // 
             this.lblCreated.AutoSize = true;
-            this.lblCreated.Location = new System.Drawing.Point(434, 107);
+            this.lblCreated.Location = new System.Drawing.Point(427, 146);
             this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCreated.Name = "lblCreated";
             this.lblCreated.Size = new System.Drawing.Size(0, 18);
@@ -287,7 +289,7 @@ namespace ProjectFarmBA_WFA
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(309, 106);
+            this.label5.Location = new System.Drawing.Point(302, 145);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 18);
@@ -313,11 +315,32 @@ namespace ProjectFarmBA_WFA
             this.label2.TabIndex = 67;
             this.label2.Text = "Veri Durumu";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(368, 106);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 18);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "ID";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(410, 106);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 18);
+            this.lblID.TabIndex = 76;
+            // 
             // wProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1222, 749);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDeleted);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUpdated);
@@ -386,5 +409,7 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblID;
     }
 }

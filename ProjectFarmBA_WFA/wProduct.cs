@@ -42,7 +42,6 @@ namespace ProjectFarmBA_WFA
             }
 
             //Ürün İşlemleri Sekmesi
-            this.Text = "Ürün İşlemleri";
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
             pctProduct.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -90,6 +89,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
+                    lblID.Text = dataReader.GetValue(0).ToString();
                     txtProductName.Text = dataReader.GetValue(1).ToString();
                     lblUnitPrice.Text = dataReader.GetValue(2).ToString();
                     lblStock.Text = dataReader.GetValue(3).ToString();

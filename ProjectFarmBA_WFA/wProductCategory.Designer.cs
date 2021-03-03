@@ -48,6 +48,8 @@ namespace ProjectFarmBA_WFA
             this.lblEmployee = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
@@ -174,6 +176,7 @@ namespace ProjectFarmBA_WFA
             this.txtCategoryName.Name = "txtCategoryName";
             this.txtCategoryName.Size = new System.Drawing.Size(194, 22);
             this.txtCategoryName.TabIndex = 79;
+            this.txtCategoryName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             // 
             // lblTcNo
             // 
@@ -234,11 +237,32 @@ namespace ProjectFarmBA_WFA
             this.lblStatus.Size = new System.Drawing.Size(0, 17);
             this.lblStatus.TabIndex = 95;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(641, 138);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 17);
+            this.lblID.TabIndex = 103;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(599, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 17);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "ID";
+            // 
             // wProductCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 743);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDeleted);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblUpdated);
@@ -290,5 +314,7 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label label3;
     }
 }
