@@ -29,8 +29,8 @@ namespace ProjectFarmBA_WFA
         private void wProduct_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme wForm3
-            pctEmployee.Height = 200;
-            pctEmployee.Width = 200;
+            pctEmployee.Height = 180;
+            pctEmployee.Width = 180;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             try
             {
@@ -45,8 +45,8 @@ namespace ProjectFarmBA_WFA
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
             pctProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctProduct.Width = 200;
-            pctProduct.Height = 200;
+            pctProduct.Width = 180;
+            pctProduct.Height = 180;
             pctProduct.BorderStyle = BorderStyle.Fixed3D;
 
             ProductShow();

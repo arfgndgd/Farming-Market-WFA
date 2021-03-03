@@ -28,8 +28,8 @@ namespace ProjectFarmBA_WFA
         private void wStorageCategory_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme wForm3
-            pctEmployee.Height = 200;
-            pctEmployee.Width = 200;
+            pctEmployee.Height = 180;
+            pctEmployee.Width = 180;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
@@ -46,8 +46,8 @@ namespace ProjectFarmBA_WFA
             //Kategori İşlemleri Sekmesi
 
             pctStorageCategory.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctStorageCategory.Width = 200;
-            pctStorageCategory.Height = 200;
+            pctStorageCategory.Width = 180;
+            pctStorageCategory.Height = 180;
             pctStorageCategory.BorderStyle = BorderStyle.Fixed3D;
 
             StorageCategoryShow();

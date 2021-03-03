@@ -28,8 +28,8 @@ namespace ProjectFarmBA_WFA
         {
 
             //Çalışan resmini ekleme wForm3
-            pctEmployee.Height = 200;
-            pctEmployee.Width = 200;
+            pctEmployee.Height = 180;
+            pctEmployee.Width = 180;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             try
             {
@@ -44,8 +44,8 @@ namespace ProjectFarmBA_WFA
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
             pctStorage.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctStorage.Width = 200;
-            pctStorage.Height = 200;
+            pctStorage.Width = 180;
+            pctStorage.Height = 180;
             pctStorage.BorderStyle = BorderStyle.Fixed3D;
 
             StorageShow();

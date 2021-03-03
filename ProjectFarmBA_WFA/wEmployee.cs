@@ -28,8 +28,8 @@ namespace ProjectFarmBA_WFA
         {
             //Çalışan resmini ekleme
             //wForm2
-            pctEmployee.Height = 200;
-            pctEmployee.Width = 200;
+            pctEmployee.Height = 180;
+            pctEmployee.Width = 180;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
 
             try
@@ -48,8 +48,8 @@ namespace ProjectFarmBA_WFA
 
 
             //Data Employee Pic
-            pctDataEmployee.Height = 200;
-            pctDataEmployee.Width = 200;
+            pctDataEmployee.Height = 180;
+            pctDataEmployee.Width = 180;
             pctDataEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             EmployeeShow();
         }

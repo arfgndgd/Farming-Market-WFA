@@ -27,8 +27,8 @@ namespace ProjectFarmBA_WFA
         private void wDepartment_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme wForm3
-            pctEmployee.Height = 200;
-            pctEmployee.Width = 200;
+            pctEmployee.Height = 180;
+            pctEmployee.Width = 180;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             
 
@@ -47,8 +47,8 @@ namespace ProjectFarmBA_WFA
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
             pctDepartment.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctDepartment.Width = 200;
-            pctDepartment.Height = 200;
+            pctDepartment.Width = 180;
+            pctDepartment.Height = 180;
             pctDepartment.BorderStyle = BorderStyle.Fixed3D;
 
             DepartmentShow();
@@ -116,6 +116,16 @@ namespace ProjectFarmBA_WFA
             {
                 MessageBox.Show("Lütfen kayıtlarda olan bir Departman ismi giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pctEmployee_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pctDepartment_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -27,8 +27,8 @@ namespace ProjectFarmBA_WFA
         private void wProductCategory_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme wForm3
-            pctEmployee.Height = 200;
-            pctEmployee.Width = 200;
+            pctEmployee.Height = 180;
+            pctEmployee.Width = 180;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
             
 
@@ -47,8 +47,8 @@ namespace ProjectFarmBA_WFA
             //Kategori İşlemleri Sekmesi
             
             pctCategory.SizeMode = PictureBoxSizeMode.StretchImage;
-            pctCategory.Width = 200;
-            pctCategory.Height = 200;
+            pctCategory.Width = 180;
+            pctCategory.Height = 180;
             pctCategory.BorderStyle = BorderStyle.Fixed3D;
 
             CategoryShow();
