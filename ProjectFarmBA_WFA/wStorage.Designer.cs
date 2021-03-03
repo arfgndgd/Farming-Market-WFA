@@ -169,11 +169,11 @@ namespace ProjectFarmBA_WFA
             // dGVStorage
             // 
             this.dGVStorage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVStorage.Location = new System.Drawing.Point(28, 310);
+            this.dGVStorage.Location = new System.Drawing.Point(28, 331);
             this.dGVStorage.Name = "dGVStorage";
             this.dGVStorage.RowHeadersWidth = 51;
             this.dGVStorage.RowTemplate.Height = 24;
-            this.dGVStorage.Size = new System.Drawing.Size(1167, 406);
+            this.dGVStorage.Size = new System.Drawing.Size(1247, 406);
             this.dGVStorage.TabIndex = 94;
             // 
             // lblCategory
@@ -318,7 +318,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1222, 749);
+            this.ClientSize = new System.Drawing.Size(1287, 749);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDeleted);

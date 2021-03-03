@@ -55,7 +55,7 @@ namespace ProjectFarmBA_WFA
             try
             {
                 connection.Open();
-                SqlDataAdapter storageList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitPrice as [Fiyat], ImagePath as [Görsel],SupplierID as [Tedarikçi], StorageCategoryID as [Kategori],  [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], TotalWeight as [Toplam Ağırlık] from Storage", connection);
+                SqlDataAdapter storageList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitInPrice as [Fiyat], ImagePath as [Görsel],SupplierID as [Tedarikçi], StorageCategoryID as [Kategori],  [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], TotalWeight as [Toplam Ağırlık] from Storages", connection);
                 DataSet dataSet = new DataSet();
                 storageList.Fill(dataSet);
                 dGVStorage.DataSource = dataSet.Tables[0];
@@ -75,7 +75,7 @@ namespace ProjectFarmBA_WFA
             if (txtStorageName.Text.Length > 0)
             {
                 connection.Open();
-                SqlCommand selectQuery = new SqlCommand("select * from Products where ProductName = '" + txtStorageName.Text + "'", connection);
+                SqlCommand selectQuery = new SqlCommand("select * from Storages where ProductName = '" + txtStorageName.Text + "'", connection);
                 SqlDataReader dataReader = selectQuery.ExecuteReader();
 
                 while (dataReader.Read())

@@ -126,18 +126,18 @@ namespace ProjectFarmBA_WFA
             this.label16.Location = new System.Drawing.Point(70, 239);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(114, 17);
+            this.label16.Size = new System.Drawing.Size(126, 17);
             this.label16.TabIndex = 97;
-            this.label16.Text = "Çalışan Fotoğrafı";
+            this.label16.Text = "Tedarikçi Fotoğrafı";
             // 
             // dGVSupplier
             // 
             this.dGVSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVSupplier.Location = new System.Drawing.Point(21, 270);
+            this.dGVSupplier.Location = new System.Drawing.Point(12, 309);
             this.dGVSupplier.Name = "dGVSupplier";
             this.dGVSupplier.RowHeadersWidth = 51;
             this.dGVSupplier.RowTemplate.Height = 24;
-            this.dGVSupplier.Size = new System.Drawing.Size(1236, 386);
+            this.dGVSupplier.Size = new System.Drawing.Size(1323, 386);
             this.dGVSupplier.TabIndex = 96;
             // 
             // lblCity
@@ -345,7 +345,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 675);
+            this.ClientSize = new System.Drawing.Size(1347, 707);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDeleted);

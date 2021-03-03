@@ -429,7 +429,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 675);
+            this.ClientSize = new System.Drawing.Size(1402, 675);
             this.Controls.Add(this.lblDeleted);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblUpdated);

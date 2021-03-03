@@ -165,11 +165,11 @@ namespace ProjectFarmBA_WFA
             // dGVShipper
             // 
             this.dGVShipper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVShipper.Location = new System.Drawing.Point(23, 300);
+            this.dGVShipper.Location = new System.Drawing.Point(23, 335);
             this.dGVShipper.Name = "dGVShipper";
             this.dGVShipper.RowHeadersWidth = 51;
             this.dGVShipper.RowTemplate.Height = 24;
-            this.dGVShipper.Size = new System.Drawing.Size(978, 406);
+            this.dGVShipper.Size = new System.Drawing.Size(1056, 406);
             this.dGVShipper.TabIndex = 113;
             // 
             // btnSearch
@@ -280,7 +280,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 734);
+            this.ClientSize = new System.Drawing.Size(1105, 753);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.label12);

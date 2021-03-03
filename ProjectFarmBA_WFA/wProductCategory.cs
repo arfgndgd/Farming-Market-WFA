@@ -30,8 +30,7 @@ namespace ProjectFarmBA_WFA
             pctEmployee.Height = 200;
             pctEmployee.Width = 200;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
-            lblEmployee.ForeColor = Color.Green;
-            lblEmployee.Text = Login.name + " " + Login.surname;
+            
 
             try
             {
@@ -41,6 +40,9 @@ namespace ProjectFarmBA_WFA
             {
                 pctEmployee.Image = Image.FromFile(Application.StartupPath + "\\ImageEmployee\\resimyok.jpg");
             }
+            
+            lblEmployee.ForeColor = Color.Green;
+            lblEmployee.Text = Login.name + " " + Login.surname;
 
             //Kategori İşlemleri Sekmesi
             

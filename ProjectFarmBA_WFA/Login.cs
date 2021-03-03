@@ -23,7 +23,7 @@ namespace ProjectFarmBA_WFA
             db = DBTool.DBInstance;
         }
 
-        SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=LENOVO-PC\\SQLEXPRESS;Initial Catalog=ProjectFarmBA;Integrated Security=True;MultipleActiveResultSets=True");
 
         public static string tcno, name, surname, authority;
 

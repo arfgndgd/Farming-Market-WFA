@@ -30,8 +30,7 @@ namespace ProjectFarmBA_WFA
             pctEmployee.Height = 200;
             pctEmployee.Width = 200;
             pctEmployee.SizeMode = PictureBoxSizeMode.StretchImage;
-            lblEmployee.ForeColor = Color.Green;
-            lblEmployee.Text = Login.name + " " + Login.surname;
+            
 
             try
             {
@@ -41,9 +40,12 @@ namespace ProjectFarmBA_WFA
             {
                 pctEmployee.Image = Image.FromFile(Application.StartupPath + "\\ImageEmployee\\resimyok.jpg");
             }
+            
 
-            //Kategori İşlemleri Sekmesi
 
+            //Departman İşlemleri Sekmesi
+            lblEmployee.ForeColor = Color.Green;
+            lblEmployee.Text = Login.name + " " + Login.surname;
             pctDepartment.SizeMode = PictureBoxSizeMode.StretchImage;
             pctDepartment.Width = 200;
             pctDepartment.Height = 200;
@@ -78,7 +80,7 @@ namespace ProjectFarmBA_WFA
             if (txtDepartmentName.Text.Length > 0)
             {
                 connection.Open();
-                SqlCommand selectQuery = new SqlCommand("select * from Categories where CategoryName = '" + txtDepartmentName.Text + "'", connection);
+                SqlCommand selectQuery = new SqlCommand("select * from Departments where DepartmentName = '" + txtDepartmentName.Text + "'", connection);
                 SqlDataReader dataReader = selectQuery.ExecuteReader();
 
                 while (dataReader.Read())

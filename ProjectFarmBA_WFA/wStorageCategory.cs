@@ -57,7 +57,7 @@ namespace ProjectFarmBA_WFA
             try
             {
                 connection.Open();
-                SqlDataAdapter categoryList = new SqlDataAdapter("select ID , CategoryName as [Kategori Adı], Description as [Açıklama], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from StorageCategories", connection);
+                SqlDataAdapter categoryList = new SqlDataAdapter("select ID , StorageCategoryName as [Kategori Adı], StorageDescription as [Açıklama], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from StorageCategories", connection);
                 DataSet dataSet = new DataSet();
                 categoryList.Fill(dataSet);
                 dGVStorageCategory.DataSource = dataSet.Tables[0];

@@ -156,7 +156,7 @@ namespace ProjectFarmBA_WFA
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(179, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(423, 23);
+            this.label1.Size = new System.Drawing.Size(509, 23);
             this.label1.TabIndex = 15;
             this.label1.Text = "Bu sayfalarda yalnızca listeleme yapabilirsiniz";
             // 
