@@ -157,7 +157,7 @@ namespace ProjectFarmBA_WFA
             }
             else
             {
-                MessageBox.Show("Girilen Kategori daha önceden kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Girilen Departman daha önceden kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -228,7 +228,8 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Departments set DepartmentName='" + txtDepartmentName.Text + "', Description='" + txtDescription.Text + "' where ID='" + txtID.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Departments set Description='" + txtDescription.Text + "' where DepartmentName='" + txtDepartmentName.Text + "'", connection);
+                    updateData.ExecuteNonQuery();
 
                     connection.Close();
 
@@ -237,7 +238,7 @@ namespace ProjectFarmBA_WFA
                     //    Directory.CreateDirectory(Application.StartupPath + "\\ImageCategory");
                     //pctCategory.Image.Save(Application.StartupPath + "\\ImageCategory\\" + txtCategoryName.Text + ".jpg");
 
-                    MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Kayıt Güncellendi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     DepartmentShow();
                     CleanDepartmentTabPage();
                 }
@@ -252,6 +253,74 @@ namespace ProjectFarmBA_WFA
             {
                 MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtDepartmentName.Text != null)
+            {
+                bool searchData = false;
+
+                connection.Open();
+
+                SqlCommand selectQuery = new SqlCommand("select * from Departments where DepartmentName='" + txtDepartmentName.Text + "'", connection);
+                SqlDataReader dataReader = selectQuery.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    searchData = true;
+                    SqlCommand deleteData = new SqlCommand("delete from Departments where DepartmentName='" + txtDepartmentName.Text + "'", connection);
+                    deleteData.ExecuteNonQuery();
+                    MessageBox.Show("Departman kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    connection.Close();
+                    DepartmentShow();
+                    CleanDepartmentTabPage();
+                    break;
+                }
+                if (searchData == false)
+                {
+                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                    CleanDepartmentTabPage();
+                }
+
+            }
+            else
+                MessageBox.Show("Lütfen kayıtlarda bulunan bir Departman ismi giriniz !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            CleanDepartmentTabPage();
+        }
+
+        private void txtDepartmentName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8 || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || ((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8 || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
+        }
+
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar >= 48 && (int)e.KeyChar <= 57) || (int)e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+                e.Handled = true;
         }
     }
 }

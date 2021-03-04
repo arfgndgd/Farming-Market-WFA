@@ -87,6 +87,7 @@ namespace ProjectFarmBA_WFA
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(587, 24);
             this.txtDescription.TabIndex = 11;
+            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
             // 
             // txtID
             // 
@@ -95,6 +96,7 @@ namespace ProjectFarmBA_WFA
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(164, 24);
             this.txtID.TabIndex = 11;
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // txtDepartmentName
             // 
@@ -103,6 +105,7 @@ namespace ProjectFarmBA_WFA
             this.txtDepartmentName.Name = "txtDepartmentName";
             this.txtDepartmentName.Size = new System.Drawing.Size(164, 24);
             this.txtDepartmentName.TabIndex = 11;
+            this.txtDepartmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDepartmentName_KeyPress);
             // 
             // btnClear
             // 
@@ -113,6 +116,7 @@ namespace ProjectFarmBA_WFA
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Temizle";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -123,6 +127,7 @@ namespace ProjectFarmBA_WFA
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 

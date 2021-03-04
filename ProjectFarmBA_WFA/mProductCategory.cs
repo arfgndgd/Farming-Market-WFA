@@ -234,8 +234,8 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Categories set CategoryName='" + txtCategoryName.Text + "', Description='" + txtDescription.Text + "' where ID='" + txtID.Text + "'", connection);
-
+                    SqlCommand updateData = new SqlCommand("update Categories set Description='" + txtDescription.Text + "' where CategoryName='" + txtCategoryName.Text + "'", connection);
+                    updateData.ExecuteNonQuery();
                     connection.Close();
 
                     //resmi debug içinde kaydetme
@@ -243,7 +243,7 @@ namespace ProjectFarmBA_WFA
                     //    Directory.CreateDirectory(Application.StartupPath + "\\ImageCategory");
                     //pctCategory.Image.Save(Application.StartupPath + "\\ImageCategory\\" + txtCategoryName.Text + ".jpg");
 
-                    MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Kayıt Güncellendi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     CategoryShow();
                     CleanCategoryTabPage();
                 }
