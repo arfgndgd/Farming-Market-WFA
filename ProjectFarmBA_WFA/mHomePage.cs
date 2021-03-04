@@ -17,18 +17,6 @@ namespace ProjectFarmBA_WFA
             InitializeComponent();
         }
 
-        private void btnPageProduct_Click(object sender, EventArgs e)
-        {
-            mProduct product = new mProduct();
-            product.Show();
-        }
-
-        private void btnPageEmployee_Click(object sender, EventArgs e)
-        {
-            mEmployee employee = new mEmployee();
-            employee.Show();
-        }
-
         private void mHomePage_Load(object sender, EventArgs e)
         {
             //Çalışan resmini ekleme
@@ -46,6 +34,30 @@ namespace ProjectFarmBA_WFA
             this.Text = "Çalışan İşlemleri";
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
+        }
+
+        private void btnPageProduct_Click(object sender, EventArgs e)
+        {
+            mProduct product = new mProduct();
+            product.Show();
+        }
+
+        private void btnPageEmployee_Click(object sender, EventArgs e)
+        {
+            mEmployee employee = new mEmployee();
+            employee.Show();
+        }
+
+        private void btnPageCategory_Click(object sender, EventArgs e)
+        {
+            mProductCategory productCategory = new mProductCategory();
+            productCategory.Show();
+        }
+
+        private void btnPageDepartment_Click(object sender, EventArgs e)
+        {
+            mDepartment department = new mDepartment();
+            department.Show();
         }
     }
 }

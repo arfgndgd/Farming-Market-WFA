@@ -30,7 +30,7 @@ namespace ProjectFarmBA_WFA
             try
             { //TODO: veriyaratma gibi tarihler yok
                 connection.Open();
-                SqlDataAdapter productList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitPrice as [Fiyat], UnitInStock as [Stok], ImagePath as [Görsel], CategoryID as [Kategori], SupplierID as [Tedarikçi], Features as [Özellikler] from Products", connection);
+                SqlDataAdapter productList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitPrice as [Fiyat], UnitInStock as [Stok], ImagePath as [Görsel], CategoryID as [Kategori], SupplierID as [Tedarikçi], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], Features as [Özellikler] from Products", connection);
                 DataSet dataSet = new DataSet();
                 productList.Fill(dataSet);
                 dGVProduct.DataSource = dataSet.Tables[0];
@@ -207,6 +207,7 @@ namespace ProjectFarmBA_WFA
                         p.Features = txtFeatures.Text;
                         p.SupplierID = cmbSupplier.SelectedItem != null ? (cmbSupplier.SelectedItem as Supplier).ID : default(int?);
                         p.CategoryID = cmbCategory.SelectedItem != null ? (cmbCategory.SelectedItem as Category).ID : default(int?);
+                        
                         db.Products.Add(p);
                         db.SaveChanges();
 
@@ -399,6 +400,5 @@ namespace ProjectFarmBA_WFA
             CleanProductTabPage();
         }
 
-        
     }
 }
