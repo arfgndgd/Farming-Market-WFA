@@ -89,5 +89,169 @@ namespace ProjectFarmBA_WFA
                 this.pctDepartment.Image = new Bitmap(image.OpenFile());
             }
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool dataCheck = false;
+
+            connection.Open();
+            SqlCommand selectQuery = new SqlCommand("select * from Departments where DepartmentName ='" + txtDepartmentName.Text + "'", connection);
+            SqlDataReader dataReader = selectQuery.ExecuteReader();
+            while (dataReader.Read())
+            {
+                dataCheck = true;
+                break;
+            }
+            connection.Close();
+            if (dataCheck == false)
+            {
+                if (txtDepartmentName.Text == "")
+                {
+                    lblDepartmentName.ForeColor = Color.Red;
+                }
+                else
+                    lblDepartmentName.ForeColor = Color.Black;
+
+                if (txtDescription.Text == "")
+                {
+                    lblDescription.ForeColor = Color.Red;
+                }
+                else
+                    lblDescription.ForeColor = Color.Black;
+
+                if (/*pctCategory.Image !=  null &&*/ txtDepartmentName.Text != "" && txtDescription.Text != "")
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        Department d = new Department();
+                        d.DepartmentName = txtDepartmentName.Text;
+                        d.Description = txtDescription.Text;
+                        db.Departments.Add(d);
+                        db.SaveChanges();
+
+                        connection.Close();
+
+                        //resmi debug içinde kaydetme
+                        //if (!Directory.Exists(Application.StartupPath + "\\ImageCategory"))
+                        //    Directory.CreateDirectory(Application.StartupPath + "\\ImageCategory");
+                        //pctCategory.Image.Save(Application.StartupPath + "\\ImageCategory\\" + txtCategoryName.Text + ".jpg");
+
+                        MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        DepartmentShow();
+                        CleanDepartmentTabPage();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        connection.Close();
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Girilen Kategori daha önceden kayıtlıdır", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            bool searchData = false;
+            if (txtDepartmentName.Text.Length > 0)
+            {
+                connection.Open();
+                SqlCommand selectQuery = new SqlCommand("select * from Departments where DepartmentName = '" + txtDepartmentName.Text + "'", connection);
+                SqlDataReader dataReader = selectQuery.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    searchData = true;
+                    txtDepartmentName.Text = dataReader.GetValue(1).ToString();
+                    txtDescription.Text = dataReader.GetValue(2).ToString();
+                    try
+                    {
+                        pctDepartment.Image = Image.FromFile(Application.StartupPath + "\\ImageDepartment\\" + dataReader.GetValue(1).ToString() + ".jpg");
+
+                    }
+                    catch
+                    {
+                        pctDepartment.Image = Image.FromFile(Application.StartupPath + "\\ImageDepartment\\resimyok.jpg");
+                    }
+
+                    break;
+                }
+                if (searchData == false)//Kayıt yoksa
+                {
+                    MessageBox.Show("Aranan kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                connection.Close();
+
+            }
+            else
+            {
+                MessageBox.Show("Lütfen kayıtlarda olan bir Departman ismi giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                CleanDepartmentTabPage();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (pctDepartment.Image == null)
+                btnAddImage.ForeColor = Color.Red;
+            else
+                btnAddImage.ForeColor = Color.Black;
+
+            if (txtDepartmentName.Text == "")
+            {
+                lblDepartmentName.ForeColor = Color.Red;
+            }
+            else
+                lblDepartmentName.ForeColor = Color.Black;
+
+            if (txtDescription.Text == "")
+            {
+                lblDescription.ForeColor = Color.Red;
+            }
+            else
+                lblDescription.ForeColor = Color.Black;
+            if (/*pctDepartment.Image !=  null &&*/ txtDepartmentName.Text != "" && txtDescription.Text != "")
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlCommand updateData = new SqlCommand("update Departments set DepartmentName='" + txtDepartmentName.Text + "', Description='" + txtDescription.Text + "' where ID='" + txtID.Text + "'", connection);
+
+                    connection.Close();
+
+                    //resmi debug içinde kaydetme
+                    //if (!Directory.Exists(Application.StartupPath + "\\ImageCategory"))
+                    //    Directory.CreateDirectory(Application.StartupPath + "\\ImageCategory");
+                    //pctCategory.Image.Save(Application.StartupPath + "\\ImageCategory\\" + txtCategoryName.Text + ".jpg");
+
+                    MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    DepartmentShow();
+                    CleanDepartmentTabPage();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

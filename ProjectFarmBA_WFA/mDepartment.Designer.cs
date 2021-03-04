@@ -133,6 +133,7 @@ namespace ProjectFarmBA_WFA
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSearch
             // 
@@ -143,6 +144,7 @@ namespace ProjectFarmBA_WFA
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Ara";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnAddImage
             // 
@@ -168,6 +170,7 @@ namespace ProjectFarmBA_WFA
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblDescription
             // 
