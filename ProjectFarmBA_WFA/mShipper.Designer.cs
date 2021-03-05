@@ -1,7 +1,7 @@
 ﻿
 namespace ProjectFarmBA_WFA
 {
-    partial class mDepartment
+    partial class mShipper
     {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,9 @@ namespace ProjectFarmBA_WFA
             this.components = new System.ComponentModel.Container();
             this.label14 = new System.Windows.Forms.Label();
             this.lblEmployee = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtDepartmentName = new System.Windows.Forms.TextBox();
+            this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -43,27 +43,29 @@ namespace ProjectFarmBA_WFA
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblDescription = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.dGVDepartment = new System.Windows.Forms.DataGridView();
-            this.pctDepartment = new System.Windows.Forms.PictureBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblDepartmentName = new System.Windows.Forms.Label();
+            this.dGVShipper = new System.Windows.Forms.DataGridView();
+            this.pctShipper = new System.Windows.Forms.PictureBox();
             this.pctEmployee = new System.Windows.Forms.PictureBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblCompanyName = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVDepartment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctDepartment)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVShipper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctShipper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(1087, 263);
+            this.label14.Location = new System.Drawing.Point(1086, 266);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 18);
             this.label14.TabIndex = 13;
@@ -74,38 +76,38 @@ namespace ProjectFarmBA_WFA
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
-            this.lblEmployee.Location = new System.Drawing.Point(1204, 263);
+            this.lblEmployee.Location = new System.Drawing.Point(1203, 266);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(82, 18);
             this.lblEmployee.TabIndex = 14;
             this.lblEmployee.Text = "Employee";
             // 
-            // txtDescription
+            // txtPhone
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDescription.Location = new System.Drawing.Point(345, 167);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(587, 24);
-            this.txtDescription.TabIndex = 11;
-            this.txtDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescription_KeyPress);
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPhone.Location = new System.Drawing.Point(345, 167);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(224, 24);
+            this.txtPhone.TabIndex = 11;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtID.Location = new System.Drawing.Point(345, 76);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(164, 24);
+            this.txtID.Size = new System.Drawing.Size(224, 24);
             this.txtID.TabIndex = 11;
-            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
-            // txtDepartmentName
+            // txtCompanyName
             // 
-            this.txtDepartmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtDepartmentName.Location = new System.Drawing.Point(345, 120);
-            this.txtDepartmentName.Name = "txtDepartmentName";
-            this.txtDepartmentName.Size = new System.Drawing.Size(164, 24);
-            this.txtDepartmentName.TabIndex = 11;
-            this.txtDepartmentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDepartmentName_KeyPress);
+            this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtCompanyName.Location = new System.Drawing.Point(345, 120);
+            this.txtCompanyName.Name = "txtCompanyName";
+            this.txtCompanyName.Size = new System.Drawing.Size(224, 24);
+            this.txtCompanyName.TabIndex = 11;
+            this.txtCompanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompanyName_KeyPress);
             // 
             // btnClear
             // 
@@ -177,15 +179,15 @@ namespace ProjectFarmBA_WFA
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblDescription
+            // lblPhone
             // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDescription.Location = new System.Drawing.Point(235, 166);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(76, 18);
-            this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "Açıklama";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblPhone.Location = new System.Drawing.Point(235, 173);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(64, 18);
+            this.lblPhone.TabIndex = 2;
+            this.lblPhone.Text = "Telefon";
             // 
             // lblID
             // 
@@ -197,94 +199,114 @@ namespace ProjectFarmBA_WFA
             this.lblID.TabIndex = 2;
             this.lblID.Text = "ID";
             // 
-            // dGVDepartment
+            // dGVShipper
             // 
-            this.dGVDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVDepartment.Location = new System.Drawing.Point(8, 252);
-            this.dGVDepartment.Name = "dGVDepartment";
-            this.dGVDepartment.RowHeadersWidth = 51;
-            this.dGVDepartment.RowTemplate.Height = 24;
-            this.dGVDepartment.Size = new System.Drawing.Size(1014, 342);
-            this.dGVDepartment.TabIndex = 1;
+            this.dGVShipper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVShipper.Location = new System.Drawing.Point(8, 252);
+            this.dGVShipper.Name = "dGVShipper";
+            this.dGVShipper.RowHeadersWidth = 51;
+            this.dGVShipper.RowTemplate.Height = 24;
+            this.dGVShipper.Size = new System.Drawing.Size(1014, 342);
+            this.dGVShipper.TabIndex = 1;
             // 
-            // pctDepartment
+            // pctShipper
             // 
-            this.pctDepartment.Location = new System.Drawing.Point(8, 20);
-            this.pctDepartment.Name = "pctDepartment";
-            this.pctDepartment.Size = new System.Drawing.Size(179, 152);
-            this.pctDepartment.TabIndex = 0;
-            this.pctDepartment.TabStop = false;
+            this.pctShipper.Location = new System.Drawing.Point(8, 20);
+            this.pctShipper.Name = "pctShipper";
+            this.pctShipper.Size = new System.Drawing.Size(179, 152);
+            this.pctShipper.TabIndex = 0;
+            this.pctShipper.TabStop = false;
             // 
-            // tabControl1
+            // pctEmployee
             // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(25, 24);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 629);
-            this.tabControl1.TabIndex = 11;
+            this.pctEmployee.Location = new System.Drawing.Point(1089, 52);
+            this.pctEmployee.Name = "pctEmployee";
+            this.pctEmployee.Size = new System.Drawing.Size(210, 172);
+            this.pctEmployee.TabIndex = 12;
+            this.pctEmployee.TabStop = false;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.txtDescription);
+            this.tabPage2.Controls.Add(this.txtEmail);
+            this.tabPage2.Controls.Add(this.txtPhone);
             this.tabPage2.Controls.Add(this.txtID);
-            this.tabPage2.Controls.Add(this.txtDepartmentName);
+            this.tabPage2.Controls.Add(this.txtCompanyName);
             this.tabPage2.Controls.Add(this.btnClear);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.btnAddImage);
             this.tabPage2.Controls.Add(this.btnSave);
-            this.tabPage2.Controls.Add(this.lblDescription);
-            this.tabPage2.Controls.Add(this.lblDepartmentName);
+            this.tabPage2.Controls.Add(this.lblEmail);
+            this.tabPage2.Controls.Add(this.lblPhone);
+            this.tabPage2.Controls.Add(this.lblCompanyName);
             this.tabPage2.Controls.Add(this.lblID);
-            this.tabPage2.Controls.Add(this.dGVDepartment);
-            this.tabPage2.Controls.Add(this.pctDepartment);
+            this.tabPage2.Controls.Add(this.dGVShipper);
+            this.tabPage2.Controls.Add(this.pctShipper);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1033, 600);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Departman İşlemleri";
+            this.tabPage2.Text = "Kargo/Nakliye İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // lblDepartmentName
+            // lblCompanyName
             // 
-            this.lblDepartmentName.AutoSize = true;
-            this.lblDepartmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblDepartmentName.Location = new System.Drawing.Point(193, 120);
-            this.lblDepartmentName.Name = "lblDepartmentName";
-            this.lblDepartmentName.Size = new System.Drawing.Size(118, 18);
-            this.lblDepartmentName.TabIndex = 2;
-            this.lblDepartmentName.Text = "Departman Adı";
+            this.lblCompanyName.AutoSize = true;
+            this.lblCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCompanyName.Location = new System.Drawing.Point(214, 120);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(79, 18);
+            this.lblCompanyName.TabIndex = 2;
+            this.lblCompanyName.Text = "Firma Adı";
             // 
-            // pctEmployee
+            // tabControl1
             // 
-            this.pctEmployee.Location = new System.Drawing.Point(1090, 49);
-            this.pctEmployee.Name = "pctEmployee";
-            this.pctEmployee.Size = new System.Drawing.Size(210, 172);
-            this.pctEmployee.TabIndex = 12;
-            this.pctEmployee.TabStop = false;
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(24, 27);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1041, 629);
+            this.tabControl1.TabIndex = 11;
             // 
-            // mDepartment
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEmail.Location = new System.Drawing.Point(235, 208);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(56, 18);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "E-Mail";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtEmail.Location = new System.Drawing.Point(345, 205);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(224, 24);
+            this.txtEmail.TabIndex = 11;
+            // 
+            // mShipper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1374, 727);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblEmployee);
-            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pctEmployee);
-            this.Name = "mDepartment";
-            this.Text = "mDepartment";
-            this.Load += new System.EventHandler(this.mDepartment_Load);
+            this.Controls.Add(this.tabControl1);
+            this.Name = "mShipper";
+            this.Text = "mShipper";
+            this.Load += new System.EventHandler(this.mShipper_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVDepartment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctDepartment)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGVShipper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctShipper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,24 +316,26 @@ namespace ProjectFarmBA_WFA
 
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblEmployee;
-        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtDepartmentName;
+        private System.Windows.Forms.TextBox txtCompanyName;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnAddImage;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pctEmployee;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label lblDepartmentName;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblCompanyName;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.DataGridView dGVDepartment;
-        private System.Windows.Forms.PictureBox pctDepartment;
-        private System.Windows.Forms.PictureBox pctEmployee;
+        private System.Windows.Forms.DataGridView dGVShipper;
+        private System.Windows.Forms.PictureBox pctShipper;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

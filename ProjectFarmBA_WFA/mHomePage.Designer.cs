@@ -126,6 +126,7 @@ namespace ProjectFarmBA_WFA
             this.btnPageStorage.TabIndex = 0;
             this.btnPageStorage.Text = "Ambar";
             this.btnPageStorage.UseVisualStyleBackColor = true;
+            this.btnPageStorage.Click += new System.EventHandler(this.btnPageStorage_Click);
             // 
             // btnPageStorageCategory
             // 
@@ -136,6 +137,7 @@ namespace ProjectFarmBA_WFA
             this.btnPageStorageCategory.TabIndex = 0;
             this.btnPageStorageCategory.Text = "Kategori (Ambar)";
             this.btnPageStorageCategory.UseVisualStyleBackColor = true;
+            this.btnPageStorageCategory.Click += new System.EventHandler(this.btnPageStorageCategory_Click);
             // 
             // btnPageShipper
             // 
@@ -146,6 +148,7 @@ namespace ProjectFarmBA_WFA
             this.btnPageShipper.TabIndex = 0;
             this.btnPageShipper.Text = "Kargo/Nakliye ";
             this.btnPageShipper.UseVisualStyleBackColor = true;
+            this.btnPageShipper.Click += new System.EventHandler(this.btnPageShipper_Click);
             // 
             // btnPageSupplier
             // 
@@ -156,6 +159,7 @@ namespace ProjectFarmBA_WFA
             this.btnPageSupplier.TabIndex = 0;
             this.btnPageSupplier.Text = "Tedarikçi";
             this.btnPageSupplier.UseVisualStyleBackColor = true;
+            this.btnPageSupplier.Click += new System.EventHandler(this.btnPageSupplier_Click);
             // 
             // label1
             // 

@@ -59,5 +59,26 @@ namespace ProjectFarmBA_WFA
             mDepartment department = new mDepartment();
             department.Show();
         }
+
+        private void btnPageShipper_Click(object sender, EventArgs e)
+        {
+            mShipper shipper = new mShipper();
+            shipper.Show();
+        }
+
+        private void btnPageStorageCategory_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnPageSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPageStorage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
