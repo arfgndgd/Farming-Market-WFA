@@ -132,6 +132,9 @@ namespace ProjectFarmBA_WFA
                         s.ShipperName = txtCompanyName.Text;
                         s.Email = txtEmail.Text;
                         s.Phone = txtPhone.Text;
+                        s.Veri_Yaratma_Tarihi = DateTime.Now;
+                        //TODO: soft delete ve veri durumu lazım 
+                        
                         db.Shippers.Add(s);
                         db.SaveChanges();
 
@@ -240,8 +243,8 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-
-                    SqlCommand updateData = new SqlCommand("update Shippers set  Phone='" + txtPhone.Text + "',Email='" + txtEmail.Text + "' where ShipperName='" + txtCompanyName.Text + "'", connection);
+                    
+                    SqlCommand updateData = new SqlCommand("update Shippers set  Phone='" + txtPhone.Text + "',Email='" + txtEmail.Text + "',[Veri Güncelleme Tarihi] = '" +DateTime.Now +"' where ShipperName='" + txtCompanyName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
                     connection.Close();
 
@@ -283,7 +286,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from Shippers where ShipperName='" + txtCompanyName.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Kategori kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Firma kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     ShipperShow();
                     CleanShipperTabPage();

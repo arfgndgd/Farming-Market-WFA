@@ -55,7 +55,7 @@ namespace ProjectFarmBA_WFA
         private void ProductShow()
         {
             try
-            { //TODO: veriyaratma gibi tarihler yok
+            { 
                 connection.Open();
                 SqlDataAdapter productList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitPrice as [Fiyat], UnitInStock as [Stok], ImagePath as [Görsel], CategoryID as [Kategori], SupplierID as [Tedarikçi], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], Features as [Özellikler] from Products", connection);
                 DataSet dataSet = new DataSet();
