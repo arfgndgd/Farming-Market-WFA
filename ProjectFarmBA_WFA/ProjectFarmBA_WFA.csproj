@@ -289,6 +289,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="wBlog.resx">
+      <DependentUpon>wBlog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wDepartment.resx">
       <DependentUpon>wDepartment.cs</DependentUpon>
     </EmbeddedResource>

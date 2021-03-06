@@ -84,5 +84,11 @@ namespace ProjectFarmBA_WFA
             wSupplier wSupplier = new wSupplier();
             wSupplier.Show();
         }
+
+        private void btnBlog_Click(object sender, EventArgs e)
+        {
+            wBlog blog = new wBlog();
+            blog.Show();
+        }
     }
 }
