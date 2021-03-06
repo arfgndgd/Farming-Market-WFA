@@ -32,7 +32,7 @@ namespace ProjectFarmBA_WFA
             try
             {
                 connection.Open();
-                SqlDataAdapter employeeList = new SqlDataAdapter("select TCNO as [Tc Kimlik No], Password as [Parola], FirstName as [Ad], LastName as [Soyad], ERole as [Yetki], Phone as [Telefon], Address as [Adres], City as [Şehir], DepartmentID as [Departman] from Employees", connection);
+                SqlDataAdapter employeeList = new SqlDataAdapter("select TCNO as [Tc Kimlik No], Password as [Parola], FirstName as [Ad], LastName as [Soyad], ERole as [Yetki], Phone as [Telefon], Address as [Adres], City as [Şehir], DepartmentID as [Departman], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from Employees", connection);
                 DataSet dataSet = new DataSet();
                 employeeList.Fill(dataSet);
                 dGVEmployee.DataSource = dataSet.Tables[0];
@@ -300,6 +300,7 @@ namespace ProjectFarmBA_WFA
                         //em.ERole = 
                         em.DepartmentID = cmbDepartment.SelectedItem != null ? (cmbDepartment.SelectedItem as Department).ID : default(int?);
                         em.Password = txtPassword.Text;
+                        em.Veri_Yaratma_Tarihi = DateTime.Now;
                         db.Employees.Add(em);
                         db.SaveChanges();
 

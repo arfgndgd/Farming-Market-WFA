@@ -207,7 +207,7 @@ namespace ProjectFarmBA_WFA
                         p.Features = txtFeatures.Text;
                         p.SupplierID = cmbSupplier.SelectedItem != null ? (cmbSupplier.SelectedItem as Supplier).ID : default(int?);
                         p.CategoryID = cmbCategory.SelectedItem != null ? (cmbCategory.SelectedItem as Category).ID : default(int?);
-                        
+                        p.Veri_Yaratma_Tarihi = DateTime.Now;
                         db.Products.Add(p);
                         db.SaveChanges();
 
@@ -322,7 +322,7 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "' where ProductName='" + txtProductName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where ProductName='" + txtProductName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
 
                     #region MyRegion

@@ -244,7 +244,7 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
                     
-                    SqlCommand updateData = new SqlCommand("update Shippers set  Phone='" + txtPhone.Text + "',Email='" + txtEmail.Text + "',[Veri Güncelleme Tarihi] = '" +DateTime.Now +"' where ShipperName='" + txtCompanyName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Shippers set  Phone='" + txtPhone.Text + "',Email='" + txtEmail.Text + "', [Veri Güncelleme Tarihi] = '" +DateTime.Now +"' where ShipperName='" + txtCompanyName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
                     connection.Close();
 

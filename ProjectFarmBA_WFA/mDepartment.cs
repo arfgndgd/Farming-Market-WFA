@@ -128,6 +128,7 @@ namespace ProjectFarmBA_WFA
                         Department d = new Department();
                         d.DepartmentName = txtDepartmentName.Text;
                         d.Description = txtDescription.Text;
+                        d.Veri_Yaratma_Tarihi = DateTime.Now;
                         db.Departments.Add(d);
                         db.SaveChanges();
 
@@ -228,7 +229,7 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Departments set Description='" + txtDescription.Text + "' where DepartmentName='" + txtDepartmentName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Departments set Description='" + txtDescription.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where DepartmentName='" + txtDepartmentName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
 
                     connection.Close();
