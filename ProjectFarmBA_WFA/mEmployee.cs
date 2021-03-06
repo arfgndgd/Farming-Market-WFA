@@ -341,6 +341,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
+                    lblID.Text = dataReader.GetValue(0).ToString();
                     txtFirstName.Text = dataReader.GetValue(1).ToString();
                     txtLastName.Text = dataReader.GetValue(2).ToString();
                     txtEmail.Text = dataReader.GetValue(3).ToString();
@@ -369,7 +370,10 @@ namespace ProjectFarmBA_WFA
                         rdbOther.Checked = true;
 
                     txtPassword.Text = dataReader.GetValue(12).ToString();
-
+                    lblCreated.Text = dataReader.GetValue(13).ToString();
+                    lblUpdated.Text = dataReader.GetValue(14).ToString();
+                    lblDeleted.Text = dataReader.GetValue(15).ToString();
+                    lblStatus.Text = dataReader.GetValue(16).ToString();
 
                     break;
                 }

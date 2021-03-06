@@ -253,6 +253,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
+                    lblID.Text = dataReader.GetValue(0).ToString();
                     txtProductName.Text = dataReader.GetValue(1).ToString();
                     txtUnitPrice.Text = dataReader.GetValue(2).ToString();
                     txtStock.Text = dataReader.GetValue(3).ToString();
@@ -267,6 +268,10 @@ namespace ProjectFarmBA_WFA
                     }
                     cmbCategory.Text = dataReader.GetValue(5).ToString();
                     cmbSupplier.Text = dataReader.GetValue(6).ToString();
+                    lblCreated.Text = dataReader.GetValue(7).ToString();
+                    lblUpdated.Text = dataReader.GetValue(8).ToString();
+                    lblDeleted.Text = dataReader.GetValue(9).ToString();
+                    lblStatus.Text = dataReader.GetValue(10).ToString();
                     txtFeatures.Text = dataReader.GetValue(11).ToString();
 
                     break;

@@ -32,6 +32,14 @@ namespace ProjectFarmBA_WFA
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblDeleted = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblUpdated = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCreated = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.rdbWomen = new System.Windows.Forms.RadioButton();
             this.rdbMan = new System.Windows.Forms.RadioButton();
             this.rdbOther = new System.Windows.Forms.RadioButton();
@@ -62,6 +70,8 @@ namespace ProjectFarmBA_WFA
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblTcNo = new System.Windows.Forms.Label();
             this.pctEmployee = new System.Windows.Forms.PictureBox();
             this.lblEmployee = new System.Windows.Forms.Label();
@@ -81,11 +91,19 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.Location = new System.Drawing.Point(1, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 629);
+            this.tabControl1.Size = new System.Drawing.Size(1170, 629);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lblDeleted);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.lblUpdated);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.lblCreated);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.lblStatus);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.rdbWomen);
             this.tabPage1.Controls.Add(this.rdbMan);
             this.tabPage1.Controls.Add(this.rdbOther);
@@ -116,19 +134,101 @@ namespace ProjectFarmBA_WFA
             this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Controls.Add(this.lblLastName);
             this.tabPage1.Controls.Add(this.lblFirstName);
+            this.tabPage1.Controls.Add(this.lblID);
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.lblTcNo);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 600);
+            this.tabPage1.Size = new System.Drawing.Size(1162, 600);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Çalışan İşlemleri";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lblDeleted
+            // 
+            this.lblDeleted.AutoSize = true;
+            this.lblDeleted.Location = new System.Drawing.Point(783, 158);
+            this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeleted.Name = "lblDeleted";
+            this.lblDeleted.Size = new System.Drawing.Size(0, 17);
+            this.lblDeleted.TabIndex = 138;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(668, 156);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 18);
+            this.label2.TabIndex = 137;
+            this.label2.Text = "Silme Tarihi";
+            // 
+            // lblUpdated
+            // 
+            this.lblUpdated.AutoSize = true;
+            this.lblUpdated.Location = new System.Drawing.Point(783, 113);
+            this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdated.Name = "lblUpdated";
+            this.lblUpdated.Size = new System.Drawing.Size(0, 17);
+            this.lblUpdated.TabIndex = 136;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(621, 111);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 18);
+            this.label8.TabIndex = 135;
+            this.label8.Text = "Güncelleme Tarihi";
+            // 
+            // lblCreated
+            // 
+            this.lblCreated.AutoSize = true;
+            this.lblCreated.Location = new System.Drawing.Point(783, 74);
+            this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreated.Name = "lblCreated";
+            this.lblCreated.Size = new System.Drawing.Size(0, 17);
+            this.lblCreated.TabIndex = 134;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(674, 72);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 18);
+            this.label5.TabIndex = 133;
+            this.label5.Text = "Giriş Tarihi";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(783, 195);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 17);
+            this.lblStatus.TabIndex = 132;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(664, 193);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 18);
+            this.label3.TabIndex = 131;
+            this.label3.Text = "Veri Durumu";
+            // 
             // rdbWomen
             // 
             this.rdbWomen.AutoSize = true;
-            this.rdbWomen.Location = new System.Drawing.Point(476, 68);
+            this.rdbWomen.Location = new System.Drawing.Point(294, 92);
             this.rdbWomen.Name = "rdbWomen";
             this.rdbWomen.Size = new System.Drawing.Size(70, 21);
             this.rdbWomen.TabIndex = 2;
@@ -139,7 +239,7 @@ namespace ProjectFarmBA_WFA
             // rdbMan
             // 
             this.rdbMan.AutoSize = true;
-            this.rdbMan.Location = new System.Drawing.Point(598, 69);
+            this.rdbMan.Location = new System.Drawing.Point(294, 126);
             this.rdbMan.Name = "rdbMan";
             this.rdbMan.Size = new System.Drawing.Size(70, 21);
             this.rdbMan.TabIndex = 2;
@@ -150,7 +250,7 @@ namespace ProjectFarmBA_WFA
             // rdbOther
             // 
             this.rdbOther.AutoSize = true;
-            this.rdbOther.Location = new System.Drawing.Point(729, 69);
+            this.rdbOther.Location = new System.Drawing.Point(294, 153);
             this.rdbOther.Name = "rdbOther";
             this.rdbOther.Size = new System.Drawing.Size(70, 21);
             this.rdbOther.TabIndex = 2;
@@ -161,18 +261,18 @@ namespace ProjectFarmBA_WFA
             // dGVEmployee
             // 
             this.dGVEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVEmployee.Location = new System.Drawing.Point(21, 391);
+            this.dGVEmployee.Location = new System.Drawing.Point(21, 314);
             this.dGVEmployee.Name = "dGVEmployee";
             this.dGVEmployee.RowHeadersWidth = 51;
             this.dGVEmployee.RowTemplate.Height = 24;
-            this.dGVEmployee.Size = new System.Drawing.Size(989, 203);
+            this.dGVEmployee.Size = new System.Drawing.Size(1135, 280);
             this.dGVEmployee.TabIndex = 6;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(342, 10);
+            this.btnSearch.Location = new System.Drawing.Point(152, 10);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(140, 34);
+            this.btnSearch.Size = new System.Drawing.Size(112, 34);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Arama";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -180,7 +280,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(513, 334);
+            this.btnClear.Location = new System.Drawing.Point(1016, 197);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(140, 34);
             this.btnClear.TabIndex = 5;
@@ -190,7 +290,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(346, 334);
+            this.btnDelete.Location = new System.Drawing.Point(1016, 140);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(140, 34);
             this.btnDelete.TabIndex = 5;
@@ -200,7 +300,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(181, 334);
+            this.btnUpdate.Location = new System.Drawing.Point(1016, 85);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(140, 34);
             this.btnUpdate.TabIndex = 5;
@@ -210,7 +310,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(21, 334);
+            this.btnSave.Location = new System.Drawing.Point(1016, 31);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 34);
             this.btnSave.TabIndex = 5;
@@ -221,7 +321,7 @@ namespace ProjectFarmBA_WFA
             // rdbWorker
             // 
             this.rdbWorker.AutoSize = true;
-            this.rdbWorker.Location = new System.Drawing.Point(598, 107);
+            this.rdbWorker.Location = new System.Drawing.Point(414, 119);
             this.rdbWorker.Name = "rdbWorker";
             this.rdbWorker.Size = new System.Drawing.Size(82, 21);
             this.rdbWorker.TabIndex = 4;
@@ -232,7 +332,7 @@ namespace ProjectFarmBA_WFA
             // rdbManager
             // 
             this.rdbManager.AutoSize = true;
-            this.rdbManager.Location = new System.Drawing.Point(476, 107);
+            this.rdbManager.Location = new System.Drawing.Point(414, 92);
             this.rdbManager.Name = "rdbManager";
             this.rdbManager.Size = new System.Drawing.Size(87, 21);
             this.rdbManager.TabIndex = 4;
@@ -243,21 +343,21 @@ namespace ProjectFarmBA_WFA
             // cmbDepartment
             // 
             this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Location = new System.Drawing.Point(476, 197);
+            this.cmbDepartment.Location = new System.Drawing.Point(405, 230);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(136, 24);
             this.cmbDepartment.TabIndex = 3;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(152, 244);
+            this.txtAddress.Location = new System.Drawing.Point(152, 286);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(724, 22);
             this.txtAddress.TabIndex = 1;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(476, 147);
+            this.txtPassword.Location = new System.Drawing.Point(405, 188);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(112, 22);
             this.txtPassword.TabIndex = 1;
@@ -266,7 +366,7 @@ namespace ProjectFarmBA_WFA
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(152, 282);
+            this.txtCity.Location = new System.Drawing.Point(152, 248);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(112, 22);
             this.txtCity.TabIndex = 1;
@@ -314,7 +414,7 @@ namespace ProjectFarmBA_WFA
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(371, 155);
+            this.lblPassword.Location = new System.Drawing.Point(309, 193);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(55, 17);
             this.lblPassword.TabIndex = 0;
@@ -323,7 +423,7 @@ namespace ProjectFarmBA_WFA
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(362, 72);
+            this.label11.Location = new System.Drawing.Point(299, 60);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 17);
             this.label11.TabIndex = 0;
@@ -332,7 +432,7 @@ namespace ProjectFarmBA_WFA
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(339, 198);
+            this.label10.Location = new System.Drawing.Point(277, 233);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 17);
             this.label10.TabIndex = 0;
@@ -341,7 +441,7 @@ namespace ProjectFarmBA_WFA
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(382, 109);
+            this.label9.Location = new System.Drawing.Point(423, 60);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 17);
             this.label9.TabIndex = 0;
@@ -350,7 +450,7 @@ namespace ProjectFarmBA_WFA
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(26, 282);
+            this.lblCity.Location = new System.Drawing.Point(26, 248);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(46, 17);
             this.lblCity.TabIndex = 0;
@@ -359,7 +459,7 @@ namespace ProjectFarmBA_WFA
             // lblAdress
             // 
             this.lblAdress.AutoSize = true;
-            this.lblAdress.Location = new System.Drawing.Point(21, 244);
+            this.lblAdress.Location = new System.Drawing.Point(21, 286);
             this.lblAdress.Name = "lblAdress";
             this.lblAdress.Size = new System.Drawing.Size(50, 17);
             this.lblAdress.TabIndex = 0;
@@ -401,6 +501,23 @@ namespace ProjectFarmBA_WFA
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "Ad";
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(789, 40);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 17);
+            this.lblID.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(742, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID";
+            // 
             // lblTcNo
             // 
             this.lblTcNo.AutoSize = true;
@@ -412,7 +529,7 @@ namespace ProjectFarmBA_WFA
             // 
             // pctEmployee
             // 
-            this.pctEmployee.Location = new System.Drawing.Point(1070, 24);
+            this.pctEmployee.Location = new System.Drawing.Point(1206, 27);
             this.pctEmployee.Name = "pctEmployee";
             this.pctEmployee.Size = new System.Drawing.Size(210, 172);
             this.pctEmployee.TabIndex = 1;
@@ -422,7 +539,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
-            this.lblEmployee.Location = new System.Drawing.Point(1151, 235);
+            this.lblEmployee.Location = new System.Drawing.Point(1287, 238);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(78, 17);
             this.lblEmployee.TabIndex = 2;
@@ -431,7 +548,7 @@ namespace ProjectFarmBA_WFA
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1048, 233);
+            this.label14.Location = new System.Drawing.Point(1184, 236);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(98, 17);
             this.label14.TabIndex = 2;
@@ -445,7 +562,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1330, 627);
+            this.ClientSize = new System.Drawing.Size(1442, 627);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblEmployee);
             this.Controls.Add(this.pctEmployee);
@@ -505,5 +622,15 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.RadioButton rdbOther;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDeleted;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUpdated;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCreated;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label label3;
     }
 }

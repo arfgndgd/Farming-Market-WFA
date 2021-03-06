@@ -76,7 +76,6 @@ namespace ProjectFarmBA_WFA
         private void CleanDepartmentTabPage()
         {
             pctDepartment.Image = null; txtDepartmentName.Clear(); txtDescription.Clear();
-            txtID.Clear();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
@@ -175,6 +174,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
+                    lblID.Text = dataReader.GetValue(0).ToString();
                     txtDepartmentName.Text = dataReader.GetValue(1).ToString();
                     txtDescription.Text = dataReader.GetValue(2).ToString();
                     try
@@ -186,6 +186,11 @@ namespace ProjectFarmBA_WFA
                     {
                         pctDepartment.Image = Image.FromFile(Application.StartupPath + "\\ImageDepartment\\resimyok.jpg");
                     }
+                    lblCreated.Text = dataReader.GetValue(3).ToString();
+                    lblUpdated.Text = dataReader.GetValue(4).ToString();
+                    lblDeleted.Text = dataReader.GetValue(5).ToString();
+                    lblStatus.Text = dataReader.GetValue(6).ToString();
+
 
                     break;
                 }

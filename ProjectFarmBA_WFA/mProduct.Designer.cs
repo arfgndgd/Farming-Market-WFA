@@ -53,12 +53,20 @@ namespace ProjectFarmBA_WFA
             this.txtFeatures = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lblDeleted = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUpdated = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCreated = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).BeginInit();
@@ -70,7 +78,7 @@ namespace ProjectFarmBA_WFA
             // lblSupplier
             // 
             this.lblSupplier.AutoSize = true;
-            this.lblSupplier.Location = new System.Drawing.Point(679, 26);
+            this.lblSupplier.Location = new System.Drawing.Point(479, 122);
             this.lblSupplier.Name = "lblSupplier";
             this.lblSupplier.Size = new System.Drawing.Size(66, 17);
             this.lblSupplier.TabIndex = 6;
@@ -79,7 +87,7 @@ namespace ProjectFarmBA_WFA
             // lblStock
             // 
             this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(270, 163);
+            this.lblStock.Location = new System.Drawing.Point(238, 162);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(36, 17);
             this.lblStock.TabIndex = 2;
@@ -88,7 +96,7 @@ namespace ProjectFarmBA_WFA
             // lblUnitPrice
             // 
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(228, 115);
+            this.lblUnitPrice.Location = new System.Drawing.Point(196, 114);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(73, 17);
             this.lblUnitPrice.TabIndex = 2;
@@ -97,7 +105,7 @@ namespace ProjectFarmBA_WFA
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Location = new System.Drawing.Point(239, 66);
+            this.lblProductName.Location = new System.Drawing.Point(207, 65);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(63, 17);
             this.lblProductName.TabIndex = 2;
@@ -106,7 +114,7 @@ namespace ProjectFarmBA_WFA
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(280, 22);
+            this.label15.Location = new System.Drawing.Point(248, 21);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(21, 17);
             this.label15.TabIndex = 2;
@@ -115,7 +123,7 @@ namespace ProjectFarmBA_WFA
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(679, 68);
+            this.lblCategory.Location = new System.Drawing.Point(479, 164);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(61, 17);
             this.lblCategory.TabIndex = 2;
@@ -128,12 +136,12 @@ namespace ProjectFarmBA_WFA
             this.dGVProduct.Name = "dGVProduct";
             this.dGVProduct.RowHeadersWidth = 51;
             this.dGVProduct.RowTemplate.Height = 24;
-            this.dGVProduct.Size = new System.Drawing.Size(1014, 342);
+            this.dGVProduct.Size = new System.Drawing.Size(1128, 342);
             this.dGVProduct.TabIndex = 1;
             // 
             // pctEmployee
             // 
-            this.pctEmployee.Location = new System.Drawing.Point(1102, 37);
+            this.pctEmployee.Location = new System.Drawing.Point(1183, 37);
             this.pctEmployee.Name = "pctEmployee";
             this.pctEmployee.Size = new System.Drawing.Size(210, 172);
             this.pctEmployee.TabIndex = 4;
@@ -142,7 +150,7 @@ namespace ProjectFarmBA_WFA
             // lblFeatures
             // 
             this.lblFeatures.AutoSize = true;
-            this.lblFeatures.Location = new System.Drawing.Point(249, 207);
+            this.lblFeatures.Location = new System.Drawing.Point(217, 206);
             this.lblFeatures.Name = "lblFeatures";
             this.lblFeatures.Size = new System.Drawing.Size(66, 17);
             this.lblFeatures.TabIndex = 4;
@@ -159,7 +167,7 @@ namespace ProjectFarmBA_WFA
             // cmbSupplier
             // 
             this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(781, 18);
+            this.cmbSupplier.Location = new System.Drawing.Point(581, 114);
             this.cmbSupplier.Name = "cmbSupplier";
             this.cmbSupplier.Size = new System.Drawing.Size(190, 24);
             this.cmbSupplier.TabIndex = 8;
@@ -167,7 +175,7 @@ namespace ProjectFarmBA_WFA
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(782, 59);
+            this.cmbCategory.Location = new System.Drawing.Point(582, 155);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(188, 24);
             this.cmbCategory.TabIndex = 8;
@@ -175,7 +183,7 @@ namespace ProjectFarmBA_WFA
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1116, 242);
+            this.label14.Location = new System.Drawing.Point(1197, 242);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 17);
             this.label14.TabIndex = 5;
@@ -185,7 +193,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
-            this.lblEmployee.Location = new System.Drawing.Point(1219, 244);
+            this.lblEmployee.Location = new System.Drawing.Point(1300, 244);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(70, 17);
             this.lblEmployee.TabIndex = 6;
@@ -197,9 +205,9 @@ namespace ProjectFarmBA_WFA
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(877, 155);
+            this.btnClear.Location = new System.Drawing.Point(673, 67);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(94, 38);
+            this.btnClear.Size = new System.Drawing.Size(94, 34);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Temizle";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -207,9 +215,9 @@ namespace ProjectFarmBA_WFA
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(653, 155);
+            this.btnDelete.Location = new System.Drawing.Point(567, 67);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 38);
+            this.btnDelete.Size = new System.Drawing.Size(94, 34);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -217,7 +225,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(877, 106);
+            this.btnUpdate.Location = new System.Drawing.Point(673, 18);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(94, 34);
             this.btnUpdate.TabIndex = 9;
@@ -227,9 +235,9 @@ namespace ProjectFarmBA_WFA
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(531, 20);
+            this.btnSearch.Location = new System.Drawing.Point(465, 18);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(109, 26);
+            this.btnSearch.Size = new System.Drawing.Size(94, 34);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.Text = "Ara";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -237,17 +245,25 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblID);
+            this.tabPage2.Controls.Add(this.lblDeleted);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.lblUpdated);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.lblCreated);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.lblStatus);
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.txtFeatures);
             this.tabPage2.Controls.Add(this.txtStock);
             this.tabPage2.Controls.Add(this.txtUnitPrice);
-            this.tabPage2.Controls.Add(this.txtID);
+            this.tabPage2.Controls.Add(this.btnSave);
             this.tabPage2.Controls.Add(this.txtProductName);
-            this.tabPage2.Controls.Add(this.btnClear);
             this.tabPage2.Controls.Add(this.btnDelete);
+            this.tabPage2.Controls.Add(this.btnClear);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.btnSearch);
             this.tabPage2.Controls.Add(this.btnAddImage);
-            this.tabPage2.Controls.Add(this.btnSave);
             this.tabPage2.Controls.Add(this.cmbSupplier);
             this.tabPage2.Controls.Add(this.cmbCategory);
             this.tabPage2.Controls.Add(this.lblFeatures);
@@ -262,21 +278,21 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1033, 600);
+            this.tabPage2.Size = new System.Drawing.Size(1142, 600);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ürün İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtFeatures
             // 
-            this.txtFeatures.Location = new System.Drawing.Point(347, 204);
+            this.txtFeatures.Location = new System.Drawing.Point(295, 203);
             this.txtFeatures.Name = "txtFeatures";
             this.txtFeatures.Size = new System.Drawing.Size(624, 22);
             this.txtFeatures.TabIndex = 11;
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(347, 160);
+            this.txtStock.Location = new System.Drawing.Point(295, 159);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(164, 22);
             this.txtStock.TabIndex = 11;
@@ -284,23 +300,15 @@ namespace ProjectFarmBA_WFA
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(347, 112);
+            this.txtUnitPrice.Location = new System.Drawing.Point(295, 111);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(164, 22);
             this.txtUnitPrice.TabIndex = 11;
             this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
             // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(347, 21);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(164, 22);
-            this.txtID.TabIndex = 11;
-            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
-            // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(347, 65);
+            this.txtProductName.Location = new System.Drawing.Point(295, 64);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(164, 22);
             this.txtProductName.TabIndex = 11;
@@ -318,9 +326,9 @@ namespace ProjectFarmBA_WFA
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(653, 106);
+            this.btnSave.Location = new System.Drawing.Point(567, 18);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 34);
+            this.btnSave.Size = new System.Drawing.Size(94, 34);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -332,14 +340,104 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1041, 629);
+            this.tabControl1.Size = new System.Drawing.Size(1150, 629);
             this.tabControl1.TabIndex = 3;
+            // 
+            // lblDeleted
+            // 
+            this.lblDeleted.AutoSize = true;
+            this.lblDeleted.Location = new System.Drawing.Point(968, 102);
+            this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeleted.Name = "lblDeleted";
+            this.lblDeleted.Size = new System.Drawing.Size(0, 17);
+            this.lblDeleted.TabIndex = 138;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(853, 100);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 18);
+            this.label1.TabIndex = 137;
+            this.label1.Text = "Silme Tarihi";
+            // 
+            // lblUpdated
+            // 
+            this.lblUpdated.AutoSize = true;
+            this.lblUpdated.Location = new System.Drawing.Point(968, 57);
+            this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdated.Name = "lblUpdated";
+            this.lblUpdated.Size = new System.Drawing.Size(0, 17);
+            this.lblUpdated.TabIndex = 136;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(806, 55);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 18);
+            this.label8.TabIndex = 135;
+            this.label8.Text = "Güncelleme Tarihi";
+            // 
+            // lblCreated
+            // 
+            this.lblCreated.AutoSize = true;
+            this.lblCreated.Location = new System.Drawing.Point(968, 18);
+            this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreated.Name = "lblCreated";
+            this.lblCreated.Size = new System.Drawing.Size(0, 17);
+            this.lblCreated.TabIndex = 134;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(859, 16);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 18);
+            this.label5.TabIndex = 133;
+            this.label5.Text = "Giriş Tarihi";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(968, 139);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 17);
+            this.lblStatus.TabIndex = 132;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(849, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.TabIndex = 131;
+            this.label2.Text = "Veri Durumu";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblID.Location = new System.Drawing.Point(301, 27);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 18);
+            this.lblID.TabIndex = 139;
             // 
             // mProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 727);
+            this.ClientSize = new System.Drawing.Size(1446, 727);
             this.Controls.Add(this.pctEmployee);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblEmployee);
@@ -389,6 +487,14 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label lblDeleted;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUpdated;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCreated;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblID;
     }
 }

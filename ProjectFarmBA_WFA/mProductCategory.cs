@@ -80,7 +80,6 @@ namespace ProjectFarmBA_WFA
         private void CleanCategoryTabPage()
         {
             pctCategory.Image = null; txtCategoryName.Clear();txtDescription.Clear();
-            txtID.Clear();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)//Fotoğraf ekleme
@@ -179,6 +178,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
+                    lblID.Text = dataReader.GetValue(0).ToString();
                     txtCategoryName.Text = dataReader.GetValue(1).ToString();
                     txtDescription.Text = dataReader.GetValue(2).ToString();
                     try
@@ -190,7 +190,10 @@ namespace ProjectFarmBA_WFA
                     {
                         pctCategory.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\resimyok.jpg");
                     }
-
+                    lblCreated.Text = dataReader.GetValue(3).ToString();
+                    lblUpdated.Text = dataReader.GetValue(4).ToString();
+                    lblDeleted.Text = dataReader.GetValue(5).ToString();
+                    lblStatus.Text = dataReader.GetValue(6).ToString();
                     break;
                 }
                 if (searchData == false)//Kayıt yoksa

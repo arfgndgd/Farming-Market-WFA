@@ -72,7 +72,6 @@ namespace ProjectFarmBA_WFA
         private void CleanShipperTabPage()
         {
             pctShipper.Image = null; txtCompanyName.Clear(); txtPhone.Clear(); txtEmail.Clear();
-            txtID.Clear();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
@@ -180,6 +179,7 @@ namespace ProjectFarmBA_WFA
                 while (dataReader.Read())
                 {
                     searchData = true;
+                    lblID.Text = dataReader.GetValue(0).ToString();
                     txtCompanyName.Text = dataReader.GetValue(1).ToString();
                     txtPhone.Text = dataReader.GetValue(2).ToString();
                     txtEmail.Text = dataReader.GetValue(3).ToString();
@@ -193,7 +193,10 @@ namespace ProjectFarmBA_WFA
                     {
                         pctShipper.Image = Image.FromFile(Application.StartupPath + "\\ImageShipper\\resimyok.jpg");
                     }
-
+                    lblCreated.Text = dataReader.GetValue(4).ToString();
+                    lblUpdated.Text = dataReader.GetValue(5).ToString();
+                    lblDeleted.Text = dataReader.GetValue(6).ToString();
+                    lblStatus.Text = dataReader.GetValue(7).ToString();
                     break;
                 }
                 if (searchData == false)//Kayıt yoksa
