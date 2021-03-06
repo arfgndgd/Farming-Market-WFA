@@ -74,7 +74,8 @@ namespace ProjectFarmBA_WFA
 
         private void btnPageSupplier_Click(object sender, EventArgs e)
         {
-
+            mSupplier supplier = new mSupplier();
+            supplier.Show();
         }
 
         private void btnPageStorage_Click(object sender, EventArgs e)

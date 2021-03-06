@@ -41,7 +41,7 @@ namespace ProjectFarmBA_WFA
                 pctEmployee.Image = Image.FromFile(Application.StartupPath + "\\ImageEmployee\\resimyok.jpg");
             }
 
-            //Ürün İşlemleri Sekmesi
+            //Kategori İşlemleri Sekmesi
             this.Text = "Kategori İşlemleri";
             lblEmployee.ForeColor = Color.Green;
             lblEmployee.Text = Login.name + " " + Login.surname;
