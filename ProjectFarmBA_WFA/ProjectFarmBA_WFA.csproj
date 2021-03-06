@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="mBlog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mBlog.Designer.cs">
+      <DependentUpon>mBlog.cs</DependentUpon>
+    </Compile>
     <Compile Include="mDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="wBlog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wBlog.Designer.cs">
+      <DependentUpon>wBlog.cs</DependentUpon>
+    </Compile>
     <Compile Include="wDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +247,9 @@
     <Compile Include="wSupplier.Designer.cs">
       <DependentUpon>wSupplier.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="mBlog.resx">
+      <DependentUpon>mBlog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mDepartment.resx">
       <DependentUpon>mDepartment.cs</DependentUpon>
     </EmbeddedResource>

@@ -41,6 +41,7 @@ namespace ProjectFarmBA_WFA
             this.btnPageShipper = new System.Windows.Forms.Button();
             this.btnPageSupplier = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnBlog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +121,7 @@ namespace ProjectFarmBA_WFA
             // btnPageStorage
             // 
             this.btnPageStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPageStorage.Location = new System.Drawing.Point(256, 73);
+            this.btnPageStorage.Location = new System.Drawing.Point(209, 73);
             this.btnPageStorage.Name = "btnPageStorage";
             this.btnPageStorage.Size = new System.Drawing.Size(122, 59);
             this.btnPageStorage.TabIndex = 0;
@@ -131,7 +132,7 @@ namespace ProjectFarmBA_WFA
             // btnPageStorageCategory
             // 
             this.btnPageStorageCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPageStorageCategory.Location = new System.Drawing.Point(256, 167);
+            this.btnPageStorageCategory.Location = new System.Drawing.Point(209, 167);
             this.btnPageStorageCategory.Name = "btnPageStorageCategory";
             this.btnPageStorageCategory.Size = new System.Drawing.Size(122, 59);
             this.btnPageStorageCategory.TabIndex = 0;
@@ -142,7 +143,7 @@ namespace ProjectFarmBA_WFA
             // btnPageShipper
             // 
             this.btnPageShipper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPageShipper.Location = new System.Drawing.Point(256, 257);
+            this.btnPageShipper.Location = new System.Drawing.Point(209, 257);
             this.btnPageShipper.Name = "btnPageShipper";
             this.btnPageShipper.Size = new System.Drawing.Size(122, 59);
             this.btnPageShipper.TabIndex = 0;
@@ -153,7 +154,7 @@ namespace ProjectFarmBA_WFA
             // btnPageSupplier
             // 
             this.btnPageSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnPageSupplier.Location = new System.Drawing.Point(256, 345);
+            this.btnPageSupplier.Location = new System.Drawing.Point(209, 345);
             this.btnPageSupplier.Name = "btnPageSupplier";
             this.btnPageSupplier.Size = new System.Drawing.Size(122, 59);
             this.btnPageSupplier.TabIndex = 0;
@@ -170,6 +171,17 @@ namespace ProjectFarmBA_WFA
             this.label1.TabIndex = 6;
             this.label1.Text = "Yönetici panelinde tüm yetkiye sahipsiniz";
             // 
+            // btnBlog
+            // 
+            this.btnBlog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBlog.Location = new System.Drawing.Point(356, 73);
+            this.btnBlog.Name = "btnBlog";
+            this.btnBlog.Size = new System.Drawing.Size(122, 59);
+            this.btnBlog.TabIndex = 0;
+            this.btnBlog.Text = "Blog";
+            this.btnBlog.UseVisualStyleBackColor = true;
+            this.btnBlog.Click += new System.EventHandler(this.btnBlog_Click);
+            // 
             // mHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,6 +197,7 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.btnPageCategory);
             this.Controls.Add(this.btnPageStorageCategory);
             this.Controls.Add(this.btnPageProduct);
+            this.Controls.Add(this.btnBlog);
             this.Controls.Add(this.btnPageStorage);
             this.Controls.Add(this.btnPageEmployee);
             this.Name = "mHomePage";
@@ -210,5 +223,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Button btnPageShipper;
         private System.Windows.Forms.Button btnPageSupplier;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBlog;
     }
 }

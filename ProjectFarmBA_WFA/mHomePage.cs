@@ -83,5 +83,11 @@ namespace ProjectFarmBA_WFA
             mStorage storage = new mStorage();
             storage.Show();
         }
+
+        private void btnBlog_Click(object sender, EventArgs e)
+        {
+            mBlog blog = new mBlog();
+            blog.Show();
+        }
     }
 }
