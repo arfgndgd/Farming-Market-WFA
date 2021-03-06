@@ -94,8 +94,6 @@ namespace ProjectFarmBA_WFA
             txtPassword.MaxLength = 3;
             toolTip1.SetToolTip(this.txtTcNo, "TC Kimlik No 11 karakter olmalıdır");
             rdbWorker.Checked = true;
-            //TODO: Parola sınırlama 
-            //TODO: Departman Ekle 48den önce
 
             EmployeeShow();
 

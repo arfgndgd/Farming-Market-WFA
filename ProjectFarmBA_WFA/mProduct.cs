@@ -28,7 +28,7 @@ namespace ProjectFarmBA_WFA
         private void ProductShow()
         {
             try
-            { //TODO: veriyaratma gibi tarihler yok
+            { 
                 connection.Open();
                 SqlDataAdapter productList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitPrice as [Fiyat], UnitInStock as [Stok], ImagePath as [Görsel], CategoryID as [Kategori], SupplierID as [Tedarikçi], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], Features as [Özellikler] from Products", connection);
                 DataSet dataSet = new DataSet();
@@ -327,7 +327,7 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where ProductName='" + txtProductName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where ProductName='" + txtProductName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
 
                     #region MyRegion

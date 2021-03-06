@@ -78,7 +78,8 @@ namespace ProjectFarmBA_WFA
 
         private void btnPageStorage_Click(object sender, EventArgs e)
         {
-
+            mStorage storage = new mStorage();
+            storage.Show();
         }
     }
 }

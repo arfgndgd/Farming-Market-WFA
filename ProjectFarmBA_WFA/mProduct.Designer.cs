@@ -50,14 +50,7 @@ namespace ProjectFarmBA_WFA
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtFeatures = new System.Windows.Forms.TextBox();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
-            this.txtProductName = new System.Windows.Forms.TextBox();
-            this.btnAddImage = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.lblID = new System.Windows.Forms.Label();
             this.lblDeleted = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUpdated = new System.Windows.Forms.Label();
@@ -66,7 +59,14 @@ namespace ProjectFarmBA_WFA
             this.label5 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
+            this.txtFeatures = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.btnAddImage = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).BeginInit();
@@ -136,7 +136,7 @@ namespace ProjectFarmBA_WFA
             this.dGVProduct.Name = "dGVProduct";
             this.dGVProduct.RowHeadersWidth = 51;
             this.dGVProduct.RowTemplate.Height = 24;
-            this.dGVProduct.Size = new System.Drawing.Size(1128, 342);
+            this.dGVProduct.Size = new System.Drawing.Size(1128, 423);
             this.dGVProduct.TabIndex = 1;
             // 
             // pctEmployee
@@ -183,7 +183,7 @@ namespace ProjectFarmBA_WFA
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1197, 242);
+            this.label14.Location = new System.Drawing.Point(1180, 243);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(85, 17);
             this.label14.TabIndex = 5;
@@ -193,7 +193,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblEmployee.AutoSize = true;
             this.lblEmployee.ForeColor = System.Drawing.Color.Green;
-            this.lblEmployee.Location = new System.Drawing.Point(1300, 244);
+            this.lblEmployee.Location = new System.Drawing.Point(1283, 245);
             this.lblEmployee.Name = "lblEmployee";
             this.lblEmployee.Size = new System.Drawing.Size(70, 17);
             this.lblEmployee.TabIndex = 6;
@@ -278,70 +278,20 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1142, 600);
+            this.tabPage2.Size = new System.Drawing.Size(1142, 681);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ürün İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtFeatures
+            // lblID
             // 
-            this.txtFeatures.Location = new System.Drawing.Point(295, 203);
-            this.txtFeatures.Name = "txtFeatures";
-            this.txtFeatures.Size = new System.Drawing.Size(624, 22);
-            this.txtFeatures.TabIndex = 11;
-            // 
-            // txtStock
-            // 
-            this.txtStock.Location = new System.Drawing.Point(295, 159);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(164, 22);
-            this.txtStock.TabIndex = 11;
-            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(295, 111);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(164, 22);
-            this.txtUnitPrice.TabIndex = 11;
-            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
-            // 
-            // txtProductName
-            // 
-            this.txtProductName.Location = new System.Drawing.Point(295, 64);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(164, 22);
-            this.txtProductName.TabIndex = 11;
-            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
-            // 
-            // btnAddImage
-            // 
-            this.btnAddImage.Location = new System.Drawing.Point(8, 187);
-            this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(179, 34);
-            this.btnAddImage.TabIndex = 9;
-            this.btnAddImage.Text = "Resim Ekle";
-            this.btnAddImage.UseVisualStyleBackColor = true;
-            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(567, 18);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 34);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1150, 629);
-            this.tabControl1.TabIndex = 3;
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblID.Location = new System.Drawing.Point(301, 27);
+            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 18);
+            this.lblID.TabIndex = 139;
             // 
             // lblDeleted
             // 
@@ -423,15 +373,65 @@ namespace ProjectFarmBA_WFA
             this.label2.TabIndex = 131;
             this.label2.Text = "Veri Durumu";
             // 
-            // lblID
+            // txtFeatures
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblID.Location = new System.Drawing.Point(301, 27);
-            this.lblID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(0, 18);
-            this.lblID.TabIndex = 139;
+            this.txtFeatures.Location = new System.Drawing.Point(295, 203);
+            this.txtFeatures.Name = "txtFeatures";
+            this.txtFeatures.Size = new System.Drawing.Size(624, 22);
+            this.txtFeatures.TabIndex = 11;
+            // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(295, 159);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(164, 22);
+            this.txtStock.TabIndex = 11;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.Location = new System.Drawing.Point(295, 111);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(164, 22);
+            this.txtUnitPrice.TabIndex = 11;
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(567, 18);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(94, 34);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Kaydet";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(295, 64);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(164, 22);
+            this.txtProductName.TabIndex = 11;
+            this.txtProductName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductName_KeyPress);
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.Location = new System.Drawing.Point(8, 187);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(179, 34);
+            this.btnAddImage.TabIndex = 9;
+            this.btnAddImage.Text = "Resim Ekle";
+            this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1150, 710);
+            this.tabControl1.TabIndex = 3;
             // 
             // mProduct
             // 
