@@ -188,7 +188,7 @@ namespace ProjectFarmBA_WFA
                     }
                     catch
                     {
-                        pctCategory.Image = Image.FromFile(Application.StartupPath + "\\ImageProduct\\resimyok.jpg");
+                        pctCategory.Image = Image.FromFile(Application.StartupPath + "\\ImageCategory\\resimyok.jpg");
                     }
                     lblCreated.Text = dataReader.GetValue(3).ToString();
                     lblUpdated.Text = dataReader.GetValue(4).ToString();

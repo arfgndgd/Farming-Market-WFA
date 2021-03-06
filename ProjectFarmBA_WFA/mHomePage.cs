@@ -68,7 +68,8 @@ namespace ProjectFarmBA_WFA
 
         private void btnPageStorageCategory_Click(object sender, EventArgs e)
         {
-            
+            mStorageCategory storageCategory = new mStorageCategory();
+            storageCategory.Show();
         }
 
         private void btnPageSupplier_Click(object sender, EventArgs e)
