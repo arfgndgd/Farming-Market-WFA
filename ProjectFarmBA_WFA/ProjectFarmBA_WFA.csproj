@@ -61,6 +61,12 @@
     <Compile Include="mBlog.Designer.cs">
       <DependentUpon>mBlog.cs</DependentUpon>
     </Compile>
+    <Compile Include="mCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mCustomer.Designer.cs">
+      <DependentUpon>mCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="mDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,18 @@
     <Compile Include="mStorageCategory.Designer.cs">
       <DependentUpon>mStorageCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="mStorageOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mStorageOrder.Designer.cs">
+      <DependentUpon>mStorageOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mStorageOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mStorageOrderDetail.Designer.cs">
+      <DependentUpon>mStorageOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="mSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +267,9 @@
     </Compile>
     <EmbeddedResource Include="mBlog.resx">
       <DependentUpon>mBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mCustomer.resx">
+      <DependentUpon>mCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mDepartment.resx">
       <DependentUpon>mDepartment.cs</DependentUpon>
