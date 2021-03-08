@@ -463,7 +463,7 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Employees set FirstName='" + txtFirstName.Text + "', LastName= '" + txtLastName.Text + "', Email= '" + txtEmail.Text + "',Phone= '" + txtPhone.Text + "',Address= '" + txtAddress.Text + "',City= '" + txtCity.Text + "',DepartmentID= '" + cmbDepartment.Text + "',Password= '" + txtPassword.Text + "' where TCNO='" + txtTcNo.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Employees set FirstName='" + txtFirstName.Text + "', LastName= '" + txtLastName.Text + "', Email= '" + txtEmail.Text + "',Phone= '" + txtPhone.Text + "',Address= '" + txtAddress.Text + "',City= '" + txtCity.Text + "',DepartmentID= '" + cmbDepartment.Text + "',Password= '" + txtPassword.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where TCNO='" + txtTcNo.Text + "'", connection);
 
                     updateData.ExecuteNonQuery();
 

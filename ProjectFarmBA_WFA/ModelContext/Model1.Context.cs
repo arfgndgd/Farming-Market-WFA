@@ -29,6 +29,7 @@ namespace ProjectFarmBA_WFA.ModelContext
         public virtual DbSet<AppUser> AppUsers { get; set; }
         public virtual DbSet<Blog> Blogs { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
@@ -37,6 +38,7 @@ namespace ProjectFarmBA_WFA.ModelContext
         public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<StorageCategory> StorageCategories { get; set; }
         public virtual DbSet<StorageOrderDetail> StorageOrderDetails { get; set; }
+        public virtual DbSet<StorageOrder> StorageOrders { get; set; }
         public virtual DbSet<Storage> Storages { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }

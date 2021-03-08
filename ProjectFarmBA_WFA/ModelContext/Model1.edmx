@@ -58,6 +58,21 @@
           <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
           <Property Name="Veri Durumu" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Departments">
           <Key>
             <PropertyRef Name="ID" />
@@ -169,10 +184,9 @@
         </EntityType>
         <EntityType Name="StorageOrderDetails">
           <Key>
-            <PropertyRef Name="OrderID" />
             <PropertyRef Name="StorageID" />
+            <PropertyRef Name="StorageOrderID" />
           </Key>
-          <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="StorageID" Type="int" Nullable="false" />
           <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Weight" Type="float" Nullable="false" />
@@ -180,6 +194,22 @@
           <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
           <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
           <Property Name="Veri Durumu" Type="int" Nullable="false" />
+          <Property Name="StorageOrderID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StorageOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShippedAddress" Type="nvarchar(max)" />
+          <Property Name="ShippedCity" Type="nvarchar(max)" />
+          <Property Name="ShippedCountry" Type="nvarchar(max)" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="DeletedDate" Type="datetime" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ShipperID" Type="int" />
         </EntityType>
         <EntityType Name="Storages">
           <Key>
@@ -325,17 +355,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_StorageOrderDetails_dbo_Orders_OrderID">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+        <Association Name="FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID">
+          <End Role="StorageOrders" Type="Self.StorageOrders" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="StorageOrderDetails" Type="Self.StorageOrderDetails" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Orders">
+            <Principal Role="StorageOrders">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="StorageOrderDetails">
-              <PropertyRef Name="OrderID" />
+              <PropertyRef Name="StorageOrderID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -350,6 +380,30 @@
             </Principal>
             <Dependent Role="StorageOrderDetails">
               <PropertyRef Name="StorageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_StorageOrders_dbo_Customers_CustomerID">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+          <End Role="StorageOrders" Type="Self.StorageOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StorageOrders">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID">
+          <End Role="Shippers" Type="Self.Shippers" Multiplicity="0..1" />
+          <End Role="StorageOrders" Type="Self.StorageOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shippers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StorageOrders">
+              <PropertyRef Name="ShipperID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -394,6 +448,7 @@
           <EntitySet Name="AppUsers" EntityType="Self.AppUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
@@ -402,6 +457,7 @@
           <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StorageCategories" EntityType="Self.StorageCategories" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StorageOrderDetails" EntityType="Self.StorageOrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StorageOrders" EntityType="Self.StorageOrders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Storages" EntityType="Self.Storages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -434,13 +490,21 @@
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_StorageOrderDetails_dbo_Orders_OrderID" Association="Self.FK_dbo_StorageOrderDetails_dbo_Orders_OrderID">
-            <End Role="Orders" EntitySet="Orders" />
+          <AssociationSet Name="FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID" Association="Self.FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID">
+            <End Role="StorageOrders" EntitySet="StorageOrders" />
             <End Role="StorageOrderDetails" EntitySet="StorageOrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_StorageOrderDetails_dbo_Storages_StorageID" Association="Self.FK_dbo_StorageOrderDetails_dbo_Storages_StorageID">
             <End Role="Storages" EntitySet="Storages" />
             <End Role="StorageOrderDetails" EntitySet="StorageOrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_StorageOrders_dbo_Customers_CustomerID" Association="Self.FK_dbo_StorageOrders_dbo_Customers_CustomerID">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="StorageOrders" EntitySet="StorageOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID" Association="Self.FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID">
+            <End Role="Shippers" EntitySet="Shippers" />
+            <End Role="StorageOrders" EntitySet="StorageOrders" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" Association="Self.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
             <End Role="StorageCategories" EntitySet="StorageCategories" />
@@ -516,6 +580,22 @@
           <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryID" FromRole="Categories" ToRole="Products" />
         </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StorageOrders" Relationship="Self.FK_dbo_StorageOrders_dbo_Customers_CustomerID" FromRole="Customers" ToRole="StorageOrders" />
+        </EntityType>
         <EntityType Name="Department">
           <Key>
             <PropertyRef Name="ID" />
@@ -589,7 +669,6 @@
           <NavigationProperty Name="AppUser" Relationship="Self.FK_dbo_Orders_dbo_AppUsers_AppUserID" FromRole="Orders" ToRole="AppUsers" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="Orders" ToRole="OrderDetails" />
           <NavigationProperty Name="Shipper" Relationship="Self.FK_dbo_Orders_dbo_Shippers_ShipperID" FromRole="Orders" ToRole="Shippers" />
-          <NavigationProperty Name="StorageOrderDetails" Relationship="Self.FK_dbo_StorageOrderDetails_dbo_Orders_OrderID" FromRole="Orders" ToRole="StorageOrderDetails" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -624,6 +703,7 @@
           <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
           <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Shippers_ShipperID" FromRole="Shippers" ToRole="Orders" />
+          <NavigationProperty Name="StorageOrders" Relationship="Self.FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID" FromRole="Shippers" ToRole="StorageOrders" />
         </EntityType>
         <EntityType Name="StorageCategory">
           <Key>
@@ -640,10 +720,9 @@
         </EntityType>
         <EntityType Name="StorageOrderDetail">
           <Key>
-            <PropertyRef Name="OrderID" />
             <PropertyRef Name="StorageID" />
+            <PropertyRef Name="StorageOrderID" />
           </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="StorageID" Type="Int32" Nullable="false" />
           <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Weight" Type="Double" Nullable="false" />
@@ -651,8 +730,27 @@
           <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
           <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
           <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Order" Relationship="Self.FK_dbo_StorageOrderDetails_dbo_Orders_OrderID" FromRole="StorageOrderDetails" ToRole="Orders" />
+          <Property Name="StorageOrderID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StorageOrder" Relationship="Self.FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID" FromRole="StorageOrderDetails" ToRole="StorageOrders" />
           <NavigationProperty Name="Storage" Relationship="Self.FK_dbo_StorageOrderDetails_dbo_Storages_StorageID" FromRole="StorageOrderDetails" ToRole="Storages" />
+        </EntityType>
+        <EntityType Name="StorageOrder">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShippedAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippedCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippedCountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="DeletedDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="ShipperID" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_dbo_StorageOrders_dbo_Customers_CustomerID" FromRole="StorageOrders" ToRole="Customers" />
+          <NavigationProperty Name="Shipper" Relationship="Self.FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID" FromRole="StorageOrders" ToRole="Shippers" />
+          <NavigationProperty Name="StorageOrderDetails" Relationship="Self.FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID" FromRole="StorageOrders" ToRole="StorageOrderDetails" />
         </EntityType>
         <EntityType Name="Storage">
           <Key>
@@ -752,6 +850,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_dbo_StorageOrders_dbo_Customers_CustomerID">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="StorageOrders" Type="Self.StorageOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StorageOrders">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_Employees_dbo_Departments_DepartmentID">
           <End Role="Departments" Type="Self.Department" Multiplicity="0..1" />
           <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
@@ -804,20 +914,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_StorageOrderDetails_dbo_Orders_OrderID">
-          <End Role="Orders" Type="Self.Order" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="StorageOrderDetails" Type="Self.StorageOrderDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Orders">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="StorageOrderDetails">
-              <PropertyRef Name="OrderID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_Products_dbo_Suppliers_SupplierID">
           <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Product" Multiplicity="*" />
@@ -830,6 +926,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID">
+          <End Role="Shippers" Type="Self.Shipper" Multiplicity="0..1" />
+          <End Role="StorageOrders" Type="Self.StorageOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shippers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StorageOrders">
+              <PropertyRef Name="ShipperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
           <End Role="StorageCategories" Type="Self.StorageCategory" Multiplicity="0..1" />
           <End Role="Storages" Type="Self.Storage" Multiplicity="*" />
@@ -839,6 +947,20 @@
             </Principal>
             <Dependent Role="Storages">
               <PropertyRef Name="StorageCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID">
+          <End Role="StorageOrders" Type="Self.StorageOrder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="StorageOrderDetails" Type="Self.StorageOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="StorageOrderDetails">
+              <PropertyRef Name="StorageOrderID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -873,6 +995,7 @@
           <EntitySet Name="AppUsers" EntityType="Self.AppUser" />
           <EntitySet Name="Blogs" EntityType="Self.Blog" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
@@ -881,6 +1004,7 @@
           <EntitySet Name="Shippers" EntityType="Self.Shipper" />
           <EntitySet Name="StorageCategories" EntityType="Self.StorageCategory" />
           <EntitySet Name="StorageOrderDetails" EntityType="Self.StorageOrderDetail" />
+          <EntitySet Name="StorageOrders" EntityType="Self.StorageOrder" />
           <EntitySet Name="Storages" EntityType="Self.Storage" />
           <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
@@ -896,6 +1020,10 @@
           <AssociationSet Name="FK_dbo_Products_dbo_Categories_CategoryID" Association="Self.FK_dbo_Products_dbo_Categories_CategoryID">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_StorageOrders_dbo_Customers_CustomerID" Association="Self.FK_dbo_StorageOrders_dbo_Customers_CustomerID">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="StorageOrders" EntitySet="StorageOrders" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_Employees_dbo_Departments_DepartmentID" Association="Self.FK_dbo_Employees_dbo_Departments_DepartmentID">
             <End Role="Departments" EntitySet="Departments" />
@@ -913,17 +1041,21 @@
             <End Role="Shippers" EntitySet="Shippers" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_StorageOrderDetails_dbo_Orders_OrderID" Association="Self.FK_dbo_StorageOrderDetails_dbo_Orders_OrderID">
-            <End Role="Orders" EntitySet="Orders" />
-            <End Role="StorageOrderDetails" EntitySet="StorageOrderDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_dbo_Products_dbo_Suppliers_SupplierID" Association="Self.FK_dbo_Products_dbo_Suppliers_SupplierID">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
+          <AssociationSet Name="FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID" Association="Self.FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID">
+            <End Role="Shippers" EntitySet="Shippers" />
+            <End Role="StorageOrders" EntitySet="StorageOrders" />
+          </AssociationSet>
           <AssociationSet Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" Association="Self.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
             <End Role="StorageCategories" EntitySet="StorageCategories" />
             <End Role="Storages" EntitySet="Storages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID" Association="Self.FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID">
+            <End Role="StorageOrders" EntitySet="StorageOrders" />
+            <End Role="StorageOrderDetails" EntitySet="StorageOrderDetails" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_StorageOrderDetails_dbo_Storages_StorageID" Association="Self.FK_dbo_StorageOrderDetails_dbo_Storages_StorageID">
             <End Role="Storages" EntitySet="Storages" />
@@ -989,6 +1121,22 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
                 <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
                 <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
@@ -1114,7 +1262,6 @@
           <EntitySetMapping Name="StorageOrderDetails">
             <EntityTypeMapping TypeName="ProjectFarmBAModel.StorageOrderDetail">
               <MappingFragment StoreEntitySet="StorageOrderDetails">
-                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="StorageID" ColumnName="StorageID" />
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
@@ -1122,6 +1269,23 @@
                 <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
                 <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
                 <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+                <ScalarProperty Name="StorageOrderID" ColumnName="StorageOrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StorageOrders">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.StorageOrder">
+              <MappingFragment StoreEntitySet="StorageOrders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShippedAddress" ColumnName="ShippedAddress" />
+                <ScalarProperty Name="ShippedCity" ColumnName="ShippedCity" />
+                <ScalarProperty Name="ShippedCountry" ColumnName="ShippedCountry" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

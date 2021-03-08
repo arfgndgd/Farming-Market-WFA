@@ -14,7 +14,6 @@ namespace ProjectFarmBA_WFA.ModelContext
     
     public partial class StorageOrderDetail
     {
-        public int OrderID { get; set; }
         public int StorageID { get; set; }
         public decimal TotalPrice { get; set; }
         public double Weight { get; set; }
@@ -22,8 +21,9 @@ namespace ProjectFarmBA_WFA.ModelContext
         public Nullable<System.DateTime> Veri_Güncelleme_Tarihi { get; set; }
         public Nullable<System.DateTime> Veri_Silme_Tarihi { get; set; }
         public int Veri_Durumu { get; set; }
+        public int StorageOrderID { get; set; }
     
-        public virtual Order Order { get; set; }
+        public virtual StorageOrder StorageOrder { get; set; }
         public virtual Storage Storage { get; set; }
     }
 }

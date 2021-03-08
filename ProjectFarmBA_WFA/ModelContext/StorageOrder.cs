@@ -12,32 +12,28 @@ namespace ProjectFarmBA_WFA.ModelContext
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class StorageOrder
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public StorageOrder()
         {
-            this.OrderDetails = new HashSet<OrderDetail>();
+            this.StorageOrderDetails = new HashSet<StorageOrderDetail>();
         }
     
         public int ID { get; set; }
         public string ShippedAddress { get; set; }
         public string ShippedCity { get; set; }
         public string ShippedCountry { get; set; }
-        public Nullable<int> AppUserID { get; set; }
+        public Nullable<int> CustomerID { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
+        public Nullable<System.DateTime> DeletedDate { get; set; }
+        public int Status { get; set; }
         public Nullable<int> ShipperID { get; set; }
-        public decimal TotalPrice { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string EmailAddress { get; set; }
-        public Nullable<System.DateTime> Veri_Yaratma_Tarihi { get; set; }
-        public Nullable<System.DateTime> Veri_Güncelleme_Tarihi { get; set; }
-        public Nullable<System.DateTime> Veri_Silme_Tarihi { get; set; }
-        public int Veri_Durumu { get; set; }
     
-        public virtual AppUser AppUser { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual Customer Customer { get; set; }
         public virtual Shipper Shipper { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StorageOrderDetail> StorageOrderDetails { get; set; }
     }
 }

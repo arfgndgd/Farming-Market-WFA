@@ -12,32 +12,26 @@ namespace ProjectFarmBA_WFA.ModelContext
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Customer()
         {
-            this.OrderDetails = new HashSet<OrderDetail>();
+            this.StorageOrders = new HashSet<StorageOrder>();
         }
     
         public int ID { get; set; }
-        public string ShippedAddress { get; set; }
-        public string ShippedCity { get; set; }
-        public string ShippedCountry { get; set; }
-        public Nullable<int> AppUserID { get; set; }
-        public Nullable<int> ShipperID { get; set; }
-        public decimal TotalPrice { get; set; }
-        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
-        public string EmailAddress { get; set; }
+        public string Address { get; set; }
         public Nullable<System.DateTime> Veri_Yaratma_Tarihi { get; set; }
         public Nullable<System.DateTime> Veri_Güncelleme_Tarihi { get; set; }
         public Nullable<System.DateTime> Veri_Silme_Tarihi { get; set; }
         public int Veri_Durumu { get; set; }
     
-        public virtual AppUser AppUser { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual Shipper Shipper { get; set; }
+        public virtual ICollection<StorageOrder> StorageOrders { get; set; }
     }
 }
