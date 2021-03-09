@@ -217,6 +217,12 @@
     <Compile Include="wBlog.Designer.cs">
       <DependentUpon>wBlog.cs</DependentUpon>
     </Compile>
+    <Compile Include="wCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wCustomer.Designer.cs">
+      <DependentUpon>wCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="wDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     <EmbeddedResource Include="mStorageCategory.resx">
       <DependentUpon>mStorageCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mStorageOrder.resx">
+      <DependentUpon>mStorageOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mSupplier.resx">
       <DependentUpon>mSupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +327,9 @@
     </Compile>
     <EmbeddedResource Include="wBlog.resx">
       <DependentUpon>wBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wCustomer.resx">
+      <DependentUpon>wCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="wDepartment.resx">
       <DependentUpon>wDepartment.cs</DependentUpon>

@@ -569,7 +569,7 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "mEmployee";
-            this.Text = "Form2";
+            this.Text = "mEmployee";
             this.Load += new System.EventHandler(this.mEmployee_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

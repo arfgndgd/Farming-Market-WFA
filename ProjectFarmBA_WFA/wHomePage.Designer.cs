@@ -42,6 +42,7 @@ namespace ProjectFarmBA_WFA
             this.btnPageCategory = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBlog = new System.Windows.Forms.Button();
+            this.btnCustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,11 +183,23 @@ namespace ProjectFarmBA_WFA
             this.btnBlog.UseVisualStyleBackColor = true;
             this.btnBlog.Click += new System.EventHandler(this.btnBlog_Click);
             // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnCustomer.Location = new System.Drawing.Point(379, 149);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(123, 59);
+            this.btnCustomer.TabIndex = 16;
+            this.btnCustomer.Text = "Müşteri";
+            this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
+            // 
             // wHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnBlog);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPageDepartment);
@@ -224,5 +237,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Button btnPageCategory;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBlog;
+        private System.Windows.Forms.Button btnCustomer;
     }
 }

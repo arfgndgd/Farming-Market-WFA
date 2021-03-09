@@ -470,7 +470,7 @@ namespace ProjectFarmBA_WFA
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "wEmployee";
-            this.Text = "wForm2";
+            this.Text = "wEmployee";
             this.Load += new System.EventHandler(this.wEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctDataEmployee)).EndInit();

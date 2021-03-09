@@ -90,5 +90,11 @@ namespace ProjectFarmBA_WFA
             wBlog blog = new wBlog();
             blog.Show();
         }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            wCustomer customer = new wCustomer();
+            customer.Show();
+        }
     }
 }
