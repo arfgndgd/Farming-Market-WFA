@@ -161,6 +161,18 @@
     <Compile Include="ModelContext\UserProfile.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="mOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mOrder.Designer.cs">
+      <DependentUpon>mOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mOrderDetail.Designer.cs">
+      <DependentUpon>mOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="mProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +307,12 @@
     <EmbeddedResource Include="mEmployee.resx">
       <DependentUpon>mEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="mOrder.resx">
+      <DependentUpon>mOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mOrderDetail.resx">
+      <DependentUpon>mOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mProduct.resx">
       <DependentUpon>mProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mStorageOrder.resx">
       <DependentUpon>mStorageOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mStorageOrderDetail.resx">
+      <DependentUpon>mStorageOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mSupplier.resx">
       <DependentUpon>mSupplier.cs</DependentUpon>

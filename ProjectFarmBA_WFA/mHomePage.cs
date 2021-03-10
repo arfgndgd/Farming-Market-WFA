@@ -107,5 +107,17 @@ namespace ProjectFarmBA_WFA
             mStorageOrderDetail storageOrderDetail = new mStorageOrderDetail();
             storageOrderDetail.Show();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            mOrder order = new mOrder();
+            order.Show();
+        }
+
+        private void btnOrderDetail_Click(object sender, EventArgs e)
+        {
+            mOrderDetail detail = new mOrderDetail();
+            detail.Show();
+        }
     }
 }
