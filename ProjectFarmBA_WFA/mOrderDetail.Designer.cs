@@ -40,6 +40,19 @@ namespace ProjectFarmBA_WFA
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.dGVOrderDetail = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.lblProductID = new System.Windows.Forms.Label();
+            this.txtProductID = new System.Windows.Forms.TextBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblOrderID = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrderDetail)).BeginInit();
@@ -48,9 +61,9 @@ namespace ProjectFarmBA_WFA
             // btnOrderPage
             // 
             this.btnOrderPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnOrderPage.Location = new System.Drawing.Point(312, 206);
+            this.btnOrderPage.Location = new System.Drawing.Point(16, 149);
             this.btnOrderPage.Name = "btnOrderPage";
-            this.btnOrderPage.Size = new System.Drawing.Size(584, 28);
+            this.btnOrderPage.Size = new System.Drawing.Size(505, 28);
             this.btnOrderPage.TabIndex = 21;
             this.btnOrderPage.Text = "Siparişler Sayfasına Gidin";
             this.btnOrderPage.UseVisualStyleBackColor = true;
@@ -69,7 +82,7 @@ namespace ProjectFarmBA_WFA
             // btnSearch
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(491, 96);
+            this.btnSearch.Location = new System.Drawing.Point(409, 16);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(112, 34);
             this.btnSearch.TabIndex = 19;
@@ -127,7 +140,7 @@ namespace ProjectFarmBA_WFA
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.txtSearch.Location = new System.Drawing.Point(224, 102);
+            this.txtSearch.Location = new System.Drawing.Point(200, 21);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(203, 24);
             this.txtSearch.TabIndex = 13;
@@ -136,7 +149,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSearch.Location = new System.Drawing.Point(37, 105);
+            this.lblSearch.Location = new System.Drawing.Point(13, 24);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(180, 18);
             this.lblSearch.TabIndex = 12;
@@ -152,11 +165,136 @@ namespace ProjectFarmBA_WFA
             this.dGVOrderDetail.Size = new System.Drawing.Size(1114, 292);
             this.dGVOrderDetail.TabIndex = 11;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(635, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(209, 23);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Sipariş Detayı CRUD";
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(694, 51);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(145, 22);
+            this.txtOrderID.TabIndex = 23;
+            // 
+            // lblProductID
+            // 
+            this.lblProductID.AutoSize = true;
+            this.lblProductID.Location = new System.Drawing.Point(604, 92);
+            this.lblProductID.Name = "lblProductID";
+            this.lblProductID.Size = new System.Drawing.Size(70, 17);
+            this.lblProductID.TabIndex = 22;
+            this.lblProductID.Text = "ProductID";
+            // 
+            // txtProductID
+            // 
+            this.txtProductID.Location = new System.Drawing.Point(694, 92);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(145, 22);
+            this.txtProductID.TabIndex = 23;
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(694, 170);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(145, 22);
+            this.txtQuantity.TabIndex = 25;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Location = new System.Drawing.Point(604, 170);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(61, 17);
+            this.lblQuantity.TabIndex = 24;
+            this.lblQuantity.Text = "Quantity";
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Location = new System.Drawing.Point(694, 132);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(145, 22);
+            this.txtTotalPrice.TabIndex = 27;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Location = new System.Drawing.Point(604, 132);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(72, 17);
+            this.lblTotalPrice.TabIndex = 26;
+            this.lblTotalPrice.Text = "TotalPrice";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(845, 51);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 141);
+            this.btnClear.TabIndex = 151;
+            this.btnClear.Text = "Temizle";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(688, 207);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 40);
+            this.btnUpdate.TabIndex = 152;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(769, 207);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 39);
+            this.btnDelete.TabIndex = 153;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lblOrderID
+            // 
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Location = new System.Drawing.Point(604, 51);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(58, 17);
+            this.lblOrderID.TabIndex = 22;
+            this.lblOrderID.Text = "OrderID";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(607, 208);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 39);
+            this.btnSave.TabIndex = 154;
+            this.btnSave.Text = "Kaydet";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // mOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 768);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtTotalPrice);
+            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.txtQuantity);
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.txtProductID);
+            this.Controls.Add(this.lblOrderID);
+            this.Controls.Add(this.lblProductID);
+            this.Controls.Add(this.txtOrderID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnOrderPage);
             this.Controls.Add(this.dGVResult);
             this.Controls.Add(this.btnSearch);
@@ -192,5 +330,18 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.DataGridView dGVOrderDetail;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.Label lblProductID;
+        private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.Label lblQuantity;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lblOrderID;
+        private System.Windows.Forms.Button btnSave;
     }
 }

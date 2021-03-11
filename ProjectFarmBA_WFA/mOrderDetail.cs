@@ -86,10 +86,15 @@ namespace ProjectFarmBA_WFA
                     //lstOrder.DisplayMember = "ID";
                     //lstOrder.DisplayMember = "ShippedAddress";
 
-                    SqlDataAdapter orderList = new SqlDataAdapter("select OrderID, ProductID as [Ürün ID'si], TotalPrice as [Toplam Fiyat], Quantity as [Miktar], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from OrderDetails", connection);
-                    DataSet dataSet = new DataSet();
-                    orderList.Fill(dataSet);
-                    dGVResult.DataSource = dataSet.Tables[0];
+                    //SqlDataAdapter orderList = new SqlDataAdapter("select OrderID, ProductID as [Ürün ID'si], TotalPrice as [Toplam Fiyat], Quantity as [Miktar], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from OrderDetails", connection);
+                    //DataSet dataSet = new DataSet();
+                    //orderList.Fill(dataSet);
+                    //dGVResult.DataSource = dataSet.Tables[0];
+
+                    txtOrderID.Text = dataReader.GetValue(0).ToString();
+                    txtProductID.Text = dataReader.GetValue(1).ToString();
+                    txtQuantity.Text = dataReader.GetValue(3).ToString();
+                    txtTotalPrice.Text = dataReader.GetValue(2).ToString();
 
 
                     break;
@@ -103,7 +108,7 @@ namespace ProjectFarmBA_WFA
             }
             else
             {
-                MessageBox.Show("Lütfen 11 haneli bir Tc Kimlik No kaydı giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lütfen kayıtlı olan bir Sipariş ID giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -111,6 +116,179 @@ namespace ProjectFarmBA_WFA
         {
             mOrder order = new mOrder();
             order.Show();
+        }
+
+        //private void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    bool dataCheck = false;
+        //    connection.Open();
+        //    SqlCommand selectQuery = new SqlCommand("select * from OrderDetails where OrderID='" + txtOrderID.Text + "'", connection);
+        //    SqlDataReader dataReader = selectQuery.ExecuteReader();
+        //    while (dataReader.Read())
+        //    {
+        //        dataCheck = true;
+        //        break;
+        //    }
+
+        //    connection.Close();
+        //    if (dataCheck == false)
+        //    {
+        //        if (txtOrderID.Text == "")
+        //        {
+        //            lblOrderID.ForeColor = Color.Red;
+        //        }
+        //        else
+        //            lblOrderID.ForeColor = Color.Black;
+
+        //        if (txtProductID.Text == "")
+        //        {
+        //            lblProductID.ForeColor = Color.Red;
+        //        }
+        //        else
+        //            lblProductID.ForeColor = Color.Black;
+
+        //        if (txtQuantity.Text == "")
+        //        {
+        //            lblQuantity.ForeColor = Color.Red;
+        //        }
+        //        else
+        //            lblQuantity.ForeColor = Color.Black;
+
+        //        if (txtTotalPrice.Text == "")
+        //        {
+        //            lblTotalPrice.ForeColor = Color.Red;
+        //        }
+        //        else
+        //            lblTotalPrice.ForeColor = Color.Black;
+
+        //        if (txtProductID.Text != "" && txtOrderID.Text != "" && txtQuantity.Text != "" && txtTotalPrice.Text != "")
+        //        {
+        //            try
+        //            {
+        //                connection.Open();
+        //                OrderDetail o = new OrderDetail();
+        //                o.OrderID = Convert.ToInt32(txtOrderID.Text);
+        //                o.ProductID = Convert.ToInt32(txtProductID.Text);
+        //                o.TotalPrice = Convert.ToInt32(txtTotalPrice.Text);
+        //                o.Quantity = Convert.ToInt16(txtQuantity.Text);
+        //                o.Veri_Yaratma_Tarihi = DateTime.Now;
+        //                db.OrderDetails.Add(o);
+        //                db.SaveChanges();
+
+        //                connection.Close();
+        //                MessageBox.Show("Yeni kayıt oluşturuldu", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //                OrderDetailShow();
+        //                CleanOrderDetailPage();
+        //            }
+        //            catch (Exception ex)
+        //            {
+        //                MessageBox.Show(ex.Message);
+        //                connection.Close();
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Zorunlu alanları doldurunuz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+
+        //    }
+        //}
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtOrderID.Text == "")
+            {
+                lblOrderID.ForeColor = Color.Red;
+            }
+            else
+                lblOrderID.ForeColor = Color.Black;
+
+            if (txtProductID.Text == "")
+            {
+                lblProductID.ForeColor = Color.Red;
+            }
+            else
+                lblProductID.ForeColor = Color.Black;
+
+            if (txtQuantity.Text == "")
+            {
+                lblQuantity.ForeColor = Color.Red;
+            }
+            else
+                lblQuantity.ForeColor = Color.Black;
+
+            if (txtTotalPrice.Text == "")
+            {
+                lblTotalPrice.ForeColor = Color.Red;
+            }
+            else
+                lblTotalPrice.ForeColor = Color.Black;
+
+            if (txtProductID.Text != "" && txtOrderID.Text != "" && txtQuantity.Text != "" && txtTotalPrice.Text != "")
+            {
+                try
+                {
+                    connection.Open();
+                    SqlCommand updateData = new SqlCommand("update OrderDetails set ProductID= '" + Convert.ToInt32(txtProductID.Text) + "', TotalPrice= '" + Convert.ToInt32(txtTotalPrice.Text) + "',Quantity= '" + Convert.ToInt16(txtQuantity.Text) + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where OrderID='" + txtOrderID.Text + "'", connection);
+
+                    updateData.ExecuteNonQuery();
+
+                    connection.Close();
+                    MessageBox.Show("Kayıt Güncellendi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    OrderDetailShow();
+                    CleanOrderDetailPage();
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text != null)
+            {
+                bool searchData = false;
+
+                connection.Open();
+
+                SqlCommand selectQuery = new SqlCommand("select * from OrderDetails where OrderID ='" + txtOrderID.Text + "'", connection);
+                SqlDataReader dataReader = selectQuery.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    searchData = true;
+                    SqlCommand deleteData = new SqlCommand("delete from OrderDetails where ID='" + txtOrderID.Text + "'", connection);
+                    deleteData.ExecuteNonQuery();
+                    MessageBox.Show("Sipariş Detayı kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    connection.Close();
+                    OrderDetailShow();
+                    //CleanOrderPage();
+                    break;
+                }
+                if (searchData == false)
+                {
+                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    connection.Close();
+                    CleanOrderDetailPage();
+                }
+
+            }
+            else
+                MessageBox.Show("Lütfen kayıtlarda olan bir Sipariş ID giriniz !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            CleanOrderDetailPage();
+        }
+
+        private void CleanOrderDetailPage()
+        {
+            txtSearch.Clear(); txtOrderID.Clear(); txtProductID.Clear(); txtQuantity.Clear(); txtTotalPrice.Clear(); 
         }
     }
 }

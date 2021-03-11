@@ -96,5 +96,17 @@ namespace ProjectFarmBA_WFA
             wCustomer customer = new wCustomer();
             customer.Show();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            wOrder order = new wOrder();
+            order.Show();
+        }
+
+        private void btnOrderDetail_Click(object sender, EventArgs e)
+        {
+            wOrderDetail orderDetail = new wOrderDetail();
+            orderDetail.Show();
+        }
     }
 }

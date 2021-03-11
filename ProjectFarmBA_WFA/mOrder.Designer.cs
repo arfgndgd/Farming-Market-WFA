@@ -73,9 +73,7 @@ namespace ProjectFarmBA_WFA
             this.btnSearch = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtShipperID = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtAppUserID = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVResult)).BeginInit();
@@ -485,16 +483,6 @@ namespace ProjectFarmBA_WFA
             this.txtShipperID.Size = new System.Drawing.Size(100, 22);
             this.txtShipperID.TabIndex = 149;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1409, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 33);
-            this.button1.TabIndex = 150;
-            this.button1.Text = "Temizle";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // txtAppUserID
             // 
             this.txtAppUserID.Location = new System.Drawing.Point(495, 47);
@@ -502,23 +490,11 @@ namespace ProjectFarmBA_WFA
             this.txtAppUserID.Size = new System.Drawing.Size(100, 22);
             this.txtAppUserID.TabIndex = 149;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1409, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 33);
-            this.button2.TabIndex = 150;
-            this.button2.Text = "Temizle";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // mOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1866, 832);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
@@ -621,8 +597,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtShipperID;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtAppUserID;
-        private System.Windows.Forms.Button button2;
     }
 }

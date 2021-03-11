@@ -253,6 +253,18 @@
     <Compile Include="wEmployee.Designer.cs">
       <DependentUpon>wEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="wOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wOrder.Designer.cs">
+      <DependentUpon>wOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="wOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wOrderDetail.Designer.cs">
+      <DependentUpon>wOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="wProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +372,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="wEmployee.resx">
       <DependentUpon>wEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wOrder.resx">
+      <DependentUpon>wOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wOrderDetail.resx">
+      <DependentUpon>wOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="wProduct.resx">
       <DependentUpon>wProduct.cs</DependentUpon>
