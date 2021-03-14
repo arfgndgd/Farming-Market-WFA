@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ProjectFarmBAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ProjectFarmBAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -134,7 +134,6 @@
           <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="UserName" Type="nvarchar(max)" />
           <Property Name="Email" Type="nvarchar(max)" />
-          <Property Name="EmailAddress" Type="nvarchar(max)" />
           <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
           <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
           <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
@@ -210,6 +209,7 @@
           <Property Name="DeletedDate" Type="datetime" />
           <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="ShipperID" Type="int" />
+          <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Storages">
           <Key>
@@ -519,8 +519,7 @@
             <End Role="UserProfiles" EntitySet="UserProfiles" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProjectFarmBAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -751,6 +750,7 @@
           <NavigationProperty Name="Customer" Relationship="Self.FK_dbo_StorageOrders_dbo_Customers_CustomerID" FromRole="StorageOrders" ToRole="Customers" />
           <NavigationProperty Name="Shipper" Relationship="Self.FK_dbo_StorageOrders_dbo_Shippers_Shipper_ID" FromRole="StorageOrders" ToRole="Shippers" />
           <NavigationProperty Name="StorageOrderDetails" Relationship="Self.FK_dbo_StorageOrderDetails_dbo_StorageOrders_StorageOrderID" FromRole="StorageOrders" ToRole="StorageOrderDetails" />
+          <Property Name="TotalPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Storage">
           <Key>
@@ -1206,7 +1206,6 @@
                 <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
                 <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
                 <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
                 <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
@@ -1276,6 +1275,7 @@
           <EntitySetMapping Name="StorageOrders">
             <EntityTypeMapping TypeName="ProjectFarmBAModel.StorageOrder">
               <MappingFragment StoreEntitySet="StorageOrders">
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ShippedAddress" ColumnName="ShippedAddress" />
                 <ScalarProperty Name="ShippedCity" ColumnName="ShippedCity" />

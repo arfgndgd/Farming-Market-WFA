@@ -30,6 +30,7 @@ namespace ProjectFarmBA_WFA.ModelContext
         public Nullable<System.DateTime> DeletedDate { get; set; }
         public int Status { get; set; }
         public Nullable<int> ShipperID { get; set; }
+        public decimal TotalPrice { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Shipper Shipper { get; set; }
