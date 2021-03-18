@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f72622d509514b1fae5db375217e3edf" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectFarmBAModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.AppUser" Width="1.5" PointX="3.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Blog" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Department" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Employee" Width="1.5" PointX="11" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.OrderDetail" Width="1.5" PointX="8.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Order" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Product" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Shipper" Width="1.5" PointX="3.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.StorageCategory" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Storage" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.Supplier" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectFarmBAModel.UserProfile" Width="1.5" PointX="6" PointY="16.75" IsExpanded="true" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Orders_dbo_AppUsers_AppUserID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_UserProfiles_dbo_AppUsers_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Products_dbo_Categories_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Employees_dbo_Departments_DepartmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_OrderDetails_dbo_Orders_OrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_OrderDetails_dbo_Products_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Orders_dbo_Shippers_ShipperID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Products_dbo_Suppliers_SupplierID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectFarmBAModel.FK_dbo_Storages_dbo_Suppliers_SupplierID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

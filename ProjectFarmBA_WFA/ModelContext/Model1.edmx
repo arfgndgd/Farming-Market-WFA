@@ -1,0 +1,1088 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProjectFarmBAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppUsers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ActivationCode" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="URole" Type="int" Nullable="false" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+          <Property Name="RememberMe" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="TCNO" Type="nvarchar(max)" />
+          <Property Name="ERole" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="smallint" Nullable="false" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShippedAddress" Type="nvarchar(max)" />
+          <Property Name="ShippedCity" Type="nvarchar(max)" />
+          <Property Name="ShippedCountry" Type="nvarchar(max)" />
+          <Property Name="AppUserID" Type="int" />
+          <Property Name="ShipperID" Type="int" />
+          <Property Name="TotalPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar(max)" />
+          <Property Name="UnitPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UnitInStock" Type="smallint" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+          <Property Name="Features" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Shippers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShipperName" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StorageCategories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StorageCategoryName" Type="nvarchar(max)" />
+          <Property Name="StorageDescription" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Storages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitInPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar(max)" />
+          <Property Name="SupplierID" Type="int" />
+          <Property Name="StorageCategoryID" Type="int" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+          <Property Name="StorageName" Type="nvarchar(max)" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UserProfiles">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Veri Yaratma Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Güncelleme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Silme Tarihi" Type="datetime2" Precision="7" />
+          <Property Name="Veri Durumu" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_dbo_Employees_dbo_Departments_DepartmentID">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Orders_OrderID">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Products_ProductID">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_AppUsers_AppUserID">
+          <End Role="AppUsers" Type="Self.AppUsers" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="AppUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_Shippers_ShipperID">
+          <End Role="Shippers" Type="Self.Shippers" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shippers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ShipperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Products_dbo_Categories_CategoryID">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Products_dbo_Suppliers_SupplierID">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
+          <End Role="StorageCategories" Type="Self.StorageCategories" Multiplicity="0..1" />
+          <End Role="Storages" Type="Self.Storages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageCategories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Storages">
+              <PropertyRef Name="StorageCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Storages_dbo_Suppliers_SupplierID">
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="0..1" />
+          <End Role="Storages" Type="Self.Storages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Storages">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserProfiles_dbo_AppUsers_ID">
+          <End Role="AppUsers" Type="Self.AppUsers" Multiplicity="1" />
+          <End Role="UserProfiles" Type="Self.UserProfiles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserProfiles">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectFarmBAModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppUsers" EntityType="Self.AppUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shippers" EntityType="Self.Shippers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StorageCategories" EntityType="Self.StorageCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Storages" EntityType="Self.Storages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfiles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_Employees_dbo_Departments_DepartmentID" Association="Self.FK_dbo_Employees_dbo_Departments_DepartmentID">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Orders_OrderID" Association="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Products_ProductID" Association="Self.FK_dbo_OrderDetails_dbo_Products_ProductID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_AppUsers_AppUserID" Association="Self.FK_dbo_Orders_dbo_AppUsers_AppUserID">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_Shippers_ShipperID" Association="Self.FK_dbo_Orders_dbo_Shippers_ShipperID">
+            <End Role="Shippers" EntitySet="Shippers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Products_dbo_Categories_CategoryID" Association="Self.FK_dbo_Products_dbo_Categories_CategoryID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Products_dbo_Suppliers_SupplierID" Association="Self.FK_dbo_Products_dbo_Suppliers_SupplierID">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" Association="Self.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
+            <End Role="StorageCategories" EntitySet="StorageCategories" />
+            <End Role="Storages" EntitySet="Storages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Storages_dbo_Suppliers_SupplierID" Association="Self.FK_dbo_Storages_dbo_Suppliers_SupplierID">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Storages" EntitySet="Storages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserProfiles_dbo_AppUsers_ID" Association="Self.FK_dbo_UserProfiles_dbo_AppUsers_ID">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="UserProfiles" EntitySet="UserProfiles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProjectFarmBAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AppUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ActivationCode" Type="Guid" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="URole" Type="Int32" Nullable="false" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <Property Name="RememberMe" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_AppUsers_AppUserID" FromRole="AppUsers" ToRole="Orders" />
+          <NavigationProperty Name="UserProfile" Relationship="Self.FK_dbo_UserProfiles_dbo_AppUsers_ID" FromRole="AppUsers" ToRole="UserProfiles" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryID" FromRole="Categories" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_dbo_Employees_dbo_Departments_DepartmentID" FromRole="Departments" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TCNO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ERole" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_dbo_Employees_dbo_Departments_DepartmentID" FromRole="Employees" ToRole="Departments" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_dbo_OrderDetails_dbo_Products_ProductID" FromRole="OrderDetails" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShippedAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippedCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippedCountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AppUserID" Type="Int32" />
+          <Property Name="ShipperID" Type="Int32" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AppUser" Relationship="Self.FK_dbo_Orders_dbo_AppUsers_AppUserID" FromRole="Orders" ToRole="AppUsers" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID" FromRole="Orders" ToRole="OrderDetails" />
+          <NavigationProperty Name="Shipper" Relationship="Self.FK_dbo_Orders_dbo_Shippers_ShipperID" FromRole="Orders" ToRole="Shippers" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="UnitInStock" Type="Int16" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <Property Name="Features" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_dbo_Products_dbo_Categories_CategoryID" FromRole="Products" ToRole="Categories" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK_dbo_OrderDetails_dbo_Products_ProductID" FromRole="Products" ToRole="OrderDetails" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_dbo_Products_dbo_Suppliers_SupplierID" FromRole="Products" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Shipper">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipperName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_Shippers_ShipperID" FromRole="Shippers" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="StorageCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StorageCategoryName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StorageDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Storages" Relationship="Self.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" FromRole="StorageCategories" ToRole="Storages" />
+        </EntityType>
+        <EntityType Name="Storage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitInPrice" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierID" Type="Int32" />
+          <Property Name="StorageCategoryID" Type="Int32" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <Property Name="StorageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="StorageCategory" Relationship="Self.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" FromRole="Storages" ToRole="StorageCategories" />
+          <NavigationProperty Name="Supplier" Relationship="Self.FK_dbo_Storages_dbo_Suppliers_SupplierID" FromRole="Storages" ToRole="Suppliers" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Self.FK_dbo_Products_dbo_Suppliers_SupplierID" FromRole="Suppliers" ToRole="Products" />
+          <NavigationProperty Name="Storages" Relationship="Self.FK_dbo_Storages_dbo_Suppliers_SupplierID" FromRole="Suppliers" ToRole="Storages" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Veri_Yaratma_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Güncelleme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Silme_Tarihi" Type="DateTime" Precision="7" />
+          <Property Name="Veri_Durumu" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AppUser" Relationship="Self.FK_dbo_UserProfiles_dbo_AppUsers_ID" FromRole="UserProfiles" ToRole="AppUsers" />
+        </EntityType>
+        <Association Name="FK_dbo_Orders_dbo_AppUsers_AppUserID">
+          <End Role="AppUsers" Type="Self.AppUser" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="AppUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_UserProfiles_dbo_AppUsers_ID">
+          <End Role="AppUsers" Type="Self.AppUser" Multiplicity="1" />
+          <End Role="UserProfiles" Type="Self.UserProfile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="AppUsers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserProfiles">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Products_dbo_Categories_CategoryID">
+          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Employees_dbo_Departments_DepartmentID">
+          <End Role="Departments" Type="Self.Department" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Orders_OrderID">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="OrderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_OrderDetails_dbo_Products_ProductID">
+          <End Role="Products" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_Shippers_ShipperID">
+          <End Role="Shippers" Type="Self.Shipper" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shippers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ShipperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Products_dbo_Suppliers_SupplierID">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
+          <End Role="StorageCategories" Type="Self.StorageCategory" Multiplicity="0..1" />
+          <End Role="Storages" Type="Self.Storage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StorageCategories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Storages">
+              <PropertyRef Name="StorageCategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Storages_dbo_Suppliers_SupplierID">
+          <End Role="Suppliers" Type="Self.Supplier" Multiplicity="0..1" />
+          <End Role="Storages" Type="Self.Storage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suppliers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Storages">
+              <PropertyRef Name="SupplierID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProjectFarmBAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="AppUsers" EntityType="Self.AppUser" />
+          <EntitySet Name="Blogs" EntityType="Self.Blog" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Shippers" EntityType="Self.Shipper" />
+          <EntitySet Name="StorageCategories" EntityType="Self.StorageCategory" />
+          <EntitySet Name="Storages" EntityType="Self.Storage" />
+          <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+          <AssociationSet Name="FK_dbo_Orders_dbo_AppUsers_AppUserID" Association="Self.FK_dbo_Orders_dbo_AppUsers_AppUserID">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_UserProfiles_dbo_AppUsers_ID" Association="Self.FK_dbo_UserProfiles_dbo_AppUsers_ID">
+            <End Role="AppUsers" EntitySet="AppUsers" />
+            <End Role="UserProfiles" EntitySet="UserProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Products_dbo_Categories_CategoryID" Association="Self.FK_dbo_Products_dbo_Categories_CategoryID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Employees_dbo_Departments_DepartmentID" Association="Self.FK_dbo_Employees_dbo_Departments_DepartmentID">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Orders_OrderID" Association="Self.FK_dbo_OrderDetails_dbo_Orders_OrderID">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_OrderDetails_dbo_Products_ProductID" Association="Self.FK_dbo_OrderDetails_dbo_Products_ProductID">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_Shippers_ShipperID" Association="Self.FK_dbo_Orders_dbo_Shippers_ShipperID">
+            <End Role="Shippers" EntitySet="Shippers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Products_dbo_Suppliers_SupplierID" Association="Self.FK_dbo_Products_dbo_Suppliers_SupplierID">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID" Association="Self.FK_dbo_Storages_dbo_StorageCategories_StorageCategoryID">
+            <End Role="StorageCategories" EntitySet="StorageCategories" />
+            <End Role="Storages" EntitySet="Storages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Storages_dbo_Suppliers_SupplierID" Association="Self.FK_dbo_Storages_dbo_Suppliers_SupplierID">
+            <End Role="Suppliers" EntitySet="Suppliers" />
+            <End Role="Storages" EntitySet="Storages" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProjectFarmBAModelStoreContainer" CdmEntityContainer="ProjectFarmBAEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppUsers">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.AppUser">
+              <MappingFragment StoreEntitySet="AppUsers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+                <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="URole" ColumnName="URole" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+                <ScalarProperty Name="RememberMe" ColumnName="RememberMe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Blog">
+              <MappingFragment StoreEntitySet="Blogs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Department">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="TCNO" ColumnName="TCNO" />
+                <ScalarProperty Name="ERole" ColumnName="ERole" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShippedAddress" ColumnName="ShippedAddress" />
+                <ScalarProperty Name="ShippedCity" ColumnName="ShippedCity" />
+                <ScalarProperty Name="ShippedCountry" ColumnName="ShippedCountry" />
+                <ScalarProperty Name="AppUserID" ColumnName="AppUserID" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="UnitInStock" ColumnName="UnitInStock" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+                <ScalarProperty Name="Features" ColumnName="Features" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shippers">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Shipper">
+              <MappingFragment StoreEntitySet="Shippers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StorageCategories">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.StorageCategory">
+              <MappingFragment StoreEntitySet="StorageCategories">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StorageCategoryName" ColumnName="StorageCategoryName" />
+                <ScalarProperty Name="StorageDescription" ColumnName="StorageDescription" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Storages">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Storage">
+              <MappingFragment StoreEntitySet="Storages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UnitInPrice" ColumnName="UnitInPrice" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="StorageCategoryID" ColumnName="StorageCategoryID" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+                <ScalarProperty Name="StorageName" ColumnName="StorageName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="ProjectFarmBAModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfiles">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Veri_Yaratma_Tarihi" ColumnName="Veri Yaratma Tarihi" />
+                <ScalarProperty Name="Veri_Güncelleme_Tarihi" ColumnName="Veri Güncelleme Tarihi" />
+                <ScalarProperty Name="Veri_Silme_Tarihi" ColumnName="Veri Silme Tarihi" />
+                <ScalarProperty Name="Veri_Durumu" ColumnName="Veri Durumu" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
