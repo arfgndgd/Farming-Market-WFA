@@ -42,9 +42,6 @@ namespace ProjectFarmBA_WFA
             this.btnPageSupplier = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBlog = new System.Windows.Forms.Button();
-            this.btnCustomer = new System.Windows.Forms.Button();
-            this.btnStorageOrder = new System.Windows.Forms.Button();
-            this.btnStorageOrderDetail = new System.Windows.Forms.Button();
             this.btnOrderDetail = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
@@ -187,43 +184,10 @@ namespace ProjectFarmBA_WFA
             this.btnBlog.UseVisualStyleBackColor = true;
             this.btnBlog.Click += new System.EventHandler(this.btnBlog_Click);
             // 
-            // btnCustomer
-            // 
-            this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnCustomer.Location = new System.Drawing.Point(356, 167);
-            this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(122, 59);
-            this.btnCustomer.TabIndex = 7;
-            this.btnCustomer.Text = "Müşteri";
-            this.btnCustomer.UseVisualStyleBackColor = true;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
-            // 
-            // btnStorageOrder
-            // 
-            this.btnStorageOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnStorageOrder.Location = new System.Drawing.Point(356, 257);
-            this.btnStorageOrder.Name = "btnStorageOrder";
-            this.btnStorageOrder.Size = new System.Drawing.Size(122, 59);
-            this.btnStorageOrder.TabIndex = 8;
-            this.btnStorageOrder.Text = "Ambar Satış";
-            this.btnStorageOrder.UseVisualStyleBackColor = true;
-            this.btnStorageOrder.Click += new System.EventHandler(this.btnStorageOrder_Click);
-            // 
-            // btnStorageOrderDetail
-            // 
-            this.btnStorageOrderDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnStorageOrderDetail.Location = new System.Drawing.Point(356, 345);
-            this.btnStorageOrderDetail.Name = "btnStorageOrderDetail";
-            this.btnStorageOrderDetail.Size = new System.Drawing.Size(122, 59);
-            this.btnStorageOrderDetail.TabIndex = 9;
-            this.btnStorageOrderDetail.Text = "Ambar Satış Detay";
-            this.btnStorageOrderDetail.UseVisualStyleBackColor = true;
-            this.btnStorageOrderDetail.Click += new System.EventHandler(this.btnStorageOrderDetail_Click);
-            // 
             // btnOrderDetail
             // 
             this.btnOrderDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderDetail.Location = new System.Drawing.Point(648, 345);
+            this.btnOrderDetail.Location = new System.Drawing.Point(356, 257);
             this.btnOrderDetail.Name = "btnOrderDetail";
             this.btnOrderDetail.Size = new System.Drawing.Size(122, 59);
             this.btnOrderDetail.TabIndex = 9;
@@ -234,7 +198,7 @@ namespace ProjectFarmBA_WFA
             // btnOrder
             // 
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrder.Location = new System.Drawing.Point(501, 345);
+            this.btnOrder.Location = new System.Drawing.Point(356, 167);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(122, 59);
             this.btnOrder.TabIndex = 8;
@@ -248,10 +212,7 @@ namespace ProjectFarmBA_WFA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnOrderDetail);
-            this.Controls.Add(this.btnStorageOrderDetail);
             this.Controls.Add(this.btnOrder);
-            this.Controls.Add(this.btnStorageOrder);
-            this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblEmployee);
@@ -289,9 +250,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Button btnPageSupplier;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBlog;
-        private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.Button btnStorageOrder;
-        private System.Windows.Forms.Button btnStorageOrderDetail;
         private System.Windows.Forms.Button btnOrderDetail;
         private System.Windows.Forms.Button btnOrder;
     }

@@ -91,11 +91,6 @@ namespace ProjectFarmBA_WFA
             blog.Show();
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            wCustomer customer = new wCustomer();
-            customer.Show();
-        }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {

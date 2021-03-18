@@ -30,7 +30,7 @@ namespace ProjectFarmBA_WFA
             try
             { 
                 connection.Open();
-                SqlDataAdapter storageList = new SqlDataAdapter("select ID , ProductName as [Ürün Adı], UnitInPrice as [Fiyat], SupplierID as [Tedarikçi], StorageCategoryID as [Kategori],  [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], TotalWeight as [Toplam Ağırlık] from Storages", connection);
+                SqlDataAdapter storageList = new SqlDataAdapter("select ID , StorageName as [Ürün Adı], UnitInPrice as [Fiyat], SupplierID as [Tedarikçi], StorageCategoryID as [Kategori],  [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], TotalWeight as [Toplam Ağırlık] from Storages", connection);
                 DataSet dataSet = new DataSet();
                 storageList.Fill(dataSet);
                 dGVStorage.DataSource = dataSet.Tables[0];
@@ -129,7 +129,7 @@ namespace ProjectFarmBA_WFA
             bool dataCheck = false;
 
             connection.Open();
-            SqlCommand selectQuery = new SqlCommand("select * from Storages where ProductName ='" + txtProductName.Text + "'", connection);
+            SqlCommand selectQuery = new SqlCommand("select * from Storages where StorageName ='" + txtProductName.Text + "'", connection);
             SqlDataReader dataReader = selectQuery.ExecuteReader();
             while (dataReader.Read())
             {
@@ -184,9 +184,9 @@ namespace ProjectFarmBA_WFA
                         connection.Open();
 
                         Storage s = new Storage();
-                        s.ProductName = txtProductName.Text;
+                        s.StorageName = txtProductName.Text;
                         s.UnitInPrice = Convert.ToInt32(txtUnitPrice.Text);
-                        s.TotalWeight = Convert.ToInt16(txtTotalWeight.Text);
+                        s.Quantity = Convert.ToInt16(txtTotalWeight.Text);
                         s.SupplierID = cmbSupplier.SelectedItem != null ? (cmbSupplier.SelectedItem as Supplier).ID : default(int?);
                         s.StorageCategoryID = cmbCategory.SelectedItem != null ? (cmbCategory.SelectedItem as Category).ID : default(int?);
                         s.Veri_Yaratma_Tarihi = DateTime.Now;
@@ -255,7 +255,7 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Storages set UnitInPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', SupplierID = '" + cmbSupplier.Text + "', StorageCategoryID='" + cmbCategory.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "', TotalWeight='" + txtTotalWeight.Text + "' where ProductName='" + txtProductName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Storages set UnitInPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', SupplierID = '" + cmbSupplier.Text + "', StorageCategoryID='" + cmbCategory.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "', TotalWeight='" + txtTotalWeight.Text + "' where StorageName='" + txtProductName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
 
                     connection.Close();
@@ -291,12 +291,12 @@ namespace ProjectFarmBA_WFA
 
                 connection.Open();
 
-                SqlCommand selectQuery = new SqlCommand("select * from Storages where ProductName='" + txtProductName.Text + "'", connection);
+                SqlCommand selectQuery = new SqlCommand("select * from Storages where StorageName='" + txtProductName.Text + "'", connection);
                 SqlDataReader dataReader = selectQuery.ExecuteReader();
                 while (dataReader.Read())
                 {
                     searchData = true;
-                    SqlCommand deleteData = new SqlCommand("delete from Storages where ProductName='" + txtProductName.Text + "'", connection);
+                    SqlCommand deleteData = new SqlCommand("delete from Storages where StorageName='" + txtProductName.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
                     MessageBox.Show("Ambar Ürünü kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
@@ -322,7 +322,7 @@ namespace ProjectFarmBA_WFA
             if (txtProductName.Text.Length > 0)
             {
                 connection.Open();
-                SqlCommand selectQuery = new SqlCommand("select * from Storages where ProductName = '" + txtProductName.Text + "'", connection);
+                SqlCommand selectQuery = new SqlCommand("select * from Storages where StorageName = '" + txtProductName.Text + "'", connection);
                 SqlDataReader dataReader = selectQuery.ExecuteReader();
 
                 while (dataReader.Read())

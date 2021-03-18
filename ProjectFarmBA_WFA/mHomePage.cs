@@ -90,23 +90,7 @@ namespace ProjectFarmBA_WFA
             blog.Show();
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
-        {
-            mCustomer customer = new mCustomer();
-            customer.Show();
-        }
-
-        private void btnStorageOrder_Click(object sender, EventArgs e)
-        {
-            mStorageOrder storageOrder = new mStorageOrder();
-            storageOrder.Show();
-        }
-
-        private void btnStorageOrderDetail_Click(object sender, EventArgs e)
-        {
-            mStorageOrderDetail storageOrderDetail = new mStorageOrderDetail();
-            storageOrderDetail.Show();
-        }
+       
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -119,5 +103,7 @@ namespace ProjectFarmBA_WFA
             mOrderDetail detail = new mOrderDetail();
             detail.Show();
         }
+
+       
     }
 }

@@ -194,12 +194,11 @@ namespace ProjectFarmBA_WFA
             this.btnCustomer.TabIndex = 16;
             this.btnCustomer.Text = "Müşteri";
             this.btnCustomer.UseVisualStyleBackColor = true;
-            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnOrderDetail
             // 
             this.btnOrderDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrderDetail.Location = new System.Drawing.Point(666, 329);
+            this.btnOrderDetail.Location = new System.Drawing.Point(379, 329);
             this.btnOrderDetail.Name = "btnOrderDetail";
             this.btnOrderDetail.Size = new System.Drawing.Size(122, 59);
             this.btnOrderDetail.TabIndex = 18;
@@ -210,7 +209,7 @@ namespace ProjectFarmBA_WFA
             // btnOrder
             // 
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOrder.Location = new System.Drawing.Point(519, 329);
+            this.btnOrder.Location = new System.Drawing.Point(379, 238);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(122, 59);
             this.btnOrder.TabIndex = 17;

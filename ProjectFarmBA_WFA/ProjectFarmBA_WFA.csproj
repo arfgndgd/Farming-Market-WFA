@@ -61,12 +61,6 @@
     <Compile Include="mBlog.Designer.cs">
       <DependentUpon>mBlog.cs</DependentUpon>
     </Compile>
-    <Compile Include="mCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mCustomer.Designer.cs">
-      <DependentUpon>mCustomer.cs</DependentUpon>
-    </Compile>
     <Compile Include="mDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,75 +85,6 @@
     </Compile>
     <Compile Include="mEmployee.Designer.cs">
       <DependentUpon>mEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\AppUser.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Blog.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Category.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Customer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\C__MigrationHistory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Department.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Employee.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Order.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\OrderDetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Product.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Shipper.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Storage.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\StorageCategory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\StorageOrder.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\StorageOrderDetail.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\Supplier.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelContext\UserProfile.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="mOrder.cs">
       <SubType>Form</SubType>
@@ -203,18 +128,6 @@
     <Compile Include="mStorageCategory.Designer.cs">
       <DependentUpon>mStorageCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="mStorageOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mStorageOrder.Designer.cs">
-      <DependentUpon>mStorageOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mStorageOrderDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mStorageOrderDetail.Designer.cs">
-      <DependentUpon>mStorageOrderDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="mSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,12 +141,6 @@
     </Compile>
     <Compile Include="wBlog.Designer.cs">
       <DependentUpon>wBlog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="wCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="wCustomer.Designer.cs">
-      <DependentUpon>wCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="wDepartment.cs">
       <SubType>Form</SubType>
@@ -304,9 +211,6 @@
     <EmbeddedResource Include="mBlog.resx">
       <DependentUpon>mBlog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mCustomer.resx">
-      <DependentUpon>mCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="mDepartment.resx">
       <DependentUpon>mDepartment.cs</DependentUpon>
     </EmbeddedResource>
@@ -340,12 +244,6 @@
     <EmbeddedResource Include="mStorageCategory.resx">
       <DependentUpon>mStorageCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mStorageOrder.resx">
-      <DependentUpon>mStorageOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mStorageOrderDetail.resx">
-      <DependentUpon>mStorageOrderDetail.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="mSupplier.resx">
       <DependentUpon>mSupplier.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,9 +258,6 @@
     </Compile>
     <EmbeddedResource Include="wBlog.resx">
       <DependentUpon>wBlog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="wCustomer.resx">
-      <DependentUpon>wCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="wDepartment.resx">
       <DependentUpon>wDepartment.cs</DependentUpon>
@@ -397,13 +292,6 @@
     <EmbeddedResource Include="wSupplier.resx">
       <DependentUpon>wSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="ModelContext\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ModelContext\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -421,18 +309,8 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="ModelContext\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelContext\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
+    <Folder Include="ModelContext\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
