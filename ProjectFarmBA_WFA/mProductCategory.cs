@@ -132,6 +132,7 @@ namespace ProjectFarmBA_WFA
                         c.CategoryName = txtCategoryName.Text;
                         c.Description = txtDescription.Text;
                         c.Veri_Yaratma_Tarihi = DateTime.Now;
+                        c.Veri_Durumu = 1;
                         db.Categories.Add(c);
                         db.SaveChanges();
 
@@ -238,7 +239,7 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Categories set  Description='" + txtDescription.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where CategoryName='" + txtCategoryName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Categories set  Description='" + txtDescription.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now/*.ToString("yyyy-MM-dd-HH-mm-ss")*/ + "', [Veri Durumu] = '" + Convert.ToInt32(2) + "' where CategoryName='" + txtCategoryName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
                     connection.Close();
 

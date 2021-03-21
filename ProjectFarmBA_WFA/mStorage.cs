@@ -190,6 +190,7 @@ namespace ProjectFarmBA_WFA
                         s.SupplierID = cmbSupplier.SelectedItem != null ? (cmbSupplier.SelectedItem as Supplier).ID : default(int?);
                         s.StorageCategoryID = cmbCategory.SelectedItem != null ? (cmbCategory.SelectedItem as Category).ID : default(int?);
                         s.Veri_Yaratma_Tarihi = DateTime.Now;
+                        s.Veri_Durumu = 1;
                         db.Storages.Add(s);
                         db.SaveChanges();
 

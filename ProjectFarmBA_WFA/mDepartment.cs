@@ -128,6 +128,7 @@ namespace ProjectFarmBA_WFA
                         d.DepartmentName = txtDepartmentName.Text;
                         d.Description = txtDescription.Text;
                         d.Veri_Yaratma_Tarihi = DateTime.Now;
+                        d.Veri_Durumu = 1;
                         db.Departments.Add(d);
                         db.SaveChanges();
 

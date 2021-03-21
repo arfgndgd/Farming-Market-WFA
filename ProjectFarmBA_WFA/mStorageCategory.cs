@@ -113,6 +113,7 @@ namespace ProjectFarmBA_WFA
                         s.StorageCategoryName = txtStorageCategoryName.Text;
                         s.StorageDescription = txtStorageDescription.Text;
                         s.Veri_Yaratma_Tarihi = DateTime.Now;
+                        s.Veri_Durumu = 1;
                         db.StorageCategories.Add(s);
                         db.SaveChanges();
 

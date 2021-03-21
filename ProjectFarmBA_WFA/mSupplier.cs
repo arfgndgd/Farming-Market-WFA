@@ -155,6 +155,7 @@ namespace ProjectFarmBA_WFA
                         s.Phone = txtPhone.Text;
                         s.Email = txtEmail.Text;
                         s.Veri_Yaratma_Tarihi = DateTime.Now;
+                        s.Veri_Durumu = 1;
                         db.Suppliers.Add(s);
                         db.SaveChanges();
 

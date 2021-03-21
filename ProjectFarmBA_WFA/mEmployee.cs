@@ -294,11 +294,13 @@ namespace ProjectFarmBA_WFA
                         em.Phone = txtPhone.Text;
                         em.Address = txtAddress.Text;
                         em.City = txtCity.Text;
+                       
                         //TODO: foto ekle, yetki, gender
                         //em.ERole = 
                         em.DepartmentID = cmbDepartment.SelectedItem != null ? (cmbDepartment.SelectedItem as Department).ID : default(int?);
                         em.Password = txtPassword.Text;
                         em.Veri_Yaratma_Tarihi = DateTime.Now;
+                        em.Veri_Durumu = 1;
                         db.Employees.Add(em);
                         db.SaveChanges();
 

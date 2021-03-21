@@ -123,6 +123,7 @@ namespace ProjectFarmBA_WFA
                         b.Title = txtTitle.Text;
                         b.Description = txtDescription.Text;
                         b.Veri_Yaratma_Tarihi = DateTime.Now;
+                        b.Veri_Durumu = 1;
                         db.Blogs.Add(b);
                         db.SaveChanges();
 
