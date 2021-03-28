@@ -240,7 +240,7 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Suppliers set  Address='" + txtAddress.Text + "', City='" + txtCity.Text + "', Country='" + txtCountry.Text + "', Phone='" + txtPhone.Text + "', Email='" + txtEmail.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where SupplierName='" + txtSupplierName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Suppliers set  Address='" + txtAddress.Text + "', City='" + txtCity.Text + "', Country='" + txtCountry.Text + "', Phone='" + txtPhone.Text + "', Email='" + txtEmail.Text + "', [Veri Durumu] = '" + 2 + "' where SupplierName='" + txtSupplierName.Text + "'", connection); //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
                     updateData.ExecuteNonQuery();
                     connection.Close();
 

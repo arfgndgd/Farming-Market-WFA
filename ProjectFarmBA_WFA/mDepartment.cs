@@ -235,9 +235,9 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Departments set Description='" + txtDescription.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where DepartmentName='" + txtDepartmentName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Departments set Description='" + txtDescription.Text + "', [Veri Durumu] = '" + 2 + "' where DepartmentName='" + txtDepartmentName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
-
+                    //TODO:  [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' 
                     connection.Close();
 
                     //resmi debug içinde kaydetme

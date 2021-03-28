@@ -261,7 +261,8 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update Blogs set  Description='" + txtDescription.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where Title='" + txtTitle.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Blogs set  Description='" + txtDescription.Text + "', [Veri Durumu] = '" + 2 + "' where Title='" + txtTitle.Text + "'", connection);
+                    //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
                     updateData.ExecuteNonQuery();
                     connection.Close();
 

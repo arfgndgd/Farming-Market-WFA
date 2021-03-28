@@ -229,8 +229,8 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update OrderDetails set ProductID= '" + Convert.ToInt32(txtProductID.Text) + "', TotalPrice= '" + Convert.ToInt32(txtTotalPrice.Text) + "',Quantity= '" + Convert.ToInt16(txtQuantity.Text) + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where OrderID='" + txtOrderID.Text + "'", connection);
-
+                    SqlCommand updateData = new SqlCommand("update OrderDetails set ProductID= '" + Convert.ToInt32(txtProductID.Text) + "', TotalPrice= '" + Convert.ToInt32(txtTotalPrice.Text) + "',Quantity= '" + Convert.ToInt16(txtQuantity.Text) + "', [Veri Durumu] = '" + 2 + "' where OrderID='" + txtOrderID.Text + "'", connection);
+                    //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
                     updateData.ExecuteNonQuery();
 
                     connection.Close();

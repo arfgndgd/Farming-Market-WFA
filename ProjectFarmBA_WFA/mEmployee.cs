@@ -468,13 +468,6 @@ namespace ProjectFarmBA_WFA
 
             if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "" && txtGender.Text != "" && txtERole.Text != "")
             {
-                //Yetki 
-                //if (rdbManager.Checked == true)
-                //{
-                //    authority = "1";
-                //}
-                //else if (rdbWorker.Checked == true)
-                //    authority = "2";
                 try
                 {
                     connection.Open();

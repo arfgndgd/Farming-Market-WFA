@@ -190,8 +190,8 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Orders set ShippedAddress='" + txtAddress.Text + "', ShippedCity= '" + txtCity.Text + "', ShippedCountry= '" + txtCountry.Text + "',AppUserID= '" + txtAppUserID.Text + "',ShipperID= '" + txtShipperID.Text + "',TotalPrice= '" + txtTotalPrice.Text.Replace(",", ".") + "',UserName= '" + txtUserName.Text + "',Email= '" + txtEmail.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where ID='" + lblID.Text + "'", connection);
-
+                    SqlCommand updateData = new SqlCommand("update Orders set ShippedAddress='" + txtAddress.Text + "', ShippedCity= '" + txtCity.Text + "', ShippedCountry= '" + txtCountry.Text + "',AppUserID= '" + txtAppUserID.Text + "',ShipperID= '" + txtShipperID.Text + "',TotalPrice= '" + txtTotalPrice.Text.Replace(",", ".") + "',UserName= '" + txtUserName.Text + "',Email= '" + txtEmail.Text + "', [Veri Durumu] = '" + 2 + "'  where ID='" + lblID.Text + "'", connection);
+                    //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
                     updateData.ExecuteNonQuery();
 
                     connection.Close();

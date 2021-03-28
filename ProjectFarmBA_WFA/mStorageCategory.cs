@@ -174,7 +174,8 @@ namespace ProjectFarmBA_WFA
                 {
                     connection.Open();
 
-                    SqlCommand updateData = new SqlCommand("update StorageCategories set  StorageDescription='" + txtStorageDescription.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where StorageCategoryName='" + txtStorageCategoryName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update StorageCategories set  StorageDescription='" + txtStorageDescription.Text + "', [Veri Durumu] = '" + 2 + "' where StorageCategoryName='" + txtStorageCategoryName.Text + "'", connection); 
+                    //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
                     updateData.ExecuteNonQuery();
                     connection.Close();
 

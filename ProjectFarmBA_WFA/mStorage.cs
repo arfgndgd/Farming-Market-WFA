@@ -256,8 +256,8 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Storages set UnitInPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', SupplierID = '" + cmbSupplier.Text + "', StorageCategoryID='" + cmbCategory.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "', Quantity='" + txtTotalWeight.Text + "' where StorageName='" + txtProductName.Text + "'", connection);
-                    updateData.ExecuteNonQuery();
+                    SqlCommand updateData = new SqlCommand("update Storages set UnitInPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', SupplierID = '" + cmbSupplier.Text + "', StorageCategoryID='" + cmbCategory.Text + "', Quantity='" + txtTotalWeight.Text + "', [Veri Durumu] = '" + 2 + "' where StorageName='" + txtProductName.Text + "'", connection);
+                    updateData.ExecuteNonQuery(); //TODO:  [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
 
                     connection.Close();
                     MessageBox.Show("Kayıt Güncellendi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

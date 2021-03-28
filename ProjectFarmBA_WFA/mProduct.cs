@@ -328,9 +328,9 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now+ "' where ProductName='" + txtProductName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Products set UnitPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', UnitInStock='" + txtStock.Text + "', CategoryID='" + cmbCategory.Text + "', SupplierID = '" + cmbSupplier.Text + "', Features = '" + txtFeatures.Text + "',[Veri Durumu] = '" + 2 + "'  where ProductName='" + txtProductName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
-
+                    //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now+ "'
                     #region MyRegion
                     //Product p = new Product();
                     //p.ProductName = txtProductName.Text;
