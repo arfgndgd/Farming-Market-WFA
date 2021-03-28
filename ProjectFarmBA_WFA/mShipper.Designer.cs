@@ -48,6 +48,7 @@ namespace ProjectFarmBA_WFA
             this.pctShipper = new System.Windows.Forms.PictureBox();
             this.pctEmployee = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblID = new System.Windows.Forms.Label();
             this.lblDeleted = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUpdated = new System.Windows.Forms.Label();
@@ -60,7 +61,7 @@ namespace ProjectFarmBA_WFA
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblCompanyName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.lblID = new System.Windows.Forms.Label();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVShipper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctShipper)).BeginInit();
@@ -112,7 +113,7 @@ namespace ProjectFarmBA_WFA
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClear.Location = new System.Drawing.Point(594, 71);
+            this.btnClear.Location = new System.Drawing.Point(596, 53);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(109, 47);
             this.btnClear.TabIndex = 9;
@@ -123,18 +124,18 @@ namespace ProjectFarmBA_WFA
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(594, 169);
+            this.btnDelete.Location = new System.Drawing.Point(596, 208);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 47);
+            this.btnDelete.Size = new System.Drawing.Size(109, 40);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.Location = new System.Drawing.Point(594, 24);
+            this.btnUpdate.Location = new System.Drawing.Point(596, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(109, 43);
             this.btnUpdate.TabIndex = 9;
@@ -171,7 +172,7 @@ namespace ProjectFarmBA_WFA
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSave.Location = new System.Drawing.Point(594, 122);
+            this.btnSave.Location = new System.Drawing.Point(596, 104);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 43);
             this.btnSave.TabIndex = 9;
@@ -227,6 +228,7 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSoftDelete);
             this.tabPage2.Controls.Add(this.lblID);
             this.tabPage2.Controls.Add(this.lblDeleted);
             this.tabPage2.Controls.Add(this.label1);
@@ -258,6 +260,15 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Kargo/Nakliye İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblID.Location = new System.Drawing.Point(352, 78);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 18);
+            this.lblID.TabIndex = 139;
             // 
             // lblDeleted
             // 
@@ -376,14 +387,16 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.Size = new System.Drawing.Size(1041, 629);
             this.tabControl1.TabIndex = 11;
             // 
-            // lblID
+            // btnSoftDelete
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblID.Location = new System.Drawing.Point(352, 78);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(0, 18);
-            this.lblID.TabIndex = 139;
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(596, 155);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(109, 47);
+            this.btnSoftDelete.TabIndex = 140;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
             // 
             // mShipper
             // 
@@ -442,5 +455,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }

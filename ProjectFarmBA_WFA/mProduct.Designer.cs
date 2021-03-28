@@ -67,6 +67,7 @@ namespace ProjectFarmBA_WFA
             this.btnAddImage = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmployee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctProduct)).BeginInit();
@@ -219,7 +220,7 @@ namespace ProjectFarmBA_WFA
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(94, 34);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -245,6 +246,7 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSoftDelete);
             this.tabPage2.Controls.Add(this.lblID);
             this.tabPage2.Controls.Add(this.lblDeleted);
             this.tabPage2.Controls.Add(this.label1);
@@ -433,6 +435,17 @@ namespace ProjectFarmBA_WFA
             this.tabControl1.Size = new System.Drawing.Size(1150, 710);
             this.tabControl1.TabIndex = 3;
             // 
+            // btnSoftDelete
+            // 
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(465, 67);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(96, 34);
+            this.btnSoftDelete.TabIndex = 140;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
+            // 
             // mProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -496,5 +509,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }
