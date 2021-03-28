@@ -32,7 +32,7 @@ namespace ProjectFarmBA_WFA
             try
             {
                 connection.Open();
-                SqlDataAdapter employeeList = new SqlDataAdapter("select TCNO as [Tc Kimlik No], Password as [Parola], FirstName as [Ad], LastName as [Soyad], ERole as [Yetki], Phone as [Telefon], Address as [Adres], City as [Şehir], DepartmentID as [Departman], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from Employees", connection);
+                SqlDataAdapter employeeList = new SqlDataAdapter("select TCNO as [Tc Kimlik No], Password as [Parola], FirstName as [Ad], LastName as [Soyad], ERole as [Yetki],Gender as [Cinsiyet], Phone as [Telefon], Address as [Adres], City as [Şehir], DepartmentID as [Departman], [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu] from Employees", connection);
                 DataSet dataSet = new DataSet();
                 employeeList.Fill(dataSet);
                 dGVEmployee.DataSource = dataSet.Tables[0];
@@ -93,7 +93,7 @@ namespace ProjectFarmBA_WFA
             txtPhone.MaxLength = 10;
             txtPassword.MaxLength = 3;
             toolTip1.SetToolTip(this.txtTcNo, "TC Kimlik No 11 karakter olmalıdır");
-            rdbWorker.Checked = true;
+            txtERole.Text = "2";
 
             EmployeeShow();
 
@@ -182,7 +182,7 @@ namespace ProjectFarmBA_WFA
         // Çalışan sekme temizleme
         private void CleanEmployeeTabPage()
         {
-            txtTcNo.Clear(); txtFirstName.Clear(); txtLastName.Clear(); txtEmail.Clear(); txtPhone.Clear(); txtAddress.Clear(); txtCity.Clear(); txtPassword.Clear(); cmbDepartment.SelectedIndex = -1;
+            txtTcNo.Clear(); txtFirstName.Clear(); txtLastName.Clear(); txtEmail.Clear(); txtPhone.Clear(); txtAddress.Clear(); txtCity.Clear(); txtGender.Clear(); txtPassword.Clear(); cmbDepartment.SelectedIndex = -1;
         }
 
         //Product sekmesi
@@ -194,10 +194,7 @@ namespace ProjectFarmBA_WFA
 
         private void btnSave_Click(object sender, EventArgs e)//Kaydet ekle butonu(employee)
         {
-            //string authority = "";
             bool dataCheck = false;
-            string gender = "";
-            //TODO: cinsiyet
 
             connection.Open();
             SqlCommand selectQuery = new SqlCommand("select * from employees where TCNO='" + txtTcNo.Text + "'", connection);
@@ -252,6 +249,22 @@ namespace ProjectFarmBA_WFA
                 else
                     lblAdress.ForeColor = Color.Black;
 
+                //Cinsiyet
+                if (txtGender.Text == "")
+                {
+                    lblGender.ForeColor = Color.Red;
+                }
+                else
+                    lblGender.ForeColor = Color.Black;
+
+                //ROl
+                if (txtERole.Text == "")
+                {
+                    lblERole.ForeColor = Color.Red;
+                }
+                else
+                    lblERole.ForeColor = Color.Black;
+
                 //Şehir
                 if (txtCity.Text == "")
                 {
@@ -269,9 +282,9 @@ namespace ProjectFarmBA_WFA
                     lblPassword.ForeColor = Color.Black;
 
 
-                if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "")
+                if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "" && txtGender.Text != "" && txtERole.Text != "")
                 {
-                    //Yetki 
+                    //Yetki
                     //if (rdbManager.Checked == true)
                     //{
                     //    authority = "1";
@@ -285,7 +298,6 @@ namespace ProjectFarmBA_WFA
 
                         //addData.ExecuteNonQuery();
 
-                        //TODO: Ekleme için şimdilik sıkıntı yok
                         Employee em = new Employee();
                         em.TCNO = txtTcNo.Text;
                         em.FirstName = txtFirstName.Text;
@@ -294,9 +306,8 @@ namespace ProjectFarmBA_WFA
                         em.Phone = txtPhone.Text;
                         em.Address = txtAddress.Text;
                         em.City = txtCity.Text;
-                       
-                        //TODO: foto ekle, yetki, gender
-                        //em.ERole = 
+                        em.Gender = Convert.ToInt32(txtGender.Text);
+                        em.ERole = Convert.ToInt32(txtERole.Text);
                         em.DepartmentID = cmbDepartment.SelectedItem != null ? (cmbDepartment.SelectedItem as Department).ID : default(int?);
                         em.Password = txtPassword.Text;
                         em.Veri_Yaratma_Tarihi = DateTime.Now;
@@ -349,25 +360,11 @@ namespace ProjectFarmBA_WFA
                     txtAddress.Text = dataReader.GetValue(5).ToString();
                     txtCity.Text = dataReader.GetValue(6).ToString();
 
-                    if (dataReader.GetValue(9).ToString() == "1")
-                    {
-                        rdbManager.Checked = true;
-                    }
-                    else
-                        rdbWorker.Checked = true;
+                    txtERole.Text = dataReader.GetValue(9).ToString();
 
                     cmbDepartment.Text = dataReader.GetValue(10).ToString();
-                    //TODO:Department ıd gözüküyor isim yok 
 
-                    //TODO: Cinsiyet ekle iki farklı enum kullanılınca ikinci gözükmüyor
-                    if (dataReader.GetValue(11).ToString() == "1")
-                    {
-                        rdbMan.Checked = true;
-                    }
-                    else if (dataReader.GetValue(11).ToString() == "2")
-                        rdbWomen.Checked = true;
-                    else
-                        rdbOther.Checked = true;
+                    txtGender.Text = dataReader.GetValue(11).ToString();
 
                     txtPassword.Text = dataReader.GetValue(12).ToString();
                     lblCreated.Text = dataReader.GetValue(13).ToString();
@@ -436,6 +433,22 @@ namespace ProjectFarmBA_WFA
             else
                 lblAdress.ForeColor = Color.Black;
 
+            //Cinsiyet
+            if (txtGender.Text == "")
+            {
+                lblGender.ForeColor = Color.Red;
+            }
+            else
+                lblGender.ForeColor = Color.Black;
+
+            //ROl
+            if (txtERole.Text == "")
+            {
+                lblERole.ForeColor = Color.Red;
+            }
+            else
+                lblERole.ForeColor = Color.Black;
+
             //Şehir
             if (txtCity.Text == "")
             {
@@ -453,7 +466,7 @@ namespace ProjectFarmBA_WFA
                 lblPassword.ForeColor = Color.Black;
 
 
-            if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "")
+            if (txtTcNo.Text.Length == 11 && txtTcNo.Text != "" && txtFirstName.Text != "" && txtFirstName.Text.Length > 1 && txtLastName.Text != "" && txtLastName.Text.Length > 1 && txtEmail.Text != "" && txtPhone.Text.Length == 10 && txtPhone.Text != "" && txtAddress.Text != "" && txtCity.Text != "" && txtPassword.Text.Length > 2 && txtPassword.Text != "" && txtGender.Text != "" && txtERole.Text != "")
             {
                 //Yetki 
                 //if (rdbManager.Checked == true)
@@ -465,8 +478,8 @@ namespace ProjectFarmBA_WFA
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Employees set FirstName='" + txtFirstName.Text + "', LastName= '" + txtLastName.Text + "', Email= '" + txtEmail.Text + "',Phone= '" + txtPhone.Text + "',Address= '" + txtAddress.Text + "',City= '" + txtCity.Text + "',DepartmentID= '" + cmbDepartment.Text + "',Password= '" + txtPassword.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' where TCNO='" + txtTcNo.Text + "'", connection);
-
+                    SqlCommand updateData = new SqlCommand("update Employees set FirstName='" + txtFirstName.Text + "', LastName= '" + txtLastName.Text + "',Gender= '" + txtGender.Text + "',ERole= '" + txtERole.Text + "', Email= '" + txtEmail.Text + "',Phone= '" + txtPhone.Text + "',Address= '" + txtAddress.Text + "',City= '" + txtCity.Text + "',DepartmentID= '" + cmbDepartment.Text + "',Password= '" + txtPassword.Text + "', [Veri Durumu] = '" + 2 + "'  where TCNO='" + txtTcNo.Text + "'", connection);
+                    //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
                     updateData.ExecuteNonQuery();
 
                     connection.Close();

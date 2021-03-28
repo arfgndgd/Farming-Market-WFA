@@ -40,17 +40,12 @@ namespace ProjectFarmBA_WFA
             this.label5 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.rdbWomen = new System.Windows.Forms.RadioButton();
-            this.rdbMan = new System.Windows.Forms.RadioButton();
-            this.rdbOther = new System.Windows.Forms.RadioButton();
             this.dGVEmployee = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.rdbWorker = new System.Windows.Forms.RadioButton();
-            this.rdbManager = new System.Windows.Forms.RadioButton();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -61,9 +56,9 @@ namespace ProjectFarmBA_WFA
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtTcNo = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblERole = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -78,6 +73,10 @@ namespace ProjectFarmBA_WFA
             this.label14 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtGender = new System.Windows.Forms.TextBox();
+            this.txtERole = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployee)).BeginInit();
@@ -96,6 +95,8 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.lblDeleted);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.lblUpdated);
@@ -104,19 +105,16 @@ namespace ProjectFarmBA_WFA
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.lblStatus);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.rdbWomen);
-            this.tabPage1.Controls.Add(this.rdbMan);
-            this.tabPage1.Controls.Add(this.rdbOther);
             this.tabPage1.Controls.Add(this.dGVEmployee);
             this.tabPage1.Controls.Add(this.btnSearch);
             this.tabPage1.Controls.Add(this.btnClear);
             this.tabPage1.Controls.Add(this.btnDelete);
             this.tabPage1.Controls.Add(this.btnUpdate);
             this.tabPage1.Controls.Add(this.btnSave);
-            this.tabPage1.Controls.Add(this.rdbWorker);
-            this.tabPage1.Controls.Add(this.rdbManager);
             this.tabPage1.Controls.Add(this.cmbDepartment);
             this.tabPage1.Controls.Add(this.txtAddress);
+            this.tabPage1.Controls.Add(this.txtERole);
+            this.tabPage1.Controls.Add(this.txtGender);
             this.tabPage1.Controls.Add(this.txtPassword);
             this.tabPage1.Controls.Add(this.txtCity);
             this.tabPage1.Controls.Add(this.txtPhone);
@@ -125,9 +123,9 @@ namespace ProjectFarmBA_WFA
             this.tabPage1.Controls.Add(this.txtFirstName);
             this.tabPage1.Controls.Add(this.txtTcNo);
             this.tabPage1.Controls.Add(this.lblPassword);
-            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.lblGender);
             this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.lblERole);
             this.tabPage1.Controls.Add(this.lblCity);
             this.tabPage1.Controls.Add(this.lblAdress);
             this.tabPage1.Controls.Add(this.lblPhone);
@@ -225,39 +223,6 @@ namespace ProjectFarmBA_WFA
             this.label3.TabIndex = 131;
             this.label3.Text = "Veri Durumu";
             // 
-            // rdbWomen
-            // 
-            this.rdbWomen.AutoSize = true;
-            this.rdbWomen.Location = new System.Drawing.Point(294, 92);
-            this.rdbWomen.Name = "rdbWomen";
-            this.rdbWomen.Size = new System.Drawing.Size(70, 21);
-            this.rdbWomen.TabIndex = 2;
-            this.rdbWomen.TabStop = true;
-            this.rdbWomen.Text = "Kadın";
-            this.rdbWomen.UseVisualStyleBackColor = true;
-            // 
-            // rdbMan
-            // 
-            this.rdbMan.AutoSize = true;
-            this.rdbMan.Location = new System.Drawing.Point(294, 126);
-            this.rdbMan.Name = "rdbMan";
-            this.rdbMan.Size = new System.Drawing.Size(70, 21);
-            this.rdbMan.TabIndex = 2;
-            this.rdbMan.TabStop = true;
-            this.rdbMan.Text = "Erkek";
-            this.rdbMan.UseVisualStyleBackColor = true;
-            // 
-            // rdbOther
-            // 
-            this.rdbOther.AutoSize = true;
-            this.rdbOther.Location = new System.Drawing.Point(294, 153);
-            this.rdbOther.Name = "rdbOther";
-            this.rdbOther.Size = new System.Drawing.Size(70, 21);
-            this.rdbOther.TabIndex = 2;
-            this.rdbOther.TabStop = true;
-            this.rdbOther.Text = "Other";
-            this.rdbOther.UseVisualStyleBackColor = true;
-            // 
             // dGVEmployee
             // 
             this.dGVEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -317,28 +282,6 @@ namespace ProjectFarmBA_WFA
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // rdbWorker
-            // 
-            this.rdbWorker.AutoSize = true;
-            this.rdbWorker.Location = new System.Drawing.Point(414, 119);
-            this.rdbWorker.Name = "rdbWorker";
-            this.rdbWorker.Size = new System.Drawing.Size(82, 21);
-            this.rdbWorker.TabIndex = 4;
-            this.rdbWorker.TabStop = true;
-            this.rdbWorker.Text = "Çalışan";
-            this.rdbWorker.UseVisualStyleBackColor = true;
-            // 
-            // rdbManager
-            // 
-            this.rdbManager.AutoSize = true;
-            this.rdbManager.Location = new System.Drawing.Point(414, 92);
-            this.rdbManager.Name = "rdbManager";
-            this.rdbManager.Size = new System.Drawing.Size(87, 21);
-            this.rdbManager.TabIndex = 4;
-            this.rdbManager.TabStop = true;
-            this.rdbManager.Text = "Yönetici";
-            this.rdbManager.UseVisualStyleBackColor = true;
             // 
             // cmbDepartment
             // 
@@ -420,14 +363,14 @@ namespace ProjectFarmBA_WFA
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Parola";
             // 
-            // label11
+            // lblGender
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(299, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Cinsiyet";
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(323, 40);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(65, 17);
+            this.lblGender.TabIndex = 0;
+            this.lblGender.Text = "Cinsiyet";
             // 
             // label10
             // 
@@ -438,14 +381,14 @@ namespace ProjectFarmBA_WFA
             this.label10.TabIndex = 0;
             this.label10.Text = "Departman";
             // 
-            // label9
+            // lblERole
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(423, 60);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Yetki";
+            this.lblERole.AutoSize = true;
+            this.lblERole.Location = new System.Drawing.Point(323, 111);
+            this.lblERole.Name = "lblERole";
+            this.lblERole.Size = new System.Drawing.Size(44, 17);
+            this.lblERole.TabIndex = 0;
+            this.lblERole.Text = "Yetki";
             // 
             // lblCity
             // 
@@ -558,6 +501,42 @@ namespace ProjectFarmBA_WFA
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(323, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(338, 17);
+            this.label4.TabIndex = 139;
+            this.label4.Text = "Erkek için 1, Kadın için 3, Other için 3 yazınız";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(323, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(272, 17);
+            this.label6.TabIndex = 139;
+            this.label6.Text = "Yönetici için 1, Çalışan için 2 yazınız";
+            // 
+            // txtGender
+            // 
+            this.txtGender.Location = new System.Drawing.Point(415, 37);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(112, 22);
+            this.txtGender.TabIndex = 1;
+            this.txtGender.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            // 
+            // txtERole
+            // 
+            this.txtERole.Location = new System.Drawing.Point(415, 107);
+            this.txtERole.Name = "txtERole";
+            this.txtERole.Size = new System.Drawing.Size(112, 22);
+            this.txtERole.TabIndex = 1;
+            this.txtERole.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtERole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            // 
             // mEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -587,9 +566,9 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblERole;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblAdress;
         private System.Windows.Forms.Label lblPhone;
@@ -605,11 +584,7 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtTcNo;
-        private System.Windows.Forms.RadioButton rdbWorker;
-        private System.Windows.Forms.RadioButton rdbManager;
         private System.Windows.Forms.ComboBox cmbDepartment;
-        private System.Windows.Forms.RadioButton rdbMan;
-        private System.Windows.Forms.RadioButton rdbWomen;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
@@ -621,7 +596,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.RadioButton rdbOther;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDeleted;
@@ -632,5 +606,9 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtERole;
+        private System.Windows.Forms.TextBox txtGender;
     }
 }

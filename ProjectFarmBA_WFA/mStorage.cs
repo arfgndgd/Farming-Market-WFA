@@ -30,7 +30,7 @@ namespace ProjectFarmBA_WFA
             try
             { 
                 connection.Open();
-                SqlDataAdapter storageList = new SqlDataAdapter("select ID , StorageName as [Ürün Adı], UnitInPrice as [Fiyat], SupplierID as [Tedarikçi], StorageCategoryID as [Kategori],  [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], TotalWeight as [Toplam Ağırlık] from Storages", connection);
+                SqlDataAdapter storageList = new SqlDataAdapter("select ID , StorageName as [Ürün Adı], UnitInPrice as [Fiyat], SupplierID as [Tedarikçi], StorageCategoryID as [Kategori],  [Veri Yaratma Tarihi] , [Veri Güncelleme Tarihi] , [Veri Silme Tarihi] ,[Veri Durumu], Quantity as [Toplam Ağırlık] from Storages", connection);
                 DataSet dataSet = new DataSet();
                 storageList.Fill(dataSet);
                 dGVStorage.DataSource = dataSet.Tables[0];
@@ -251,12 +251,12 @@ namespace ProjectFarmBA_WFA
                 lblTotalWeight.ForeColor = Color.Black;
             
 
-            if (pctStorage.Image != null && txtProductName.Text != "" && txtUnitPrice.Text != "" && txtTotalWeight.Text != "" && cmbCategory.Text != "" && cmbSupplier.Text != "")
+            if (pctStorage.Image != null && txtProductName.Text != "" && txtUnitPrice.Text != "" && txtTotalWeight.Text != "" && cmbCategory.Text != "" )
             {
                 try
                 {
                     connection.Open();
-                    SqlCommand updateData = new SqlCommand("update Storages set UnitInPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', SupplierID = '" + cmbSupplier.Text + "', StorageCategoryID='" + cmbCategory.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "', TotalWeight='" + txtTotalWeight.Text + "' where StorageName='" + txtProductName.Text + "'", connection);
+                    SqlCommand updateData = new SqlCommand("update Storages set UnitInPrice='" + txtUnitPrice.Text.Replace(",", ".") + "', SupplierID = '" + cmbSupplier.Text + "', StorageCategoryID='" + cmbCategory.Text + "', [Veri Güncelleme Tarihi] = '" + DateTime.Now + "', Quantity='" + txtTotalWeight.Text + "' where StorageName='" + txtProductName.Text + "'", connection);
                     updateData.ExecuteNonQuery();
 
                     connection.Close();
@@ -330,8 +330,8 @@ namespace ProjectFarmBA_WFA
                 {
                     searchData = true;
                     lblID.Text = dataReader.GetValue(0).ToString();
-                    txtProductName.Text = dataReader.GetValue(1).ToString();
-                    txtUnitPrice.Text = dataReader.GetValue(2).ToString();
+                    txtProductName.Text = dataReader.GetValue(9).ToString();
+                    txtUnitPrice.Text = dataReader.GetValue(1).ToString();
                     txtTotalWeight.Text = dataReader.GetValue(10).ToString();
                     try
                     {
@@ -342,12 +342,12 @@ namespace ProjectFarmBA_WFA
                     {
                         pctStorage.Image = Image.FromFile(Application.StartupPath + "\\ImageStorage\\resimyok.jpg");
                     }
-                    cmbCategory.Text = dataReader.GetValue(5).ToString();
-                    cmbSupplier.Text = dataReader.GetValue(4).ToString();
-                    lblCreated.Text = dataReader.GetValue(6).ToString();
-                    lblUpdated.Text = dataReader.GetValue(7).ToString();
-                    lblDeleted.Text = dataReader.GetValue(8).ToString();
-                    lblStatus.Text = dataReader.GetValue(9).ToString();
+                    cmbCategory.Text = dataReader.GetValue(4).ToString();
+                    cmbSupplier.Text = dataReader.GetValue(3).ToString();
+                    lblCreated.Text = dataReader.GetValue(5).ToString();
+                    lblUpdated.Text = dataReader.GetValue(6).ToString();
+                    lblDeleted.Text = dataReader.GetValue(7).ToString();
+                    lblStatus.Text = dataReader.GetValue(8).ToString();
 
                     break;
                 }
