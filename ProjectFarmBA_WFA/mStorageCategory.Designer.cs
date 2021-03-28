@@ -59,6 +59,7 @@ namespace ProjectFarmBA_WFA
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pctEmployee = new System.Windows.Forms.PictureBox();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVStorageCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctStorageCategory)).BeginInit();
@@ -172,7 +173,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblID.Location = new System.Drawing.Point(341, 44);
+            this.lblID.Location = new System.Drawing.Point(266, 105);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 18);
             this.lblID.TabIndex = 133;
@@ -181,7 +182,7 @@ namespace ProjectFarmBA_WFA
             // 
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelID.Location = new System.Drawing.Point(277, 42);
+            this.labelID.Location = new System.Drawing.Point(202, 103);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(24, 18);
             this.labelID.TabIndex = 132;
@@ -221,11 +222,11 @@ namespace ProjectFarmBA_WFA
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(532, 53);
+            this.btnDelete.Location = new System.Drawing.Point(333, 6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(115, 47);
+            this.btnDelete.Size = new System.Drawing.Size(164, 42);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -311,6 +312,7 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSoftDelete);
             this.tabPage2.Controls.Add(this.lblDeleted);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.lblUpdated);
@@ -359,6 +361,17 @@ namespace ProjectFarmBA_WFA
             this.pctEmployee.Size = new System.Drawing.Size(210, 172);
             this.pctEmployee.TabIndex = 12;
             this.pctEmployee.TabStop = false;
+            // 
+            // btnSoftDelete
+            // 
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(532, 54);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(115, 47);
+            this.btnSoftDelete.TabIndex = 142;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
             // 
             // mStorageCategory
             // 
@@ -415,5 +428,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.PictureBox pctStorageCategory;
         private System.Windows.Forms.PictureBox pctEmployee;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }

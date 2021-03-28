@@ -216,7 +216,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from StorageCategories where StorageCategoryName='" + txtStorageCategoryName.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Ambar Kategorisi kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Ambar Kategorisi kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     StorageCategoryShow();
                     CleanStorageCategoryTabPage();
@@ -224,7 +224,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanStorageCategoryTabPage();
                 }
@@ -292,6 +292,21 @@ namespace ProjectFarmBA_WFA
             {
                 this.pctStorageCategory.Image = new Bitmap(image.OpenFile());
             }
+        }
+
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+
+            SqlCommand updateData = new SqlCommand("update StorageCategories set [Veri Durumu] = '" + 3 + "' where StorageCategoryName='" + txtStorageCategoryName.Text + "'", connection);
+            //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
+            updateData.ExecuteNonQuery();
+            connection.Close();
+
+
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            StorageCategoryShow();
+            CleanStorageCategoryTabPage();
         }
     }
 }
