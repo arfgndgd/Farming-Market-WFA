@@ -229,7 +229,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from Orders where ID='" + txtID.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Sipariş kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Sipariş kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     OrderShow();
                     //CleanOrderPage();
@@ -237,7 +237,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanOrderPage();
                 }
@@ -283,6 +283,20 @@ namespace ProjectFarmBA_WFA
             {
                 MessageBox.Show("Lütfen Müşteri Email kaydı giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand updateData = new SqlCommand("update Orders set [Veri Durumu] = '" + 3 + "'  where ID='" + lblID.Text + "'", connection);
+            //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
+            updateData.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            OrderShow();
+            CleanOrderPage();
         }
 
         //Sipariş eklemesi yapılamaz

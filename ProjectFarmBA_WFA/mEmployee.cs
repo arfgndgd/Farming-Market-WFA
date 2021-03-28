@@ -501,7 +501,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from Employees where TCNO='" + txtTcNo.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Çalışan kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Çalışan kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     EmployeeShow();
                     CleanEmployeeTabPage();
@@ -509,7 +509,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanEmployeeTabPage();
                 }
@@ -524,5 +524,19 @@ namespace ProjectFarmBA_WFA
             CleanEmployeeTabPage();
         }
 
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+
+            connection.Open();
+            SqlCommand updateData = new SqlCommand("update Employees set [Veri Durumu] = '" + 3 + "'  where TCNO='" + txtTcNo.Text + "'", connection);
+            //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
+            updateData.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            EmployeeShow();
+            CleanEmployeeTabPage();
+        }
     }
 }

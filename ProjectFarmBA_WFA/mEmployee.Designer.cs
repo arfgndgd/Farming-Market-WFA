@@ -32,6 +32,8 @@ namespace ProjectFarmBA_WFA
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblDeleted = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUpdated = new System.Windows.Forms.Label();
@@ -48,6 +50,8 @@ namespace ProjectFarmBA_WFA
             this.btnSave = new System.Windows.Forms.Button();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtERole = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -73,10 +77,7 @@ namespace ProjectFarmBA_WFA
             this.label14 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtGender = new System.Windows.Forms.TextBox();
-            this.txtERole = new System.Windows.Forms.TextBox();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVEmployee)).BeginInit();
@@ -95,6 +96,7 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSoftDelete);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.lblDeleted);
@@ -142,6 +144,24 @@ namespace ProjectFarmBA_WFA
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Çalışan İşlemleri";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(323, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(272, 17);
+            this.label6.TabIndex = 139;
+            this.label6.Text = "Yönetici için 1, Çalışan için 2 yazınız";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(323, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(338, 17);
+            this.label4.TabIndex = 139;
+            this.label4.Text = "Erkek için 1, Kadın için 3, Other için 3 yazınız";
             // 
             // lblDeleted
             // 
@@ -255,11 +275,11 @@ namespace ProjectFarmBA_WFA
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1016, 140);
+            this.btnDelete.Location = new System.Drawing.Point(1016, 248);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(140, 34);
             this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -297,6 +317,24 @@ namespace ProjectFarmBA_WFA
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(724, 22);
             this.txtAddress.TabIndex = 1;
+            // 
+            // txtERole
+            // 
+            this.txtERole.Location = new System.Drawing.Point(415, 107);
+            this.txtERole.Name = "txtERole";
+            this.txtERole.Size = new System.Drawing.Size(112, 22);
+            this.txtERole.TabIndex = 1;
+            this.txtERole.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtERole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            // 
+            // txtGender
+            // 
+            this.txtGender.Location = new System.Drawing.Point(415, 37);
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(112, 22);
+            this.txtGender.TabIndex = 1;
+            this.txtGender.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtPassword
             // 
@@ -501,41 +539,16 @@ namespace ProjectFarmBA_WFA
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label4
+            // btnSoftDelete
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(323, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(338, 17);
-            this.label4.TabIndex = 139;
-            this.label4.Text = "Erkek için 1, Kadın için 3, Other için 3 yazınız";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 74);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(272, 17);
-            this.label6.TabIndex = 139;
-            this.label6.Text = "Yönetici için 1, Çalışan için 2 yazınız";
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(415, 37);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(112, 22);
-            this.txtGender.TabIndex = 1;
-            this.txtGender.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
-            this.txtGender.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
-            // 
-            // txtERole
-            // 
-            this.txtERole.Location = new System.Drawing.Point(415, 107);
-            this.txtERole.Name = "txtERole";
-            this.txtERole.Size = new System.Drawing.Size(112, 22);
-            this.txtERole.TabIndex = 1;
-            this.txtERole.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
-            this.txtERole.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(1016, 139);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(140, 35);
+            this.btnSoftDelete.TabIndex = 140;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
             // 
             // mEmployee
             // 
@@ -610,5 +623,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtERole;
         private System.Windows.Forms.TextBox txtGender;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }

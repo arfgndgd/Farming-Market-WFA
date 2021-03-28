@@ -265,7 +265,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from OrderDetails where ID='" + txtOrderID.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Sipariş Detayı kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Sipariş Detayı kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     OrderDetailShow();
                     //CleanOrderPage();
@@ -273,7 +273,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanOrderDetailPage();
                 }
@@ -291,6 +291,20 @@ namespace ProjectFarmBA_WFA
         private void CleanOrderDetailPage()
         {
             txtSearch.Clear(); txtOrderID.Clear(); txtProductID.Clear(); txtQuantity.Clear(); txtTotalPrice.Clear(); 
+        }
+
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand updateData = new SqlCommand("update OrderDetails set [Veri Durumu] = '" + 3 + "' where OrderID='" + txtOrderID.Text + "'", connection);
+            //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
+            updateData.ExecuteNonQuery();
+
+            connection.Close();
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            OrderDetailShow();
+            CleanOrderDetailPage();
         }
     }
 }
