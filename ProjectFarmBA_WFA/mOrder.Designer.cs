@@ -63,7 +63,6 @@ namespace ProjectFarmBA_WFA
             this.txtCountry = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -390,20 +389,11 @@ namespace ProjectFarmBA_WFA
             this.txtAddress.Size = new System.Drawing.Size(521, 78);
             this.txtAddress.TabIndex = 149;
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(1313, 154);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 39);
-            this.btnSave.TabIndex = 150;
-            this.btnSave.Text = "Kaydet";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1409, 154);
+            this.btnDelete.Location = new System.Drawing.Point(1313, 154);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 39);
+            this.btnDelete.Size = new System.Drawing.Size(75, 27);
             this.btnDelete.TabIndex = 150;
             this.btnDelete.Text = "Sil";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -411,7 +401,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1313, 199);
+            this.btnUpdate.Location = new System.Drawing.Point(1313, 184);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 33);
             this.btnUpdate.TabIndex = 150;
@@ -421,7 +411,7 @@ namespace ProjectFarmBA_WFA
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(1409, 199);
+            this.btnClear.Location = new System.Drawing.Point(1313, 223);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 33);
             this.btnClear.TabIndex = 150;
@@ -498,7 +488,6 @@ namespace ProjectFarmBA_WFA
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtAppUserID);
@@ -587,7 +576,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClear;

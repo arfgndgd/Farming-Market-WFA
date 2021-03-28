@@ -15,6 +15,7 @@ namespace ProjectFarmBA_WFA
 {
     public partial class mOrder : Form
     {
+        //Bu classta Sipariş eklemesi yapılamaz, siparişler yalnızca düzenlebilir ve silinir
         public mOrder()
         {
             InitializeComponent();
@@ -283,6 +284,8 @@ namespace ProjectFarmBA_WFA
                 MessageBox.Show("Lütfen Müşteri Email kaydı giriniz", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //Sipariş eklemesi yapılamaz
 
         //private void btnSave_Click(object sender, EventArgs e)
         //{

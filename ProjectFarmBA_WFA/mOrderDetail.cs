@@ -15,6 +15,8 @@ namespace ProjectFarmBA_WFA
 {
     public partial class mOrderDetail : Form
     {
+        //Bu classta Sipariş detayı eklemesi yapılamaz, siparişler yalnızca düzenlebilir ve silinir
+
         public mOrderDetail()
         {
             InitializeComponent();

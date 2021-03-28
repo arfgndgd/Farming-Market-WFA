@@ -32,6 +32,16 @@ namespace ProjectFarmBA_WFA
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblDeleted = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUpdated = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblCreated = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
@@ -49,16 +59,7 @@ namespace ProjectFarmBA_WFA
             this.label14 = new System.Windows.Forms.Label();
             this.pctEmployee = new System.Windows.Forms.PictureBox();
             this.lblEmployee = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
-            this.labelID = new System.Windows.Forms.Label();
-            this.lblDeleted = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblUpdated = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblCreated = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVCategory)).BeginInit();
@@ -91,6 +92,7 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.Controls.Add(this.txtDescription);
             this.tabPage2.Controls.Add(this.txtCategoryName);
             this.tabPage2.Controls.Add(this.btnClear);
+            this.tabPage2.Controls.Add(this.btnSoftDelete);
             this.tabPage2.Controls.Add(this.btnDelete);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.btnSearch);
@@ -107,6 +109,105 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Ürün Kategori İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblDeleted
+            // 
+            this.lblDeleted.AutoSize = true;
+            this.lblDeleted.Location = new System.Drawing.Point(832, 91);
+            this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeleted.Name = "lblDeleted";
+            this.lblDeleted.Size = new System.Drawing.Size(0, 17);
+            this.lblDeleted.TabIndex = 141;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(717, 89);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 18);
+            this.label1.TabIndex = 140;
+            this.label1.Text = "Silme Tarihi";
+            // 
+            // lblUpdated
+            // 
+            this.lblUpdated.AutoSize = true;
+            this.lblUpdated.Location = new System.Drawing.Point(832, 46);
+            this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUpdated.Name = "lblUpdated";
+            this.lblUpdated.Size = new System.Drawing.Size(0, 17);
+            this.lblUpdated.TabIndex = 139;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(670, 44);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(144, 18);
+            this.label8.TabIndex = 138;
+            this.label8.Text = "Güncelleme Tarihi";
+            // 
+            // lblCreated
+            // 
+            this.lblCreated.AutoSize = true;
+            this.lblCreated.Location = new System.Drawing.Point(832, 7);
+            this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCreated.Name = "lblCreated";
+            this.lblCreated.Size = new System.Drawing.Size(0, 17);
+            this.lblCreated.TabIndex = 137;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(723, 5);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 18);
+            this.label5.TabIndex = 136;
+            this.label5.Text = "Giriş Tarihi";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(832, 128);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 17);
+            this.lblStatus.TabIndex = 135;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(713, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 18);
+            this.label2.TabIndex = 134;
+            this.label2.Text = "Veri Durumu";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblID.Location = new System.Drawing.Point(341, 44);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 18);
+            this.lblID.TabIndex = 133;
+            // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelID.Location = new System.Drawing.Point(277, 42);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(24, 18);
+            this.labelID.TabIndex = 132;
+            this.labelID.Text = "ID";
             // 
             // txtDescription
             // 
@@ -140,11 +241,11 @@ namespace ProjectFarmBA_WFA
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(532, 53);
+            this.btnDelete.Location = new System.Drawing.Point(673, 155);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(115, 47);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -263,104 +364,16 @@ namespace ProjectFarmBA_WFA
             this.lblEmployee.TabIndex = 10;
             this.lblEmployee.Text = "Employee";
             // 
-            // lblID
+            // btnSoftDelete
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblID.Location = new System.Drawing.Point(341, 44);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(0, 18);
-            this.lblID.TabIndex = 133;
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelID.Location = new System.Drawing.Point(277, 42);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(24, 18);
-            this.labelID.TabIndex = 132;
-            this.labelID.Text = "ID";
-            // 
-            // lblDeleted
-            // 
-            this.lblDeleted.AutoSize = true;
-            this.lblDeleted.Location = new System.Drawing.Point(829, 114);
-            this.lblDeleted.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDeleted.Name = "lblDeleted";
-            this.lblDeleted.Size = new System.Drawing.Size(0, 17);
-            this.lblDeleted.TabIndex = 141;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(714, 112);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 18);
-            this.label1.TabIndex = 140;
-            this.label1.Text = "Silme Tarihi";
-            // 
-            // lblUpdated
-            // 
-            this.lblUpdated.AutoSize = true;
-            this.lblUpdated.Location = new System.Drawing.Point(829, 69);
-            this.lblUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUpdated.Name = "lblUpdated";
-            this.lblUpdated.Size = new System.Drawing.Size(0, 17);
-            this.lblUpdated.TabIndex = 139;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(667, 67);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(144, 18);
-            this.label8.TabIndex = 138;
-            this.label8.Text = "Güncelleme Tarihi";
-            // 
-            // lblCreated
-            // 
-            this.lblCreated.AutoSize = true;
-            this.lblCreated.Location = new System.Drawing.Point(829, 30);
-            this.lblCreated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCreated.Name = "lblCreated";
-            this.lblCreated.Size = new System.Drawing.Size(0, 17);
-            this.lblCreated.TabIndex = 137;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(720, 28);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 18);
-            this.label5.TabIndex = 136;
-            this.label5.Text = "Giriş Tarihi";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(829, 151);
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(0, 17);
-            this.lblStatus.TabIndex = 135;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(710, 149);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 18);
-            this.label2.TabIndex = 134;
-            this.label2.Text = "Veri Durumu";
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(532, 54);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(115, 47);
+            this.btnSoftDelete.TabIndex = 9;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
             // 
             // mProductCategory
             // 
@@ -417,5 +430,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }
