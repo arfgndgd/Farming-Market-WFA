@@ -132,7 +132,6 @@ namespace ProjectFarmBA_WFA
                         s.Email = txtEmail.Text;
                         s.Phone = txtPhone.Text;
                         s.Veri_Yaratma_Tarihi = DateTime.Now;
-                        //TODO: soft delete ve veri durumu lazım 
                         s.Veri_Durumu = 1;
                         db.Shippers.Add(s);
                         db.SaveChanges();

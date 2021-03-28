@@ -57,16 +57,17 @@ namespace ProjectFarmBA_WFA
             this.pctSupplier = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.pctEmployee = new System.Windows.Forms.PictureBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.txtCity = new System.Windows.Forms.TextBox();
-            this.lblCountry = new System.Windows.Forms.Label();
             this.txtCountry = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.pctEmployee = new System.Windows.Forms.PictureBox();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctSupplier)).BeginInit();
@@ -229,11 +230,11 @@ namespace ProjectFarmBA_WFA
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(532, 53);
+            this.btnDelete.Location = new System.Drawing.Point(193, 6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(115, 47);
+            this.btnDelete.Size = new System.Drawing.Size(105, 36);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -319,6 +320,7 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSoftDelete);
             this.tabPage2.Controls.Add(this.lblDeleted);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.lblUpdated);
@@ -357,6 +359,39 @@ namespace ProjectFarmBA_WFA
             this.tabPage2.Text = "Tedarikçi İşlemleri";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtCountry
+            // 
+            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtCountry.Location = new System.Drawing.Point(333, 178);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(164, 24);
+            this.txtCountry.TabIndex = 11;
+            // 
+            // txtCity
+            // 
+            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtCity.Location = new System.Drawing.Point(333, 148);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(164, 24);
+            this.txtCity.TabIndex = 11;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtPhone.Location = new System.Drawing.Point(333, 116);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(164, 24);
+            this.txtPhone.TabIndex = 11;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtEmail.Location = new System.Drawing.Point(333, 86);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(164, 24);
+            this.txtEmail.TabIndex = 11;
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -368,50 +403,15 @@ namespace ProjectFarmBA_WFA
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // pctEmployee
+            // lblCountry
             // 
-            this.pctEmployee.Location = new System.Drawing.Point(1182, 52);
-            this.pctEmployee.Name = "pctEmployee";
-            this.pctEmployee.Size = new System.Drawing.Size(210, 172);
-            this.pctEmployee.TabIndex = 12;
-            this.pctEmployee.TabStop = false;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEmail.Location = new System.Drawing.Point(248, 92);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(50, 18);
-            this.lblEmail.TabIndex = 2;
-            this.lblEmail.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEmail.Location = new System.Drawing.Point(333, 86);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(164, 24);
-            this.txtEmail.TabIndex = 11;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPhone.Location = new System.Drawing.Point(234, 122);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(64, 18);
-            this.lblPhone.TabIndex = 2;
-            this.lblPhone.Text = "Telefon";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPhone.Location = new System.Drawing.Point(333, 116);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(164, 24);
-            this.txtPhone.TabIndex = 11;
-            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCountry.Location = new System.Drawing.Point(256, 184);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(42, 18);
+            this.lblCountry.TabIndex = 2;
+            this.lblCountry.Text = "Ülke";
             // 
             // lblCity
             // 
@@ -423,31 +423,44 @@ namespace ProjectFarmBA_WFA
             this.lblCity.TabIndex = 2;
             this.lblCity.Text = "Şehir";
             // 
-            // txtCity
+            // lblPhone
             // 
-            this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCity.Location = new System.Drawing.Point(333, 148);
-            this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(164, 24);
-            this.txtCity.TabIndex = 11;
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblPhone.Location = new System.Drawing.Point(234, 122);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(64, 18);
+            this.lblPhone.TabIndex = 2;
+            this.lblPhone.Text = "Telefon";
             // 
-            // lblCountry
+            // lblEmail
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCountry.Location = new System.Drawing.Point(256, 184);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(42, 18);
-            this.lblCountry.TabIndex = 2;
-            this.lblCountry.Text = "Ülke";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblEmail.Location = new System.Drawing.Point(248, 92);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(50, 18);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email";
             // 
-            // txtCountry
+            // pctEmployee
             // 
-            this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtCountry.Location = new System.Drawing.Point(333, 178);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(164, 24);
-            this.txtCountry.TabIndex = 11;
+            this.pctEmployee.Location = new System.Drawing.Point(1182, 52);
+            this.pctEmployee.Name = "pctEmployee";
+            this.pctEmployee.Size = new System.Drawing.Size(210, 172);
+            this.pctEmployee.TabIndex = 12;
+            this.pctEmployee.TabStop = false;
+            // 
+            // btnSoftDelete
+            // 
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(532, 54);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(115, 47);
+            this.btnSoftDelete.TabIndex = 142;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
             // 
             // mSupplier
             // 
@@ -512,5 +525,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.PictureBox pctSupplier;
         private System.Windows.Forms.PictureBox pctEmployee;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }

@@ -330,7 +330,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from Suppliers where SupplierName='" + txtSupplierName.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Tedarikçi kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Tedarikçi kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     SupplierShow();
                     CleanSupplierTabPage();
@@ -338,7 +338,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanSupplierTabPage();
                 }
@@ -361,6 +361,19 @@ namespace ProjectFarmBA_WFA
             }
             else
                 e.Handled = true;
+        }
+
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+
+            SqlCommand updateData = new SqlCommand("update Suppliers set [Veri Durumu] = '" + 3 + "' where SupplierName='" + txtSupplierName.Text + "'", connection); //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
+            updateData.ExecuteNonQuery();
+            connection.Close();
+
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            SupplierShow();
+            CleanSupplierTabPage();
         }
     }
 }
