@@ -59,6 +59,7 @@ namespace ProjectFarmBA_WFA
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pctEmployee = new System.Windows.Forms.PictureBox();
+            this.btnSoftDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGVBlog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBlog)).BeginInit();
@@ -211,9 +212,9 @@ namespace ProjectFarmBA_WFA
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnClear.Location = new System.Drawing.Point(935, 199);
+            this.btnClear.Location = new System.Drawing.Point(935, 156);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(95, 47);
+            this.btnClear.Size = new System.Drawing.Size(95, 33);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Temizle";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -222,11 +223,11 @@ namespace ProjectFarmBA_WFA
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.Location = new System.Drawing.Point(935, 70);
+            this.btnDelete.Location = new System.Drawing.Point(935, 204);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(95, 47);
+            this.btnDelete.Size = new System.Drawing.Size(95, 33);
             this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Sil";
+            this.btnDelete.Text = "Yok Et";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -257,7 +258,7 @@ namespace ProjectFarmBA_WFA
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSave.Location = new System.Drawing.Point(935, 12);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 43);
+            this.btnSave.Size = new System.Drawing.Size(95, 33);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Kaydet";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -312,6 +313,7 @@ namespace ProjectFarmBA_WFA
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnSoftDelete);
             this.tabPage2.Controls.Add(this.lblDeleted);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.lblUpdated);
@@ -345,9 +347,9 @@ namespace ProjectFarmBA_WFA
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.Location = new System.Drawing.Point(935, 135);
+            this.btnUpdate.Location = new System.Drawing.Point(935, 108);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(95, 43);
+            this.btnUpdate.Size = new System.Drawing.Size(95, 33);
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -360,6 +362,17 @@ namespace ProjectFarmBA_WFA
             this.pctEmployee.Size = new System.Drawing.Size(210, 172);
             this.pctEmployee.TabIndex = 12;
             this.pctEmployee.TabStop = false;
+            // 
+            // btnSoftDelete
+            // 
+            this.btnSoftDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSoftDelete.Location = new System.Drawing.Point(935, 60);
+            this.btnSoftDelete.Name = "btnSoftDelete";
+            this.btnSoftDelete.Size = new System.Drawing.Size(95, 33);
+            this.btnSoftDelete.TabIndex = 142;
+            this.btnSoftDelete.Text = "Sil";
+            this.btnSoftDelete.UseVisualStyleBackColor = true;
+            this.btnSoftDelete.Click += new System.EventHandler(this.btnSoftDelete_Click);
             // 
             // mBlog
             // 
@@ -416,5 +429,6 @@ namespace ProjectFarmBA_WFA
         private System.Windows.Forms.PictureBox pctBlog;
         private System.Windows.Forms.PictureBox pctEmployee;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnSoftDelete;
     }
 }

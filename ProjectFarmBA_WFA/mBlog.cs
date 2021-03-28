@@ -217,7 +217,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from Blogs where Title='" + txtTitle.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Kategori kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Kategori kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     BlogShow();
                     CleanBlogTabPage();
@@ -225,7 +225,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanBlogTabPage();
                 }
@@ -290,6 +290,20 @@ namespace ProjectFarmBA_WFA
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            CleanBlogTabPage();
+        }
+
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+
+            SqlCommand updateData = new SqlCommand("update Blogs set  Description='" + txtDescription.Text + "', [Veri Durumu] = '" + 3 + "' where Title='" + txtTitle.Text + "'", connection);
+            //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
+            updateData.ExecuteNonQuery();
+            connection.Close();
+
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            BlogShow();
             CleanBlogTabPage();
         }
     }

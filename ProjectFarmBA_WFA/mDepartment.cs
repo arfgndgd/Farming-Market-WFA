@@ -277,7 +277,7 @@ namespace ProjectFarmBA_WFA
                     searchData = true;
                     SqlCommand deleteData = new SqlCommand("delete from Departments where DepartmentName='" + txtDepartmentName.Text + "'", connection);
                     deleteData.ExecuteNonQuery();
-                    MessageBox.Show("Departman kaydı silindi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Departman kaydı yok edildi !", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     connection.Close();
                     DepartmentShow();
                     CleanDepartmentTabPage();
@@ -285,7 +285,7 @@ namespace ProjectFarmBA_WFA
                 }
                 if (searchData == false)
                 {
-                    MessageBox.Show("Silinecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Yok edilecek kayıt bulunamadı", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     connection.Close();
                     CleanDepartmentTabPage();
                 }
@@ -328,6 +328,21 @@ namespace ProjectFarmBA_WFA
             }
             else
                 e.Handled = true;
+        }
+
+        private void btnSoftDelete_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+
+            SqlCommand updateData = new SqlCommand("update Departments set Description='" + txtDescription.Text + "', [Veri Durumu] = '" + 3 + "' where DepartmentName='" + txtDepartmentName.Text + "'", connection);
+            updateData.ExecuteNonQuery();
+            //TODO:  [Veri Silme Tarihi] = '" + DateTime.Now + "' 
+            connection.Close();
+
+
+            MessageBox.Show("Kayıt türü silinmiş olarak değiştirildi", "Farming Market", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            DepartmentShow();
+            CleanDepartmentTabPage();
         }
     }
 }

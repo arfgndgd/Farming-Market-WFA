@@ -340,7 +340,7 @@ namespace ProjectFarmBA_WFA
             connection.Open();
 
             SqlCommand updateData = new SqlCommand("update Categories set  Description='" + txtDescription.Text + "', [Veri Durumu] = '" + 3 + "' where CategoryName='" + txtCategoryName.Text + "'", connection);
-            //TODO: [Veri Güncelleme Tarihi] = '" + DateTime.Now + "'
+            //TODO: [Veri Silme Tarihi] = '" + DateTime.Now + "'
             updateData.ExecuteNonQuery();
             connection.Close();
 
