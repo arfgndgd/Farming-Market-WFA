@@ -1,0 +1,6 @@
+﻿Bu proje, ProjectFarmBA adlı projemin Windows Form Application versiyonudur. Veritabanı bağlantısı Ado.Net ile yapılmıştır.
+
+
+Nasıl Çalışır?
+
+Proje çalıştırıldığında önce bir login ekranı çıkar ve yapılan çalışan girişi ile birlikte çalışanın yetkisine göre "Manager" ya da "Worker" olarak ayrı özelliklere sahip alanlara yönlendirilir. "Manager" girişi yapılan alanda çalışan tüm yetkilere sahiptir, "Worker" alanında ise yalnızca arama ve görüntüleme yetkisine sahiptir.

@@ -1,0 +1,3 @@
+Proje veritabaný baðlantýsýný oluþturan ana projede miras aldýðý base sýnýfýnda iþlem tarihleri ile ilgili bilgiler bulunuyor.
+[Veri Yaratma Tarihi] bilgisini Datetime.Now ile ekliyorum. Ancak bu projede " [Veri Güncelleme Tarihi] = '" + DateTime.Now + "' " ile güncelleneme tarihini veritabanýna yansýtmak istediðimde datetime hatasý alýyorum. 
+Ayný sorunu verinin siliniþ tarihini veritabanýna yansýtan [Veri Silme Tarihi] = '"+DateTime.Now+"' ile de yaþýyorum.

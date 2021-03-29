@@ -1,0 +1,9 @@
+Proje Standartlarý
+
+1. Proje Ýngilizce dilinde yazýldý.
+2. Kod yazýmýnda Türkçe karakter kullanýlmadý.
+3. View'lar üzerinde kullanýcýnýn muhatap olacaðý kýsýmlarda Türkçe ifadeler kullanýldý.
+4. Method isimleri PascalCase ile emir kipinde yazýldý.
+5. Field isimleri camelCase olarak yazýldý.
+6. Local Variablelar Ýngilizce dilinde Türkçe karakter kullanmadan camelCase olarak yazýldý.
+7. Proje içerisinde yazýlýmcýlarýn yararlanabileceði Türkçe bilgilendirme ve yorumlar bulunuyor.
